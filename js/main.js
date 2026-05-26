@@ -28,6 +28,8 @@ function init() {
     createStars();
     initSound();
     initHud();
+    initRadar();
+    initControls();
     initParticles();
 
     playComms();
@@ -36,13 +38,14 @@ function init() {
 function initTHREE() {
     scene = new THREE.Scene();
 
+    visibleHalfW = halfHeight * window.innerWidth / window.innerHeight;
     camera = new THREE.OrthographicCamera(
-        -halfWidth, 
-        halfWidth, 
-        halfHeight, 
-        -halfHeight, 
-        0.1, 
-        1000 );
+        -visibleHalfW,
+        visibleHalfW,
+        halfHeight,
+        -halfHeight,
+        0.1,
+        1000);
     scene.add(camera);
     cameraPositionReset();
 
@@ -182,6 +185,11 @@ function createStars() {
 function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 
+    visibleHalfW = halfHeight * window.innerWidth / window.innerHeight;
+    camera.left  = -visibleHalfW;
+    camera.right =  visibleHalfW;
+    camera.updateProjectionMatrix();
+
     initHud();
 }
 
@@ -207,6 +215,7 @@ function render() {
 
     renderer.render(scene, camera);
     renderHud();
+    renderRadar();
 
     if (isDebugOn) {
         scene.remove(trajectory);
@@ -287,9 +296,11 @@ function update() {
     }
 
     updateTimer();
+    applyOnScreenControls();
     handleMovement();
     checkCollision();
     checkZoom();
+    updateCameraFollow();
     updateParticles();
 }
 
@@ -523,6 +534,7 @@ function respawn() {
     isGameOver = false;
     isPaused = false;
 
+    resetControls();
     randomSpawn();
     randomizeScoreMultipliers();
 }
@@ -650,9 +662,23 @@ function zoomOut() {
     if(!isZoomed) return;
 
     isZoomed = false;
-    cameraPositionReset();
+    camera.position.y = 0;
+    camera.position.z = cameraPositionDefault.z;
     camera.zoom = 1;
     camera.updateProjectionMatrix();
+}
+
+function updateCameraFollow() {
+    if (isZoomed) return; // zoomIn() handles its own positioning
+
+    const maxPan = halfWidth - visibleHalfW;
+    if (maxPan > 0) {
+        // Clamp so neither edge of the viewport exceeds the world boundary
+        camera.position.x = Math.max(-maxPan, Math.min(maxPan, lander.position.x));
+    } else {
+        // Viewport is as wide (or wider) than the world — keep centred
+        camera.position.x = 0;
+    }
 }
 
 function initParticles() {

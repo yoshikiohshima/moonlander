@@ -12,6 +12,7 @@ let deltaTime = 0;
 let lastTime = -1;
 
 let isZoomed = false;
+let visibleHalfW = 0; // half-width of camera frustum, set by window aspect ratio
 
 let velocityX = 0;
 let velocityY = 0;

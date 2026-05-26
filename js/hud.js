@@ -102,8 +102,8 @@ function fillMainPanel() {
             hudWidth*mainPanelRelativeOffsetX, 
             hudHeight*(mainPanelRelativeOffsetY+0*mainPanelRelativeOffsetYStep));
         hudContext.fillText(
-            "ARROW KEYS TO MOVE", 
-            hudWidth*mainPanelRelativeOffsetX, 
+            "ARROW KEYS / ON-SCREEN CONTROLS",
+            hudWidth*mainPanelRelativeOffsetX,
             hudHeight*(mainPanelRelativeOffsetY+1*mainPanelRelativeOffsetYStep));
     }
     else if(isBetweenRounds) {
@@ -175,14 +175,18 @@ function drawMultipliers() {
 function worldToHudCoord(wx, wy) {
     let hx, hy;
 
+    // Always offset by camera position (camera now pans horizontally even when not zoomed)
+    wx -= camera.position.x;
+    wy -= camera.position.y;
+
     if(isZoomed) {
-        wx -= camera.position.x;
-        wy -= camera.position.y;
         wx *= zoom;
         wy *= zoom;
     }
 
-    hx = (wx / gameWidth + 0.5) * hudWidth;
+    // x: map [-visibleHalfW, +visibleHalfW] → [0, hudWidth]
+    hx = (wx / (visibleHalfW * 2) + 0.5) * hudWidth;
+    // y: full height is always shown, so use gameHeight
     hy = (1 - (wy / gameHeight + 0.5)) * hudHeight;
 
     return [hx, hy];

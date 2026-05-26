@@ -1,8 +1,123 @@
 body {
     margin: 0;
     background-color: #000000;
+    overflow: hidden;
+    touch-action: none;
 }
 canvas {
     width: 100%;
     height: 100%;
+}
+
+/* ── Radar mini-map ─────────────────────────────── */
+#radar {
+    position: fixed;
+    bottom: 80px;
+    right: 10px;
+    width: 200px !important;
+    height: 113px !important;
+    border: 1px solid #0a0;
+    z-index: 10;
+    background: #001500;
+}
+
+/* ── On-screen controls bar ─────────────────────── */
+#controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.85);
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 14px;
+    z-index: 10;
+    touch-action: none;
+}
+
+.ctrl-label {
+    color: #0a0;
+    font-family: monospace;
+    font-size: 11px;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.slider-wrap {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.center-mark {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 16px;
+    background: #444;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#rotSlider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: #1a1a1a;
+    border-radius: 3px;
+    border: 1px solid #333;
+    outline: none;
+    touch-action: none;
+}
+
+#rotSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #0a0;
+    border: 2px solid #0f0;
+    cursor: pointer;
+    box-shadow: 0 0 6px #0f0;
+}
+
+#rotSlider::-moz-range-thumb {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #0a0;
+    border: 2px solid #0f0;
+    cursor: pointer;
+}
+
+#thrustBtn {
+    flex-shrink: 0;
+    width: 68px;
+    height: 54px;
+    border-radius: 8px;
+    background: #1a0000;
+    border: 2px solid #500;
+    color: #900;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#thrustBtn.active {
+    background: #c00;
+    border-color: #f44;
+    color: #fff;
+    box-shadow: 0 0 12px #f00;
 }
