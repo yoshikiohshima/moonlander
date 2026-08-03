@@ -1,0 +1,1501 @@
+{"padTitle":"moonlander",
+"positions":{"map":{"__map":true,
+"values":[["1",{"height":3052.2806336940703,
+"id":"1",
+"width":974.886475695685,
+"x":-194.2173064226809,
+"y":3129.796884842082}],["2",{"height":1064.483179052934,
+"id":"2",
+"width":585.2740315467669,
+"x":834.9352351022643,
+"y":3133.827923945124}],["7",{"height":8435.128050308807,
+"id":"7",
+"width":1139.3076448350926,
+"x":2923.160937674902,
+"y":3111.8923863658206}],["13",{"height":1207.1168306831983,
+"id":"13",
+"width":680.5820265109874,
+"x":4413.276831623932,
+"y":5717.095098133981}],["17",{"height":228.7674356848047,
+"id":"17",
+"width":572.8338732304037,
+"x":4425.308450189166,
+"y":5447.71524599064}],["23",{"height":1257.8575397244015,
+"id":"23",
+"width":747.8256814924646,
+"x":4.251543263729651,
+"y":6250.405308812842}],["24",{"height":1970.3146218360507,
+"id":"24",
+"width":658.6044789526261,
+"x":-876.8574693440798,
+"y":3139.3178950352153}],["25",{"height":1221.2245332196048,
+"id":"25",
+"width":714.2733894893871,
+"x":4157.081563106822,
+"y":3115.5987504673367}],["31",{"height":4036.359275880022,
+"id":"31",
+"width":933.4792288386477,
+"x":851.4832872973512,
+"y":4569.590094041701}],["34",{"height":294.8236627142669,
+"id":"34",
+"width":829.061940920184,
+"x":855.3990954263635,
+"y":4242.735508993669}],["42",{"height":4970.700438503079,
+"id":"42",
+"width":1057.5434036184017,
+"x":1817.419817210077,
+"y":3114.952851151315}],["160",{"height":1133.7921232955848,
+"id":"160",
+"width":679.1151859815747,
+"x":5091.6093008640755,
+"y":3220.798577468815}]]}},
+"titles":{"map":{"__map":true,
+"values":[["1",{"id":"1",
+"state":false,
+"title":"untitled-1"}],["2",{"id":"2",
+"state":false,
+"title":"Initialization"}],["7",{"id":"7",
+"state":false,
+"title":"untitled-7"}],["13",{"id":"13",
+"state":false,
+"title":"untitled-13"}],["17",{"id":"17",
+"state":false,
+"title":"untitled-17"}],["23",{"id":"23",
+"state":false,
+"title":"Radar"}],["24",{"id":"24",
+"state":false,
+"title":"untitled-24"}],["25",{"id":"25",
+"state":false,
+"title":"untitled-25"}],["31",{"id":"31",
+"state":false,
+"title":"Rendering"}],["34",{"id":"34",
+"state":false,
+"title":"Timers"}],["42",{"id":"42",
+"state":false,
+"title":"States"}],["160",{"id":"160",
+"state":false,
+"title":"untitled-160"}]]}},
+"version":3,
+"windowEnabled":{"map":{"__map":true,
+"values":[["1",{"enabled":true,
+"id":"1"}],["2",{"enabled":true,
+"id":"2"}],["7",{"enabled":true,
+"id":"7"}],["13",{"enabled":true,
+"id":"13"}],["17",{"enabled":true,
+"id":"17"}],["23",{"enabled":true,
+"id":"23"}],["24",{"enabled":true,
+"id":"24"}],["25",{"enabled":false,
+"id":"25"}],["31",{"enabled":true,
+"id":"31"}],["34",{"enabled":true,
+"id":"34"}],["42",{"enabled":true,
+"id":"42"}],["160",{"enabled":true,
+"id":"160"}]]}},
+"windowTypes":{"map":{"__map":true,
+"values":[["1","code"],["2","code"],["7","code"],["13","code"],["17","code"],["23","code"],["24","code"],["25","code"],["31","code"],["34","code"],["42","code"],["160","code"]]}},
+"windows":["1","2","7","13","17","23","24","25","31","34","42","160"],
+"zIndex":{"map":{"__map":true,
+"values":[["1",108],["2",110],["7",105],["13",100],["17",113],["23",104],["24",103],["25",107],["31",106],["34",111],["42",114],["160",102]]}}}
+{__codeMap: true, value: [[`1`, `const gameWidth = 800;
+const gameHeight = 450;
+const halfWidth = gameWidth/2;
+const halfHeight = gameHeight/2;
+const lineWidth = 0.5;
+
+const zoom = 4;
+const cameraZoomAltitude = 100;
+const cameraZoomOutAltitude = 110;
+const cameraPositionDefault = [0, 0, 5];
+
+const verticalTopSpawnOffset = 50;
+const verticalMiddleSpawnOffset = 170;
+const horizontalSpawnOffset = 80;
+const middleSpawnOffset = 120;
+const velocityXSpawnMin = 30;
+const velocityXSpawnMax = 50;
+
+const landerScale = 8;
+const gravity = 1.62;
+const thrusterAccelerationMax = 4;
+const thrusterJerk = 4;
+const accelerationFalloffMultiplier = 2;
+const angularVelocity = 90 * (Math.PI / 180);
+const horizontalDragCoef = 0.04;
+
+const mainScale = landerScale/2;
+const smallScale = landerScale/8;
+
+const startingFuel = 1000;
+const fuelConsumptionRateMin = 4;
+const fuelConsumptionRateMax = 14;
+const fuelPenaltyMin = 300;
+const fuelPenaltyMax = 350;
+const fuelGainMin = 50;
+const fuelGainMax = 50;
+const fuelGainExtra = 10;
+const fuelAlertThreshold = fuelPenaltyMin;
+
+const landingAngleTolerance = 6.7 * (Math.PI / 180);
+const landingVelocityTolerance = 5.0;
+
+const numOfStars = 100;
+
+const betweenRoundPause = 5.1;
+
+const alertInterval = 4;
+const commsIntervalMin = 20;
+const commsIntervalMax = 40;
+
+const scorePerLanding = 100;
+const scoreMultiplierChances = [0.4, 0.2, 0.15, 0.15, 0.1];
+
+const infoPanelFontSize = 20;
+const mainPanelFontSize = 30;
+const statsPanelFontSize = 30;
+
+const infoPanelTextColor = "rgba(255,255,255,1)";
+const mainPanelTextColor = "rgba(255,255,255,1)";
+const statsPanelTextColor = "rgba(255,255,255,1)";
+
+const infoPanelRelativeOffsetX = 0.03;
+const infoPanelRelativeOffsetY = 0.07;
+const infoPanelRelativeOffsetYStep = 0.03;
+
+const mainPanelRelativeOffsetX = 0.5;
+const mainPanelRelativeOffsetY = 0.35;
+const mainPanelRelativeOffsetYStep = 0.05;
+
+const statsPanelRelativeOffsetX = 0.5;
+const statsPanelRelativeOffsetY = 0.30;
+const statsPanelRelativeOffsetYStep = 0.05;
+
+const multiplierFontSize = 15;
+const multiplierFontColor = "rgba(255,255,255,1)";
+
+const particleEmitPointOffset = new THREE.Vector3(0, -landerScale/2.5, 3);
+
+const coneMaxParticles = 1100;
+const conePSPerSecondMin = 250;
+const conePSPerSecondMax = 350;
+const conePSLifetimeMin = 0.3;
+const conePSLifetimeMax = 0.8;
+const conePSDragCoefMin = 0.10;
+const conePSDragCoefMax = 0.20;
+const conePSStartingWidth = landerScale/6;
+const conePSAngle = 10 * (Math.PI / 180);
+const conePSSize = landerScale/4;
+const conePSMinVelocityMagnitude = 20;
+const conePSMaxVelocityMagnitude = 55;
+const conePSStartOpacity = 0.8;
+const conePSEndOpacity = 0.0;
+const conePSStartColor = new THREE.Color("rgb(255,255,128)");
+const conePSEndColor = new THREE.Color("rgb(255,0,0)");
+const conePSStartScale = 0.4;
+const conePSEndScale = 1;
+
+const explosionPSParticlesMax = 350;
+const explosionPSLifetimeMin = 0.8;
+const explosionPSLifetimeMax = 5;
+const explosionPSDragCoefMin = 0.6;
+const explosionPSDragCoefMax = 0.8;
+const explosionPSSize = 1;
+const explosionPSMinVelocityMagnitude = 0.0;
+const explosionPSMaxVelocityMagnitude = 50;
+const explosionPSOpacityStart = 0.8;
+const explosionPSOpacityEnd = 0.3;
+const explosionPSColorStart = new THREE.Color("rgb(240,160,20)");
+const explosionPSColorEnd = new THREE.Color("rgb(200,40,0)");
+const explosionPSScaleStart = 2;
+const explosionPSScaleEnd = 0.8;
+
+const RADAR_W = 200;
+const RADAR_H = Math.round(RADAR_W * gameHeight / gameWidth); // ~113
+
+const constants = {
+ gameWidth, gameHeight, halfWidth, halfHeight, lineWidth,
+
+ zoom, cameraZoomAltitude, cameraZoomOutAltitude, cameraPositionDefault,
+
+ verticalTopSpawnOffset, verticalMiddleSpawnOffset, horizontalSpawnOffset, middleSpawnOffset, velocityXSpawnMin, velocityXSpawnMax,
+
+ landerScale, gravity, thrusterAccelerationMax, thrusterJerk, accelerationFalloffMultiplier, angularVelocity, horizontalDragCoef,
+
+ mainScale, smallScale,
+
+ startingFuel, fuelConsumptionRateMin, fuelConsumptionRateMax, fuelPenaltyMin, fuelPenaltyMax, fuelGainMin, fuelGainMax, fuelGainExtra,fuelAlertThreshold,
+
+ landingAngleTolerance, landingVelocityTolerance,
+
+ numOfStars,
+
+ betweenRoundPause,
+
+ alertInterval, commsIntervalMin, commsIntervalMax,
+
+ scorePerLanding, scoreMultiplierChances,
+
+ infoPanelFontSize, mainPanelFontSize, statsPanelFontSize,
+
+ infoPanelTextColor, mainPanelTextColor, statsPanelTextColor,
+
+ infoPanelRelativeOffsetX, infoPanelRelativeOffsetY, infoPanelRelativeOffsetYStep,
+
+ mainPanelRelativeOffsetX, mainPanelRelativeOffsetY, mainPanelRelativeOffsetYStep,
+
+ statsPanelRelativeOffsetX, statsPanelRelativeOffsetY, statsPanelRelativeOffsetYStep,
+
+ multiplierFontSize, multiplierFontColor,
+
+ particleEmitPointOffset,
+
+ coneMaxParticles, conePSPerSecondMin, conePSPerSecondMax, conePSLifetimeMin, conePSLifetimeMax, conePSDragCoefMin, conePSDragCoefMax, conePSStartingWidth, conePSAngle, conePSSize, conePSMinVelocityMagnitude, conePSMaxVelocityMagnitude, conePSStartOpacity, conePSEndOpacity, conePSStartColor, conePSEndColor, conePSStartScale, conePSEndScale,
+
+ explosionPSParticlesMax, explosionPSLifetimeMin, explosionPSLifetimeMax, explosionPSDragCoefMin, explosionPSDragCoefMax, explosionPSSize, explosionPSMinVelocityMagnitude, explosionPSMaxVelocityMagnitude, explosionPSOpacityStart, explosionPSOpacityEnd, explosionPSColorStart, explosionPSColorEnd, explosionPSScaleStart, explosionPSScaleEnd,
+
+ RADAR_W, RADAR_H,
+}
+`],
+[`2`, `const renkon = (() => {
+  const radar = document.createElement("canvas");
+  radar.id = "radar";
+  document.body.querySelector(\`#\${radar.id}\`)?.remove();
+  document.body.appendChild(radar);
+  
+  const script = document.createElement("script");
+  script.src = "https://unpkg.com/three@0.124.0";
+  script.id = "three";
+  return new Promise((resolve) => {
+    script.onload = () => resolve(script);
+    document.head.querySelector(\`#\${script.id}\`)?.remove();
+    document.head.appendChild(script);
+  });
+})();
+
+const THREE = (() => {return window.THREE})(renkon);
+
+const css = \`
+
+body {
+    margin: 0;
+    background-color: #000000;
+    overflow: hidden;
+    touch-action: none;
+}
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+#moonlander {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%
+}
+
+#radar {
+  position: fixed;
+  width: 200px;
+  height: 113px;
+  top: 0px;
+  left: 0px;
+}
+\`;
+
+((css, renkon) => {
+  const c = document.createElement("style");
+  c.textContent = css;
+  c.id = "lander-css";
+  document.head.querySelector(\`#\${c.id}\`)?.remove();
+  document.head.appendChild(c);
+})(css, renkon);`],
+[`7`, `const {scene, camera, renderer, lander} = ((THREE) => {
+  console.log("scenes");
+  const scene = new THREE.Scene();
+  const {landerScale, cameraPositionDefault, halfHeight} = constants;
+  
+  const camera = new THREE.OrthographicCamera(
+      -0,
+      0,
+      halfHeight,
+      -halfHeight,
+      0.1,
+      1000);
+  scene.add(camera);
+  camera.position.set(...cameraPositionDefault);
+
+  const renderer = new THREE.WebGLRenderer({antialias: true});
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.autoClear = false;
+  renderer.domElement.id = "moonlander";
+  document.body.querySelector("#moonlander")?.remove();
+  document.body.insertBefore(renderer.domElement, document.body.querySelector("#radar"));
+
+  const geometry = new THREE.PlaneGeometry(landerScale, landerScale);
+  const texture = new THREE.TextureLoader().load('textures/lander.png');
+  const material = new THREE.MeshBasicMaterial({map: texture});
+  material.transparent = true;
+  const lander = new THREE.Mesh(geometry, material);
+  scene.add(lander);
+  // lander.visible = false;
+  return {scene, renderer, camera, lander};
+})(THREE);
+
+const {colliders} = ((THREE, lander) => {
+  // initColliders
+  const colliders = new THREE.Group();
+
+  const mainGeometry = new THREE.SphereGeometry(mainScale);
+  const smallGeometry = new THREE.SphereGeometry(smallScale);
+
+  const material = new THREE.MeshBasicMaterial({color: 0xffffff});
+
+  let mainCollider = new THREE.Mesh(mainGeometry, material);
+  let leftCollider = new THREE.Mesh(smallGeometry, material);
+  let rightCollider = new THREE.Mesh(smallGeometry, material);
+
+  colliders.add(mainCollider);
+  colliders.add(leftCollider);
+  colliders.add(rightCollider);
+
+  const verticalOffset = -mainScale + smallScale;
+  leftCollider.position.y = verticalOffset;
+  rightCollider.position.y = verticalOffset;
+
+  const horizontalOffset = mainScale - smallScale;
+  leftCollider.position.x = -horizontalOffset;
+  rightCollider.position.x = horizontalOffset;
+
+  lander.add(colliders);
+  colliders.visible = false;
+  return {colliders}
+})(THREE, lander);
+
+const {borders} = ((THREE, scene) => {
+  // createBorders
+  let borders = new THREE.Group();
+  scene.add(borders);
+
+  const {lineWidth, gameHeight, gameWidth, halfWidth, halfHeight} = constants;
+
+  const verticalGeometry = new THREE.PlaneGeometry(lineWidth, gameHeight + lineWidth*2);
+  const horizontalGeometry = new THREE.PlaneGeometry(gameWidth + lineWidth*2, lineWidth);
+  const material = new THREE.MeshBasicMaterial({color: 0xffffff});
+  let leftBorder = new THREE.Mesh(verticalGeometry, material);
+  let rightBorder = new THREE.Mesh(verticalGeometry, material);
+  let topBorder = new THREE.Mesh(horizontalGeometry, material);
+  let botBorder = new THREE.Mesh(horizontalGeometry, material);
+  borders.add(leftBorder);
+  borders.add(rightBorder);
+  borders.add(topBorder);
+  borders.add(botBorder);
+
+  let verticalOffset = halfWidth + lineWidth/2;
+  let horizontalOffset = halfHeight + lineWidth/2;
+  leftBorder.position.x = -verticalOffset;
+  rightBorder.position.x = verticalOffset;
+  topBorder.position.y = horizontalOffset;
+  botBorder.position.y = -horizontalOffset;
+  return {borders};
+})(THREE, scene);
+
+const {lineSegments, heightDifferences} = ((scene, points) => {
+  const terrainMeshGroup = new THREE.Group();
+  const lineSegments = [];
+  const heightDifferences = [];
+  
+  scene.add(terrainMeshGroup);
+  const {halfWidth, halfHeight, lineWidth} = constants;
+
+  function placeTerrainSegment(leftPoint, rightPoint, lineSegments) {
+    let leftVector = new THREE.Vector2(leftPoint[0] - halfWidth, leftPoint[1] - halfHeight);
+    let rightVector = new THREE.Vector2(rightPoint[0] - halfWidth, rightPoint[1] - halfHeight);
+  
+    lineSegments.push([leftVector.clone(), rightVector.clone()]);
+  
+    let center = leftVector.add(rightVector).divideScalar(2);
+    let distance = leftVector.distanceTo(rightVector);
+  
+    const geometry = new THREE.PlaneGeometry(distance*2 + lineWidth/2, lineWidth);
+    const material = new THREE.MeshBasicMaterial({color: 0xffffff});
+    let terrainMesh = new THREE.Mesh(geometry, material);
+    terrainMesh.position.x = center.x;
+    terrainMesh.position.y = center.y;
+  
+    let direction = rightVector.sub(leftVector);
+    let angle = direction.angle();
+  
+    terrainMesh.rotation.z = angle;
+    terrainMeshGroup.add(terrainMesh);
+  }
+
+  for(let i=0; i<points.length-1; i++) {
+    placeTerrainSegment(points[i], points[i+1], lineSegments);
+    heightDifferences.push(Math.abs(points[i][1]-points[i+1][1]));
+  }
+  return {lineSegments, heightDifferences};
+})(scene, points);
+
+const {stars} = ((THREE, scene) => {
+  // createStars
+  let stars = new THREE.Group();
+  scene.add(stars);
+
+  const {numOfStars, gameWidth, gameHeight, landerScale} = constants;
+
+  let j;
+  for(let i = 0; i < numOfStars; i++) {
+    let randomX, randomY;
+    randomX = (Math.random() - 0.5) * gameWidth;
+    randomY = (Math.random() - 0.5) * gameHeight;
+
+    const geometry = new THREE.PlaneGeometry(landerScale/10, landerScale/5);
+    const material = new THREE.MeshBasicMaterial({color: 0xffffff});
+    let mesh = new THREE.Mesh(geometry, material);
+    stars.add(mesh);
+
+    mesh.position.x = randomX;
+    mesh.position.y = randomY;
+    mesh.position.z = -5;
+
+    for(j = 0; j < lineSegments.length; j++) {
+      let leftVector = lineSegments[j][0];
+      let rightVector = lineSegments[j][1];
+
+      if(randomX > leftVector.x && randomX < rightVector.x) {
+        if(randomY < Math.max(leftVector.y, rightVector.y)) {
+            mesh.visible = false;
+        }
+        break;
+      }
+    }
+  }
+  return {stars};
+})(THREE, scene);
+
+const visibleHalfW = Behaviors.select(
+  halfHeight * window.innerWidth / window.innerHeight,
+  resize, (_prev, _resize) => halfHeight * window.innerWidth / window.innerHeight
+);
+/*
+const isZoomed = Behaviors.select(
+  false,
+  collisionState, (prev, collisionState) => {
+    const isGameOver = gameState.state !== "playOn";
+    if (isGameOver) {return false;}
+    if(collisionState.altitude <= cameraZoomAltitude || (prev && collisionState.altitude <= cameraZoomOutAltitude)) {
+      return true;
+    } else if (prev && collisionState.altitude >= cameraZoomOutAltitude) {
+      return false;
+    }
+    return prev;
+  }
+);
+*/
+
+const resizeFunction = (_prev, _resize) => {
+  // onWindowResize
+  console.log("resizer");
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  camera.left  = -visibleHalfW;
+  camera.right =  visibleHalfW;
+  camera.updateProjectionMatrix();
+  return {};
+};
+
+const resizer = Behaviors.select(
+  resizeFunction(),
+  resize, resizeFunction
+);
+
+const resize = Events.listener(window, "resize", (evt) => evt);
+const keydown = Events.listener(window, "keydown", (evt) => evt);
+const keyup = Events.listener(window, "keyup", (evt) => evt);
+const visibilityChange = Events.listener(document, "visibilitychange", (evt) => evt);
+
+const render = ((scene, renderer, gameState, hudState, shipState, collisionState, camera, resizer) => {
+  let trajectory;
+  const {isDebugOn} = gameState;
+  const {cameraPositionDefault, zoom} = constants;
+  if (isDebugOn) {
+    trajectory = generateTrajectoryMesh(calculateTrajectory(shipState));
+    scene.add(trajectory)
+  }
+
+  const {isZoomed, zoomChanged, altitude} = collisionState;
+  const z = cameraPositionDefault[2];
+  if (isZoomed) {
+    camera.position.set(shipState.x, shipState.y - altitude/2, z);
+    camera.zoom = zoom;
+    camera.updateProjectionMatrix();
+  } else if (zoomChanged && isZoomed === false) {
+    camera.position.y = 0;
+    camera.position.z = z;
+    camera.zoom = 1;
+    const maxPan = halfWidth - visibleHalfW;
+    if (maxPan > 0) {
+      // Clamp so neither edge of the viewport exceeds the world boundary
+      camera.position.x = Math.max(-maxPan, Math.min(maxPan, lander.position.x));
+    } else {
+      // Viewport is as wide (or wider) than the world — keep centred
+      camera.position.x = 0;
+    }   
+    camera.updateProjectionMatrix();
+  }
+
+  renderer.render(scene, camera);
+  renderHud(renderer, gameState, hudState, shipState, collisionState);
+  renderRadar(radarCtx, radarCanvas, timer, shipState, collisionState, visibleHalfW);
+
+  if (isDebugOn) {
+    scene.remove(trajectory);
+  }
+})(scene, renderer, gameState, hudState, shipState, collisionState, camera, resizer, timer);
+
+const renderHud = (renderer, gameState, hudState, shipState, collisionState) => {
+  const {hudWidth, hudHeight, hudTexture, sceneHud, cameraHud} = hudState;
+  hudState.hudContext.clearRect(0, 0, hudWidth, hudHeight);
+
+  fillLeftInfoPanel(gameState, hudState, shipState, collisionState);
+  fillRightInfoPanel(gameState, hudState, shipState, collisionState);
+  fillMainPanel(gameState, hudState, shipState, collisionState);
+
+  drawMultipliers(gameState, hudState);
+
+  hudTexture.needsUpdate = true;
+  renderer.render(sceneHud, cameraHud);
+}
+
+function calculateTrajectory(shipState) {
+  const {x, y, velocityX, velocityY} = shipState;
+  const {halfHeight, horizontalDragCoef, gravity} = constants;
+  let x0 = x; // lander.position.x;
+  let y0 = y; // lander.position.y;
+  let tAx = 0;
+  let tAy = -gravity;
+  let tVx = velocityX;
+  let tVy = velocityY;
+  const dt = 1.0/60;
+
+  let res = [[x0,y0]];
+
+  while (y0 > -halfHeight) {
+    tAx = -tVx * horizontalDragCoef;
+
+    tVx += tAx * dt;
+    tVy += tAy * dt;
+
+    const x1 = x0 + tVx*dt;
+    const y1 = y0 + tVy*dt;
+
+    res.push([x1,y1]);
+
+    x0 = x1;
+    y0 = y1;
+  }
+
+  return res;
+}
+
+function generateTrajectoryMesh(trajectory) {
+  const lineMeshes = new THREE.Group();
+  const {lineWidth} = constants;
+
+  const material = new THREE.MeshBasicMaterial({color: 0xffffff});
+  const geometry = new THREE.PlaneGeometry(1, 1);
+
+  for (let i = 0; i < trajectory.length-1; i++) {
+    const point0 = trajectory[i];
+    const point1 = trajectory[i+1];
+
+    const deltaX = point1[0]-point0[0];
+    const deltaY = point1[1]-point0[1];
+
+    const middle = [(point0[0] + point1[0])/2, (point0[1] + point1[1])/2];
+    const scale = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+    const angle = Math.atan2(deltaY, deltaX);
+
+    const lineMesh = new THREE.Mesh(geometry, material);
+
+    lineMesh.scale.x = scale;
+    lineMesh.scale.y = lineWidth;
+
+    lineMesh.position.x = middle[0];
+    lineMesh.position.y = middle[1];
+
+    lineMesh.rotation.z = angle;
+
+    lineMeshes.add(lineMesh);
+  }
+    
+  return lineMeshes;
+}
+
+const randomSpawn = () => {
+  let randomPositionX;
+  let randomPositionY;
+  let randomRotation;
+  const {
+    halfWidth, halfHeight, horizontalSpawnOffset,
+    middleSpawnOffset, verticalMiddleSpawnOffset,
+    velocityXSpawnMax, velocityXSpawnMin} = constants;
+  let minX = -halfWidth + horizontalSpawnOffset;
+  let maxX = halfWidth - horizontalSpawnOffset;
+
+  if(Math.random() > 0.5) {
+    minX = -halfWidth + horizontalSpawnOffset;
+    maxX = -middleSpawnOffset;
+  } else {
+    minX = middleSpawnOffset;
+    maxX = halfWidth - horizontalSpawnOffset;
+  }
+
+  randomPositionX = Math.random() * (maxX - minX) + minX;
+
+  const minY = verticalMiddleSpawnOffset;
+  const maxY = halfHeight - verticalTopSpawnOffset;
+
+  randomPositionY = Math.random() * (maxY - minY) + minY;
+  randomRotation = (Math.random() - 0.5) * Math.PI; 
+
+  let initialVelocity = Math.random() * (velocityXSpawnMax - velocityXSpawnMin) + velocityXSpawnMin;
+  if(randomPositionX > 0) {
+    initialVelocity = -initialVelocity;
+  }
+  return {initialVelocity, randomPositionX, randomPositionY, randomRotation};
+}
+
+
+const updateLander = ((lander, shipState) => {
+  lander.position.x = shipState.x;
+  lander.position.y = shipState.y;
+  lander.rotation.z = shipState.r;
+})(lander, shipState);`],
+[`13`, `const isAlerted = Behaviors.select(
+  false,
+  shipState, (prev, currentFuel) => {
+    if (!prev && shipState.currentFuel < fuelAlertThreshold) {
+      fuelAlert();
+      return true;
+    }
+    if (prev && shipState.currentFuel > fuelAlertThreshold) {
+      return false;
+    }
+    return prev;
+  }
+);
+
+const fuelAlert = ((gameState, shipState, timer) => {
+  if (gameState.isGameOver || shipState.isAlerted) {
+    // lowFuelSound.play();
+  }
+})(gameState, shipState, timer);
+/*
+const crashSound = new sound("audio/crash.mp3");
+const rocketSound = new sound("audio/rocket.mp3");
+const lowFuelSound = new sound("audio/alarm.mp3");
+const commSound = new sound("audio/morse.mp3");
+*/
+class sound{
+  constructor(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+  }
+
+  play() {
+    this.sound.play();
+  }
+
+  stop() {
+    this.sound.pause();
+  }
+
+  loop() {
+    this.sound.addEventListener('timeupdate', function(){
+      let buffer = 0.42;
+      if(this.currentTime > this.sound.duration - buffer){
+        this.currentTime = 0;
+        this.play();
+      }
+    });
+  }
+}
+
+const hasFuel = Behaviors.select(
+  true,
+  shipState, (prev, shipState) => {
+    if(shipState.currentFuel <  0.0001) {
+      return false;
+    }
+    return prev;
+  }
+)`],
+[`17`, `
+const crashSound = {play: () => {}, stop: () => {}};
+const rocketSound = {play: () => {}, stop: () => {}};
+const lowFuelSound = {play: () => {}, stop: () => {}};
+const commSound = {play: () => {}, stop: () => {}};
+
+`],
+[`23`, `const {radarCanvas, radarCtx} = (() => {
+  // initRadar;
+  const radarCanvas = document.getElementById('radar');
+  radarCanvas.width  = constants.RADAR_W;
+  radarCanvas.height = constants.RADAR_H;
+  const radarCtx = radarCanvas.getContext('2d');
+  return {radarCanvas, radarCtx};
+})();
+
+const renderRadar = (radarCtx, radarCanvas, shipState, controlState, collisionState, visibleHalfW) => {
+  const {currentAcceleration} = shipState;
+  const accelerating = controlState.accelerating;
+  const isZoomed = collisionState.isZoomed;
+  // renderRadar
+  const {RADAR_W, RADAR_H, halfWidth, halfHeight, gameWidth, gameHeight, zoom} = constants;
+  const ctx = radarCtx;
+  const W = RADAR_W;
+  const H = RADAR_H;
+
+  ctx.fillStyle = '#001500';
+  ctx.fillRect(0, 0, W, H);
+
+  // World → radar coordinate helpers
+  const toRX = wx => (wx + halfWidth)  / gameWidth  * W;
+  const toRY = wy => (halfHeight - wy) / gameHeight * H;
+
+  // Terrain: flat landing zones brighter/thicker
+  for (let i = 0; i < lineSegments.length; i++) {
+    const lv = lineSegments[i][0];
+    const rv = lineSegments[i][1];
+    const isFlat = heightDifferences[i] < 0.0001;
+    ctx.strokeStyle = isFlat ? '#00cc55' : '#2a5530';
+    ctx.lineWidth   = isFlat ? 2 : 1;
+    ctx.beginPath();
+    ctx.moveTo(toRX(lv.x), toRY(lv.y));
+    ctx.lineTo(toRX(rv.x), toRY(rv.y));
+    ctx.stroke();
+  }
+
+  // Viewport rectangle — always shown, brighter when zoomed
+  {
+    const vwHalf = isZoomed ? visibleHalfW / zoom : visibleHalfW;
+    const vhHalf = isZoomed ? halfHeight   / zoom : halfHeight;
+    const cx = camera.position.x;
+    const cy = isZoomed ? camera.position.y : 0;
+    ctx.strokeStyle = isZoomed ? '#44ff88' : '#22cc55';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(
+      toRX(cx - vwHalf),
+      toRY(cy + vhHalf),
+      (vwHalf * 2 / gameWidth)  * W,
+      (vhHalf * 2 / gameHeight) * H
+    );
+  }
+
+  // Lander dot — yellow when thrusting, cyan otherwise
+  if (shipState.visible) {
+    ctx.fillStyle = accelerating ? '#ffee00' : '#00ffcc';
+    ctx.beginPath();
+    ctx.arc(toRX(shipState.x), toRY(shipState.y), 2.5, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  return radarCanvas;
+};
+`],
+[`24`, `const points = [
+    [0,28],
+    [10,15],
+    [20,12],
+    [40,12],
+    [50,24],
+    [60,50],
+    [65,70],
+    [80,70],
+    [85,100],
+    [90,110],
+    [100,150],
+    [110,140],
+    [120,135],
+    [135,135],
+    [140,100],
+    [150,105],
+    [160,108],
+    [170,100],
+    [190,100],
+    [200,60],
+    [210,30],
+    [215,25],
+    [230,25],
+    [240,30],
+    [250,75],
+    [260,80],
+    [270,100],
+    [280,120],
+    [300,120],
+    [310,160],
+    [320,180],
+    [340,180],
+    [350,212],
+    [360,215],
+    [370,217],
+    [380,215],
+    [390,200],
+    [400,140],
+    [405,110],
+    [410,140],
+    [425,140],
+    [430,70],
+    [440,10],
+    [460,10],
+    [465,15],
+    [470,20],
+    [480,40],
+    [495,40],
+    [500,65],
+    [510,80],
+    [530,80],
+    [540,70],
+    [550,72],
+    [560,70],
+    [580,70],
+    [590,45],
+    [600,20],
+    [610,18],
+    [620,20],
+    [640,20],
+    [650,80],
+    [660,92],
+    [670,95],
+    [690,95],
+    [695,100],
+    [700,140],
+    [715,140],
+    [720,130],
+    [730,100],
+    [740,105],
+    [760,105],
+    [770,108],
+    [780,110],
+    [790,115],
+    [800,117]
+    ];
+`],
+[`25`, `let rotSlider, thrustBtn;
+let rotSliderValue = 0;
+let thrustBtnDown  = false;
+
+function initControls() {
+  rotSlider = document.getElementById('rotSlider');
+  thrustBtn = document.getElementById('thrustBtn');
+
+  rotSlider.addEventListener('input', () => {
+    rotSliderValue = parseInt(rotSlider.value, 10);
+  });
+
+  const snapSlider = () => {
+    rotSliderValue = 0;
+    rotSlider.value = 0;
+  };
+  rotSlider.addEventListener('pointerup',     snapSlider);
+  rotSlider.addEventListener('pointerleave',  snapSlider);
+  rotSlider.addEventListener('pointercancel', snapSlider);
+
+  thrustBtn.addEventListener('pointerdown', e => {
+      e.preventDefault();
+      if (isGameOver && isPaused) { resetGame(); return; }
+      thrustBtnDown = true;
+      thrustBtn.classList.add('active');
+  });
+
+  const stopThrust = () => {
+      thrustBtnDown = false;
+      thrustBtn.classList.remove('active');
+  };
+  thrustBtn.addEventListener('pointerup',     stopThrust);
+  thrustBtn.addEventListener('pointerleave',  stopThrust);
+  thrustBtn.addEventListener('pointercancel', stopThrust);
+}
+
+// Called each frame before handleMovement() — merges slider/button state into game flags
+function applyOnScreenControls() {
+  if (rotSliderValue < -15) rotatingLeft  = true;
+  if (rotSliderValue >  15) rotatingRight = true;
+  if (thrustBtnDown)        accelerating  = true;
+}
+
+// Called on respawn to snap controls back to neutral
+function resetControls() {
+  rotSliderValue = 0;
+  thrustBtnDown  = false;
+  if (rotSlider) rotSlider.value = 0;
+  if (thrustBtn) thrustBtn.classList.remove('active');
+}
+`],
+[`31`, `const {sceneHud, hudCanvas, hudContext, hudTexture, hudWidth, hudHeight, cameraHud} = ((THREE) => {
+  // initHud
+  const hudWidth = window.innerWidth;
+  const hudHeight = window.innerHeight;
+  const {halfWidth, halfHeight, gameWidth, gameHeight} = constants;
+
+  const cameraHud = new THREE.OrthographicCamera(
+    -halfWidth, 
+    halfWidth, 
+    halfHeight, 
+    -halfHeight, 
+    0, 
+    1000 );
+  const sceneHud = new THREE.Scene();
+  const hudCanvas = document.createElement('canvas');
+  const hudContext = hudCanvas.getContext('2d');
+  hudCanvas.width = hudWidth;
+  hudCanvas.height = hudHeight;
+
+  const hudTexture = new THREE.Texture(hudCanvas);
+  const hudMaterial = new THREE.MeshBasicMaterial( {map: hudTexture} );
+  hudMaterial.transparent = true;
+
+  const planeGeometry = new THREE.PlaneGeometry(gameWidth, gameHeight);
+  const hudPlane = new THREE.Mesh(planeGeometry, hudMaterial);
+  sceneHud.add(hudPlane);
+  return {sceneHud, hudCanvas, hudContext, hudTexture, hudWidth, hudHeight, cameraHud}
+})(THREE, visibleHalfW)
+
+const hudState = Behaviors.select(
+  {hudContext, hudCanvas, hudContext, hudTexture, hudWidth, hudHeight, cameraHud, sceneHud},
+  resize, (prev, resize) => prev
+);
+
+const fuelAlertText = shipState.isAlerted ? (shipState.hasFuel ? "LOW ON FUEL" : "OUT OF FUEL") : "";
+
+function fillLeftInfoPanel(gameState, hudState, shipState, collisionState) {
+  // const {currentTime, currentScore} = gameState;
+  const currentTime = "100";
+  const currentScore = "200";
+  const {
+    infoPanelFontSize, infoPanelTextColor, 
+    infoPanelRelativeOffsetX, infoPanelRelativeOffsetY, infoPanelRelativeOffsetYStep} = constants;
+  const {hudContext, hudWidth, hudHeight} = hudState;
+  const {currentFuel} = shipState;
+  hudContext.textAlign = 'left';
+  hudContext.fillStyle = infoPanelTextColor;
+  hudContext.font = "Normal "+infoPanelFontSize+"px Courier New";
+  hudContext.fillText(
+    "SCORE".padEnd(7, " ") + currentScore.toString().padStart(4, "0"), 
+    hudWidth*infoPanelRelativeOffsetX, 
+    hudHeight*(infoPanelRelativeOffsetY+0*infoPanelRelativeOffsetYStep));
+  hudContext.fillText(
+    "TIME".padEnd(7, " ") + (currentTime/59 | 0).toString().padStart(1, "0")+":"+(currentTime%59).toFixed(0).padStart(2, "0"), 
+    hudWidth*infoPanelRelativeOffsetX, 
+    hudHeight*(infoPanelRelativeOffsetY+1*infoPanelRelativeOffsetYStep));
+  hudContext.fillText(
+    "FUEL".padEnd(7, " ") + currentFuel.toFixed(0).padStart(4, "0"), 
+    hudWidth*infoPanelRelativeOffsetX, 
+    hudHeight*(infoPanelRelativeOffsetY+2*infoPanelRelativeOffsetYStep));
+  if(fuelAlertText !== "") {
+    hudContext.fillText(
+      fuelAlertText, 
+      hudWidth*infoPanelRelativeOffsetX, 
+      hudHeight*(infoPanelRelativeOffsetY+3*infoPanelRelativeOffsetYStep));
+  }
+}
+
+function fillRightInfoPanel(gameState, hudState, shipState, collisionState) {
+  const {currentTime} = gameState;
+  const {hudContext, hudWidth, hudHeight} = hudState;
+  const {currentFuel, currentScore, velocityX, velocityY} = shipState;
+  const {altitude} = collisionState;
+  const {
+    infoPanelFontSize, infoPanelTextColor, 
+    infoPanelRelativeOffsetX, infoPanelRelativeOffsetY, infoPanelRelativeOffsetYStep} = constants;
+
+  hudContext.textAlign = 'right';
+  hudContext.fillStyle = infoPanelTextColor;
+  hudContext.font = "Normal "+infoPanelFontSize+"px Courier New";
+  hudContext.fillText(
+    "ALTITUDE".padEnd(20, " ") + altitude.toFixed(0).padStart(4, "0"), 
+    hudWidth*(1-infoPanelRelativeOffsetX), 
+    hudHeight*(infoPanelRelativeOffsetY+0*infoPanelRelativeOffsetYStep));
+  hudContext.fillText(
+    "HORIZONTAL SPEED".padEnd(18, " ") + velocityX.toFixed(1).padStart(6, " "), 
+    hudWidth*(1-infoPanelRelativeOffsetX), 
+    hudHeight*(infoPanelRelativeOffsetY+1*infoPanelRelativeOffsetYStep));
+  hudContext.fillText(
+    "VERTICAL SPEED".padEnd(18, " ") + (-velocityY).toFixed(1).padStart(6, " "), 
+    hudWidth*(1-infoPanelRelativeOffsetX), 
+    hudHeight*(infoPanelRelativeOffsetY+2*infoPanelRelativeOffsetYStep));
+  hudContext.fillText(
+    "ROTATION ANGLE".padEnd(18, " ") + (-lander.rotation.z * (180/Math.PI)).toFixed(1).padStart(6, " "), 
+    hudWidth*(1-infoPanelRelativeOffsetX), 
+    hudHeight*(infoPanelRelativeOffsetY+3*infoPanelRelativeOffsetYStep));
+}
+
+function fillMainPanel(gameState, hudState, shipState, collisionState) {
+  const {isGameOver, isBetweenRounds, scoreChange} = gameState;
+  const {hasFuel} = shipState;
+  const {hudContext, hudWidth, hudHeight} = hudState;
+  const {landed, crashInfo, fuelChange} = collisionState;
+  const {
+    mainPanelFontSize, mainPanelTextColor, 
+    statsPanelFontSize, statsPanelTextColor,
+    statsPanelRelativeOffsetX, statsPanelRelativeOffsetY, statsPanelRelativeOffsetYStep,
+    mainPanelRelativeOffsetX, mainPanelRelativeOffsetY, mainPanelRelativeOffsetYStep} = constants;
+
+  hudContext.textAlign = 'center';
+
+  if(isGameOver) {
+    hudContext.font = "Normal "+mainPanelFontSize+"px Courier New";
+    hudContext.fillStyle = mainPanelTextColor;
+
+    hudContext.fillText(
+      "PRESS ANY KEY TO PLAY", 
+      hudWidth*mainPanelRelativeOffsetX, 
+      hudHeight*(mainPanelRelativeOffsetY+0*mainPanelRelativeOffsetYStep));
+    hudContext.fillText(
+      "ARROW KEYS / ON-SCREEN CONTROLS",
+      hudWidth*mainPanelRelativeOffsetX,
+      hudHeight*(mainPanelRelativeOffsetY+1*mainPanelRelativeOffsetYStep));
+  }
+  else if(isBetweenRounds) {
+    hudContext.font = "Normal "+statsPanelFontSize+"px Courier New";
+    hudContext.fillStyle = statsPanelTextColor;
+
+    let landingText, scoreText, fuelText, gameOverText;
+
+    gameOverText = "";
+    if(landed) {
+        landingText = "SUCCESSFULLY LANDED";
+        fuelText = fuelChange.toFixed(0) + " FUEL UNITS GAINED";
+        scoreText = scoreChange + " POINTS GAINED";
+    }
+    else {
+        landingText = "LANDER DESTROYED";
+        fuelText = fuelChange.toFixed(0) + " FUEL UNITS LOST";
+        scoreText = crashInfo;
+        if(!hasFuel) {
+            fuelText = "OUT OF FUEL";
+            gameOverText = "GAME OVER";
+        }
+    }
+
+    hudContext.fillText(
+      landingText, 
+      hudWidth*statsPanelRelativeOffsetX, 
+      hudHeight*(statsPanelRelativeOffsetY+0*statsPanelRelativeOffsetYStep));
+    hudContext.fillText(
+      scoreText, 
+      hudWidth*statsPanelRelativeOffsetX, 
+      hudHeight*(statsPanelRelativeOffsetY+1*statsPanelRelativeOffsetYStep));
+    hudContext.fillText(
+      fuelText, 
+      hudWidth*statsPanelRelativeOffsetX, 
+      hudHeight*(statsPanelRelativeOffsetY+2*statsPanelRelativeOffsetYStep));
+    hudContext.fillText(
+      gameOverText, 
+      hudWidth*statsPanelRelativeOffsetX, 
+      hudHeight*(statsPanelRelativeOffsetY+3*statsPanelRelativeOffsetYStep));        
+  }
+}
+
+function drawMultipliers(gameState, hudState) {
+  return;
+  /*
+  const {isGameOver, isBetweenRounds} = gameState;
+  const {hudContext} = hudState;
+
+  if(isGameOver) return;
+
+  hudContext.textAlign = 'center';
+  hudContext.fillStyle = multiplierFontColor;
+
+  let fontSize = multiplierFontSize;
+  if(isZoomed) fontSize *= zoom;
+  hudContext.font = "Normal "+fontSize+"px Courier New";
+
+  for(let i = 0; i < scoreMultipliers.length; i++) {
+    let mul = scoreMultipliers[i];
+    if(mul < 2) continue;
+
+    let leftVector = lineSegments[i][0];
+    let rightVector = lineSegments[i][1];
+    let pointX, pointY;
+    pointX = (leftVector.x + rightVector.x) / 2;
+    pointY = leftVector.y;
+
+    let hudPoint = worldToHudCoord(pointX, pointY);
+    hudContext.fillText("X"+mul, hudPoint[0], hudPoint[1] + fontSize);
+  }
+  */
+}
+
+function worldToHudCoord(wx, wy, isZoomed) {
+  let hx, hy;
+
+  // Always offset by camera position (camera now pans horizontally even when not zoomed)
+  wx -= camera.position.x;
+  wy -= camera.position.y;
+
+  const {hudWidth, hudHeight} = hudState;
+  const {gameHeight, zoom} = constants;
+
+  if(isZoomed) {
+    wx *= zoom;
+    wy *= zoom;
+  }
+
+  // x: map [-visibleHalfW, +visibleHalfW] → [0, hudWidth]
+  hx = (wx / (visibleHalfW * 2) + 0.5) * hudWidth;
+  // y: full height is always shown, so use gameHeight
+  hy = (1 - (wy / gameHeight + 0.5)) * hudHeight;
+
+  return [hx, hy];
+}`],
+[`34`, `const timerState = Behaviors.select(
+  {now: 0 , delta: 0.01},
+  init, (_prev, _init) => ({now: Renkon.time, delta: 0.011}),
+  timer, (prev, timer) => ({now: Renkon.time, delta: (Renkon.time - prev.now) / 1000.0})
+);
+
+const timer = Events.timer(4);
+
+const init = undefined;`],
+[`42`, `const somebodyLanded = Events.receiver({queued: true});
+const somebodyCrashed = Events.receiver({queued: true});
+const newRound = Events.receiver();
+
+const gameState = Behaviors.select(
+  {isDebugOn: false, state: "isBetweenRounds", since: 0},
+  somebodyLanded, (prev, somebodyLandedArray) => {
+    console.log("somebodyLanded", somebodyLandedArray);
+    const sorted = [...somebodyLandedArray].sort((a, b) => b.time - a.time);
+    return {...prev, state: "showWinner", since: sorted[0].time};
+  },
+  somebodyCrashed, (prev, somebodyCrashedArray) => {
+    console.log("somebodyCrashed", somebodyCrashedArray);
+    const sorted = [...somebodyCrashedArray].sort((a, b) => b.time - a.time);
+    return {...prev, state: "showWinner", since: sorted[0].time};    
+  },
+  timerState, (prev, timerState) => {
+    if (prev.state === "isBetweenRounds") {
+      if (timerState.now - prev.since > 3000) {
+        return {...prev, state: "playOn", since: timerState.now};
+      }
+    }
+    if (prev.state === "showWinner") {
+      if (timerState.now - prev.since > 3000) {
+        Events.send(newRound, true);
+        return {state: "isBetweenRounds", since: timerState.now};
+      }
+    }
+    return prev;
+  }
+);
+  
+const collisionState = Behaviors.select(
+  {landed: false, crashInfo: "", altitude: 0, fuelChange: 0, isZoomed: false, zoomChanged: false, time: -1},
+  newRound, (_prev, _newRound) => {
+    console.log("newRound collisionState");
+    return {
+      landed: false, crashInfo: "", altitude: 0, fuelChange: 0, isZoomed: false, zoomChanged: true, time: -1
+    }
+  },
+  shipState, (prev, shipState) => {
+    // orderCheck
+    const time = shipState.time;
+    if (gameState.state === "showWinnder") {return prev;}
+    if (gameState.state !== "playOn") {return prev;}
+    const {x, y, r, velocityY, velocityX, currentFuel} = shipState;
+    const {
+      smallScale, mainScale,
+      halfWidth, halfHeight, landerScale, lineWidth,
+      landingAngleTolerance, landingVelocityTolerance,
+      fuelGainMax, fuelGainMin, fuelGainExtra, fuelPenaltyMax, fuelPenaltyMin,
+      cameraZoomAltitude, cameraZoomOutAltitude} = constants;
+    if(x < -halfWidth - lineWidth ||
+       x > halfWidth + lineWidth ||
+       y < -halfHeight - lineWidth ||
+       y > halfHeight + lineWidth){
+      return {...prev, crashInfo: "OUT OF BOUNDS", altitude: 0, zoomChanged: prev.isZoomed, isZoomed: false, time};
+    }
+
+    // terrainCheck
+    let i,j;
+
+    let spheres = colliders.children;
+    let altitude = prev.altitude;
+    let hasLanded;
+    let crashInfo;
+    let fuelChange;
+    let isZoomed = prev.isZoomed;
+    let zoomChanged = false;
+
+    for (i = 0; i < spheres.length; i++) {
+      let worldPosition = new THREE.Vector3();
+      spheres[i].getWorldPosition(worldPosition);
+
+      for (j = 0; j < lineSegments.length; j++) {
+        let leftVector = lineSegments[j][0];
+        let rightVector = lineSegments[j][1];
+
+        if (i == 0 && worldPosition.x > leftVector.x && worldPosition.x < rightVector.x){
+          const k = (rightVector.y-leftVector.y)/(rightVector.x-leftVector.x);
+          const terrainHeight = leftVector.y + k * (worldPosition.x - leftVector.x);
+          altitude = worldPosition.y - mainScale - smallScale - terrainHeight;
+          altitude = Math.max(0, altitude);
+        }
+
+        let dot = ((worldPosition.x-leftVector.x)*(rightVector.x-leftVector.x) + (worldPosition.y-leftVector.y)*(rightVector.y-leftVector.y)) / leftVector.distanceToSquared(rightVector);
+        let closestX, closestY, distanceX, distanceY, distanceSquared;
+
+        closestX = leftVector.x + (dot * (rightVector.x - leftVector.x));
+        closestY = leftVector.y + (dot * (rightVector.y - leftVector.y));
+
+        if (closestX < leftVector.x ||
+            closestX > rightVector.x ||
+            closestY > Math.max(leftVector.y, rightVector.y) ||
+            closestY < Math.min(leftVector.y, rightVector.y)) continue;
+
+        distanceX = closestX - worldPosition.x;
+        distanceY = closestY - worldPosition.y;
+        distanceSquared = distanceX*distanceX + distanceY*distanceY;
+
+        let radius=mainScale;
+        if(i>0) radius=smallScale;
+
+        let hitDistance = radius + lineWidth;        
+
+        if(distanceSquared <= hitDistance*hitDistance) {
+          hasLanded = true;
+          if(Math.min(x - leftVector.x, rightVector.x - x) < (landerScale*0.38)) {
+            crashInfo = "TOO CLOSE TO EDGE OF TERRAIN";
+            hasLanded = false;
+          }
+          if(heightDifferences[j] > 0.0001 ) {
+            crashInfo = "CRASHED ON UNEVEN TERRAIN";
+            hasLanded = false;
+          }
+          if(Math.abs(r) > landingAngleTolerance) {
+            crashInfo = "LANDING ANGLE WAS TOO HIGH";
+            hasLanded = false;
+          }
+          if(velocityX*velocityX + velocityY*velocityY > landingVelocityTolerance*landingVelocityTolerance) {
+            crashInfo = "LANDING VELOCITY WAS TOO HIGH";
+            hasLanded = false;
+          }
+          let mul = 1;
+          if (hasLanded) {
+            console.log("hasLanded")
+            fuelChange = Math.random() * (fuelGainMax - fuelGainMin) + fuelGainMin;
+            fuelChange += fuelGainExtra * mul;
+          } else if (crashInfo)
+            console.log("hasCrashed")
+            fuelChange = Math.random() * (fuelPenaltyMax - fuelPenaltyMin) + fuelPenaltyMin;
+            fuelChange = Math.min(fuelChange, currentFuel);
+          }
+          if(hasLanded || crashInfo) {
+            return {landed: hasLanded, crashInfo: crashInfo, fuelChange, altitude: 0, zoomChanged: prev.isZoomed === false, isZoomed: true, time};
+          }
+        }
+      }
+      if (gameState.state !== "playOn") {
+        isZoomed = false;
+        if (prev.isZoomed) zoomChanged = true;
+      } else if (altitude <= cameraZoomAltitude || prev.isZoomed && altitude <= cameraZoomOutAltitude) {
+        isZoomed = true;
+      } else if (prev.isZoomed && altitude >= cameraZoomOutAltitude) {
+        isZoomed = false;
+      }
+      return {...prev, isZoomed, zoomChanged: prev.isZoomed === false, altitude, time};
+    });
+
+((collisionState) => {
+  if (collisionState.crashInfo !== "") {
+    Events.send(somebodyCrashed, collisionState);
+  }
+  if (collisionState.landed) {
+    Events.send(somebodyLanded, collisionState);
+  }
+})(collisionState);
+
+
+const shipState = Behaviors.select(
+  {
+    x: 0, y: 0, r: 0, visible: true,
+    velocityDeltaX: 0, velocityDeltaY: 0,
+    currentAcceleration: 0, currentAccelerationRatio: 0,
+    currentFuel: 1000,
+    landerForward: new THREE.Vector2(0,1),
+    landerBackDirection: new THREE.Vector2(0,1),
+    velocityX: 0, velocityY: 0,
+    time: -1
+  },
+  newRound, (_prev, _new) => {
+    console.log("new ship");
+    return {
+      x: 0, y: 0, r: 0, visible: true,
+      velocityDeltaX: 0, velocityDeltaY: 0,
+      currentAcceleration: 0, currentAccelerationRatio: 0,
+      currentFuel: 1000,
+      landerForward: new THREE.Vector2(0,1),
+      landerBackDirection: new THREE.Vector2(0,1),
+      velocityX: 0, velocityY: 0,
+      time: -1
+    }
+  },
+  gameState, (prev, gameState) => {
+    if (gameState.state === "playOn") {
+      console.log('play');
+      const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = randomSpawn();
+      return {...prev, x: randomPositionX, y: randomPositionY, r: randomRotation, velocityX: initialVelocity, velocityY: 0, time: Renkon.now};
+    }
+    return prev;
+  },
+  timerState, (prev, timer) => {
+    let rotationDelta = 0;
+    if (gameState.state === "showWinner") {return prev;}
+    
+    const deltaTime = timer.delta;
+    const time = timer.now;
+    let {x, y, r, landerForward} = prev;
+    const {rotatingRight, rotatingLeft, accelerating} = controlState;
+    const {
+      angularVelocity, thrusterJerk, thrusterAccelerationMax, gravity,
+      fuelConsumptionRateMax, fuelConsumptionRateMin,
+      accelerationFalloffMultiplier, horizontalDragCoef} = constants;
+    
+    if(rotatingLeft) rotationDelta += angularVelocity * deltaTime;
+    if(rotatingRight) rotationDelta += -angularVelocity * deltaTime;
+
+    // lander.rotation.z += rotationDelta;
+    r += rotationDelta;
+    // console.log(r)
+
+    // if(lander.rotation.z > Math.PI / 2) lander.rotation.z = Math.PI / 2;
+    // if(lander.rotation.z < -Math.PI / 2) lander.rotation.z = -Math.PI / 2;
+    if(r > Math.PI / 2) r = Math.PI / 2;
+    if(r < -Math.PI / 2) r = -Math.PI / 2;
+    
+    let velocityDeltaY = 0;
+    let velocityDeltaX = 0;
+
+    velocityDeltaY += -gravity * deltaTime;
+    let currentAcceleration = prev.currentAcceleration;
+    let currentAccelerationRatio = prev.currentAccelerationRatio;
+    let currentFuel = prev.currentFuel;
+    let velocityX = prev.velocityX;
+    let velocityY = prev.velocityY;
+
+    if(accelerating && currentFuel > 0) {
+      rocketSound.play();
+
+      currentAcceleration += thrusterJerk * deltaTime;
+      if(currentAcceleration > thrusterAccelerationMax) currentAcceleration = thrusterAccelerationMax;
+
+      currentAccelerationRatio = currentAcceleration / thrusterAccelerationMax;
+      let fuelBurned = currentAccelerationRatio * (fuelConsumptionRateMax - fuelConsumptionRateMin) + fuelConsumptionRateMin;
+      currentFuel -= fuelBurned * deltaTime;
+      if (currentFuel < 0.0001) currentFuel = 0;
+      // fuelCheck();
+      // fuelAlertCheck();
+     // console.log(currentAcceleration);
+    } else {
+      rocketSound.stop();
+
+      currentAcceleration -= thrusterJerk * deltaTime * accelerationFalloffMultiplier;
+      if(currentAcceleration < 0) currentAcceleration = 0;
+    }
+
+    landerForward.x = 0;
+    landerForward.y = 1;
+    const vector2Zero = new THREE.Vector2(0,0);
+    landerForward.rotateAround(vector2Zero, r);
+    prev.landerBackDirection.x = -landerForward.x;
+    prev.landerBackDirection.y = -landerForward.y;
+
+    velocityDeltaX += -velocityX * horizontalDragCoef * deltaTime;
+
+    velocityDeltaX += landerForward.x * currentAcceleration * deltaTime;
+    velocityDeltaY += landerForward.y * currentAcceleration * deltaTime;
+
+    velocityY += velocityDeltaY;
+    velocityX += velocityDeltaX;
+
+    // console.log(velocityX, velocityY);
+  
+    let positionDeltaY = velocityY * deltaTime
+    // lander.position.y += positionDeltaY;
+    y += positionDeltaY;
+
+    let positionDeltaX = velocityX * deltaTime;
+    // lander.position.x += positionDeltaX;
+    x += positionDeltaX;
+    return {
+      x, y, r, visible: prev.visible,
+      velocityDeltaX, velocityDeltaY,
+      currentAcceleration, currentFuel, currentAccelerationRatio,
+      landerForward, landerBackDirection: prev.landerBackDirection,
+      velocityX, velocityY, time} 
+});
+`],
+[`160`, `const controlState = Behaviors.select(
+  {rotatingRight: false, rotatingLeft: false, accelerating: false},
+  keys, (prev, keys) => {
+    const value = {...prev};
+    if (keys.includes("ArrowLeftDown")) {
+      value.rotatingLeft = true;
+    }
+    if (keys.includes("ArrowRightDown")) {
+      value.rotatingRight = true;
+    }
+    if (keys.includes("ArrowUpDown")) {
+      value.accelerating = true;
+    }
+    if (keys.includes("ArrowLeftUp")) {
+      value.rotatingLeft = false;
+    }
+    if (keys.includes("ArrowRightUp")) {
+      value.rotatingRight = false;
+    }
+    if (keys.includes("ArrowUpUp")) {
+      value.accelerating = false;
+    }
+    return value;
+  },
+);
+
+const keyLeftDown = Events.listener(
+  document.body, "keydown", 
+  (evt) => evt.key === "ArrowLeft" ? evt.key + "Down" : undefined
+);
+
+const keyRightDown = Events.listener(
+  document.body, "keydown",
+  (evt) => evt.key === "ArrowRight" ? evt.key + "Down" : undefined
+);
+
+const keyUpDown = Events.listener(
+  document.body, "keydown",
+  (evt) => evt.key === "ArrowUp" ? evt.key + "Down" : undefined
+);
+
+const keyLeftUp = Events.listener(
+  document.body, "keyup", 
+  (evt) => evt.key === "ArrowLeft" ? evt.key + "Up" : undefined
+);
+
+const keyRightUp = Events.listener(
+  document.body, "keyup",
+  (evt) => evt.key === "ArrowRight" ? evt.key + "Up" : undefined
+);
+
+const keyUpUp = Events.listener(
+  document.body, "keyup",
+  (evt) => evt.key === "ArrowUp" ? evt.key + "Up": undefined
+);
+
+const keys = Events.some(keyLeftDown, keyRightDown, keyUpDown, keyLeftUp, keyRightUp, keyUpUp);
+`]]}

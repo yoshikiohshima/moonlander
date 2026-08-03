@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Lunar Lander</title>
+        <link type="text/css" rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <canvas id="radar"></canvas>
+        <div id="controls">
+            <span class="ctrl-label">&#9668; ROT &#9658;</span>
+            <div class="slider-wrap">
+                <div class="center-mark"></div>
+                <input type="range" id="rotSlider" min="-100" max="100" value="0">
+            </div>
+            <button id="thrustBtn">THRUST</button>
+        </div>
+        <script src="https://unpkg.com/three@0.124.0"></script>
+        <script src="js/constants.js"></script>
+        <script src="js/globals.js"></script>
+        <script src="js/terrainData.js"></script>
+        <script src="js/sound.js"></script>
+        <script src="js/hud.js"></script>
+        <script src="js/particles.js"></script>
+        <script src="js/radar.js"></script>
+        <script src="js/controls.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

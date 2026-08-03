@@ -31,7 +31,7 @@ let accelerating = false;
 let isPaused = true;
 let isGameOver = true;
 let isBetweenRounds = false;
-let isDebugOn = false;
+let isDebugOn = true;
 let hasLanded = false;
 
 let currentFuel = 1000;
