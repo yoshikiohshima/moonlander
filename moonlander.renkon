@@ -3,60 +3,72 @@
 "values":[["1",{"height":3052.2806336940703,
 "id":"1",
 "width":974.886475695685,
-"x":-194.2173064226809,
-"y":3129.796884842082}],["2",{"height":1064.483179052934,
+"x":-1252.020142019639,
+"y":3110.5601026207787}],["2",{"height":1064.483179052934,
 "id":"2",
 "width":585.2740315467669,
-"x":834.9352351022643,
-"y":3133.827923945124}],["7",{"height":8435.128050308807,
+"x":-209.02886536852145,
+"y":3118.1243424872478}],["7",{"height":6762.057745645519,
 "id":"7",
-"width":1139.3076448350926,
-"x":2923.160937674902,
-"y":3111.8923863658206}],["13",{"height":1207.1168306831983,
+"width":1120.868478304371,
+"x":4776.241816397377,
+"y":3059.8382948524813}],["13",{"height":1207.1168306831983,
 "id":"13",
 "width":680.5820265109874,
-"x":4413.276831623932,
-"y":5717.095098133981}],["17",{"height":228.7674356848047,
+"x":6234.903684005899,
+"y":4694.115625729772}],["17",{"height":228.7674356848047,
 "id":"17",
 "width":572.8338732304037,
-"x":4425.308450189166,
-"y":5447.71524599064}],["23",{"height":1257.8575397244015,
+"x":6224.518369528621,
+"y":4382.163145404702}],["23",{"height":1257.8575397244015,
 "id":"23",
 "width":747.8256814924646,
-"x":4.251543263729651,
-"y":6250.405308812842}],["24",{"height":1970.3146218360507,
+"x":1542.4251451106693,
+"y":3055.494857874923}],["24",{"height":1970.3146218360507,
 "id":"24",
 "width":658.6044789526261,
-"x":-876.8574693440798,
-"y":3139.3178950352153}],["25",{"height":1221.2245332196048,
+"x":-2034.4889724687089,
+"y":3117.6736439275996}],["25",{"height":1221.2245332196048,
 "id":"25",
 "width":714.2733894893871,
-"x":4157.081563106822,
-"y":3115.5987504673367}],["31",{"height":4036.359275880022,
+"x":6251.97441928801,
+"y":5997.358808591727}],["31",{"height":4036.359275880022,
 "id":"31",
 "width":933.4792288386477,
-"x":851.4832872973512,
-"y":4569.590094041701}],["34",{"height":294.8236627142669,
+"x":2440.2496962577784,
+"y":3064.709683773554}],["34",{"height":294.8236627142669,
 "id":"34",
 "width":829.061940920184,
-"x":855.3990954263635,
-"y":4242.735508993669}],["42",{"height":4970.700438503079,
+"x":-1175.412986143853,
+"y":2771.6381057070917}],["42",{"height":4121.893174477463,
 "id":"42",
-"width":1057.5434036184017,
-"x":1817.419817210077,
-"y":3114.952851151315}],["160",{"height":1133.7921232955848,
+"width":943.9655255661711,
+"x":3625.1766165742733,
+"y":3069.02522138969}],["160",{"height":1218.1690499384022,
 "id":"160",
-"width":679.1151859815747,
-"x":5091.6093008640755,
-"y":3220.798577468815}]]}},
+"width":679.6161902498887,
+"x":6211.852588433938,
+"y":3062.0481311152325}],["196",{"height":522.0446093689553,
+"id":"196",
+"width":900.0504632723639,
+"x":-234.07836861077152,
+"y":2435.8192413334295}],["197",{"height":4072.425774088373,
+"id":"197",
+"width":973.1655715332109,
+"x":439.1154414292034,
+"y":3039.50108016743}],["312",{"height":644.7118873038488,
+"id":"312",
+"width":1087.7090128758564,
+"x":-356.0925865988803,
+"y":3033.9151966467884}]]}},
 "titles":{"map":{"__map":true,
 "values":[["1",{"id":"1",
 "state":false,
-"title":"untitled-1"}],["2",{"id":"2",
+"title":"Constants"}],["2",{"id":"2",
 "state":false,
 "title":"Initialization"}],["7",{"id":"7",
 "state":false,
-"title":"untitled-7"}],["13",{"id":"13",
+"title":"THREE"}],["13",{"id":"13",
 "state":false,
 "title":"untitled-13"}],["17",{"id":"17",
 "state":false,
@@ -64,17 +76,23 @@
 "state":false,
 "title":"Radar"}],["24",{"id":"24",
 "state":false,
-"title":"untitled-24"}],["25",{"id":"25",
+"title":"points"}],["25",{"id":"25",
 "state":false,
 "title":"untitled-25"}],["31",{"id":"31",
 "state":false,
-"title":"Rendering"}],["34",{"id":"34",
+"title":"HUD"}],["34",{"id":"34",
 "state":false,
 "title":"Timers"}],["42",{"id":"42",
 "state":false,
 "title":"States"}],["160",{"id":"160",
 "state":false,
-"title":"untitled-160"}]]}},
+"title":"untitled-160"}],["196",{"id":"196",
+"state":false,
+"title":"Multiplayer"}],["197",{"id":"197",
+"state":false,
+"title":"Ships"}],["312",{"id":"312",
+"state":false,
+"title":"untitled-312"}]]}},
 "version":3,
 "windowEnabled":{"map":{"__map":true,
 "values":[["1",{"enabled":true,
@@ -89,12 +107,15 @@
 "id":"31"}],["34",{"enabled":true,
 "id":"34"}],["42",{"enabled":true,
 "id":"42"}],["160",{"enabled":true,
-"id":"160"}]]}},
+"id":"160"}],["196",{"enabled":true,
+"id":"196"}],["197",{"enabled":true,
+"id":"197"}],["312",{"enabled":true,
+"id":"312"}]]}},
 "windowTypes":{"map":{"__map":true,
-"values":[["1","code"],["2","code"],["7","code"],["13","code"],["17","code"],["23","code"],["24","code"],["25","code"],["31","code"],["34","code"],["42","code"],["160","code"]]}},
-"windows":["1","2","7","13","17","23","24","25","31","34","42","160"],
+"values":[["1","code"],["2","code"],["7","code"],["13","code"],["17","code"],["23","code"],["24","code"],["25","code"],["31","code"],["34","code"],["42","code"],["160","code"],["196","code"],["197","code"],["312","runner"]]}},
+"windows":["1","2","7","13","17","23","24","25","31","34","42","160","196","197","312"],
 "zIndex":{"map":{"__map":true,
-"values":[["1",108],["2",110],["7",105],["13",100],["17",113],["23",104],["24",103],["25",107],["31",106],["34",111],["42",114],["160",102]]}}}
+"values":[["1",110],["2",111],["7",106],["13",105],["17",113],["23",108],["24",107],["25",114],["31",102],["34",104],["42",115],["160",100],["196",116],["197",103],["312",117]]}}}
 {__codeMap: true, value: [[`1`, `const gameWidth = 800;
 const gameHeight = 450;
 const halfWidth = gameWidth/2;
@@ -309,7 +330,7 @@ canvas {
   document.head.querySelector(\`#\${c.id}\`)?.remove();
   document.head.appendChild(c);
 })(css, renkon);`],
-[`7`, `const {scene, camera, renderer, lander} = ((THREE) => {
+[`7`, `const {scene, camera, renderer} = ((THREE) => {
   console.log("scenes");
   const scene = new THREE.Scene();
   const {landerScale, cameraPositionDefault, halfHeight} = constants;
@@ -330,46 +351,17 @@ canvas {
   renderer.domElement.id = "moonlander";
   document.body.querySelector("#moonlander")?.remove();
   document.body.insertBefore(renderer.domElement, document.body.querySelector("#radar"));
-
+/*
   const geometry = new THREE.PlaneGeometry(landerScale, landerScale);
   const texture = new THREE.TextureLoader().load('textures/lander.png');
   const material = new THREE.MeshBasicMaterial({map: texture});
   material.transparent = true;
   const lander = new THREE.Mesh(geometry, material);
   scene.add(lander);
+  */
   // lander.visible = false;
-  return {scene, renderer, camera, lander};
+  return {scene, renderer, camera};
 })(THREE);
-
-const {colliders} = ((THREE, lander) => {
-  // initColliders
-  const colliders = new THREE.Group();
-
-  const mainGeometry = new THREE.SphereGeometry(mainScale);
-  const smallGeometry = new THREE.SphereGeometry(smallScale);
-
-  const material = new THREE.MeshBasicMaterial({color: 0xffffff});
-
-  let mainCollider = new THREE.Mesh(mainGeometry, material);
-  let leftCollider = new THREE.Mesh(smallGeometry, material);
-  let rightCollider = new THREE.Mesh(smallGeometry, material);
-
-  colliders.add(mainCollider);
-  colliders.add(leftCollider);
-  colliders.add(rightCollider);
-
-  const verticalOffset = -mainScale + smallScale;
-  leftCollider.position.y = verticalOffset;
-  rightCollider.position.y = verticalOffset;
-
-  const horizontalOffset = mainScale - smallScale;
-  leftCollider.position.x = -horizontalOffset;
-  rightCollider.position.x = horizontalOffset;
-
-  lander.add(colliders);
-  colliders.visible = false;
-  return {colliders}
-})(THREE, lander);
 
 const {borders} = ((THREE, scene) => {
   // createBorders
@@ -399,7 +391,25 @@ const {borders} = ((THREE, scene) => {
   return {borders};
 })(THREE, scene);
 
-const {lineSegments, heightDifferences} = ((scene, points) => {
+const {lineSegmentsModel, heightDifferences} = ((points) => {
+  const {halfWidth, halfHeight, lineWidth} = constants;
+  const lineSegments = [];
+  const heightDifferences = [];
+  function placeTerrainSegment(leftPoint, rightPoint, lineSegments) {
+    let leftVector = {x: leftPoint[0] - halfWidth, y: leftPoint[1] - halfHeight};
+    let rightVector = {x: rightPoint[0] - halfWidth, y: rightPoint[1] - halfHeight};
+  
+    lineSegments.push([leftVector, rightVector]);
+  }
+
+  for(let i=0; i<points.length-1; i++) {
+    placeTerrainSegment(points[i], points[i+1], lineSegments);
+    heightDifferences.push(Math.abs(points[i][1]-points[i+1][1]));
+  }
+  return {lineSegmentsModel: lineSegments, heightDifferences};
+})(points);
+
+const {lineSegments} = ((scene, points) => {
   const terrainMeshGroup = new THREE.Group();
   const lineSegments = [];
   const heightDifferences = [];
@@ -431,9 +441,8 @@ const {lineSegments, heightDifferences} = ((scene, points) => {
 
   for(let i=0; i<points.length-1; i++) {
     placeTerrainSegment(points[i], points[i+1], lineSegments);
-    heightDifferences.push(Math.abs(points[i][1]-points[i+1][1]));
   }
-  return {lineSegments, heightDifferences};
+  return {lineSegments};
 })(scene, points);
 
 const {stars} = ((THREE, scene) => {
@@ -477,21 +486,6 @@ const visibleHalfW = Behaviors.select(
   halfHeight * window.innerWidth / window.innerHeight,
   resize, (_prev, _resize) => halfHeight * window.innerWidth / window.innerHeight
 );
-/*
-const isZoomed = Behaviors.select(
-  false,
-  collisionState, (prev, collisionState) => {
-    const isGameOver = gameState.state !== "playOn";
-    if (isGameOver) {return false;}
-    if(collisionState.altitude <= cameraZoomAltitude || (prev && collisionState.altitude <= cameraZoomOutAltitude)) {
-      return true;
-    } else if (prev && collisionState.altitude >= cameraZoomOutAltitude) {
-      return false;
-    }
-    return prev;
-  }
-);
-*/
 
 const resizeFunction = (_prev, _resize) => {
   // onWindowResize
@@ -514,16 +508,22 @@ const keydown = Events.listener(window, "keydown", (evt) => evt);
 const keyup = Events.listener(window, "keyup", (evt) => evt);
 const visibilityChange = Events.listener(document, "visibilitychange", (evt) => evt);
 
-const render = ((scene, renderer, gameState, hudState, shipState, collisionState, camera, resizer) => {
+const render = ((scene, renderer, gameState, hudState, shipStates, landers, controlStates, collisionState, camera, resizer) => {
   let trajectory;
   const {isDebugOn} = gameState;
   const {cameraPositionDefault, zoom} = constants;
+  const shipState = shipStates.map.get(viewId);
+  // if (!shipState.currentFuel) debugger;
   if (isDebugOn) {
     trajectory = generateTrajectoryMesh(calculateTrajectory(shipState));
     scene.add(trajectory)
   }
 
-  const {isZoomed, zoomChanged, altitude} = collisionState;
+  const lander = landers.map.get(viewId);
+  const myCollisionState = collisionState.map.get(viewId);
+
+  const {altitude} = myCollisionState;
+  const {isZoomed, zoomChanged} = renderState;
   const z = cameraPositionDefault[2];
   if (isZoomed) {
     camera.position.set(shipState.x, shipState.y - altitude/2, z);
@@ -545,13 +545,13 @@ const render = ((scene, renderer, gameState, hudState, shipState, collisionState
   }
 
   renderer.render(scene, camera);
-  renderHud(renderer, gameState, hudState, shipState, collisionState);
-  renderRadar(radarCtx, radarCanvas, timer, shipState, collisionState, visibleHalfW);
+  renderHud(renderer, gameState, hudState, shipState, myCollisionState);
+  renderRadar(radarCtx, radarCanvas, shipStates, controlStates, myCollisionState, visibleHalfW);
 
   if (isDebugOn) {
     scene.remove(trajectory);
   }
-})(scene, renderer, gameState, hudState, shipState, collisionState, camera, resizer, timer);
+})(scene, renderer, gameState, hudState, shipStates, landers, controlStates, collisionState, camera, resizer, timer);
 
 const renderHud = (renderer, gameState, hudState, shipState, collisionState) => {
   const {hudWidth, hudHeight, hudTexture, sceneHud, cameraHud} = hudState;
@@ -666,31 +666,34 @@ const randomSpawn = () => {
   return {initialVelocity, randomPositionX, randomPositionY, randomRotation};
 }
 
-
-const updateLander = ((lander, shipState) => {
-  lander.position.x = shipState.x;
-  lander.position.y = shipState.y;
-  lander.rotation.z = shipState.r;
-})(lander, shipState);`],
+const updateLanders = ((landers, shipStates) => {
+  for (const [k, shipState] of shipStates.map) {
+    const lander = landers.map.get(viewId);
+    lander.position.x = shipState.x;
+    lander.position.y = shipState.y;
+    lander.rotation.z = shipState.r;
+  }
+})(landers, shipStates);`],
 [`13`, `const isAlerted = Behaviors.select(
   false,
-  shipState, (prev, currentFuel) => {
-    if (!prev && shipState.currentFuel < fuelAlertThreshold) {
+  shipStates, (prev, shipStates) => {
+    const currentFuel = shipStates.map.get(viewId).currentFuel;
+    if (!prev && currentFuel < fuelAlertThreshold) {
       fuelAlert();
       return true;
     }
-    if (prev && shipState.currentFuel > fuelAlertThreshold) {
+    if (prev && currentFuel > fuelAlertThreshold) {
       return false;
     }
     return prev;
   }
 );
 
-const fuelAlert = ((gameState, shipState, timer) => {
-  if (gameState.isGameOver || shipState.isAlerted) {
+const fuelAlert = ((gameState, shipStates, timer) => {
+  if (gameState.isGameOver || shipStates.map.get(viewId).isAlerted) {
     // lowFuelSound.play();
   }
-})(gameState, shipState, timer);
+})(gameState, shipStates, timer);
 /*
 const crashSound = new sound("audio/crash.mp3");
 const rocketSound = new sound("audio/rocket.mp3");
@@ -728,8 +731,8 @@ class sound{
 
 const hasFuel = Behaviors.select(
   true,
-  shipState, (prev, shipState) => {
-    if(shipState.currentFuel <  0.0001) {
+  shipStates, (prev, shipStates) => {
+    if(shipStates.map.get(viewId).currentFuel <  0.0001) {
       return false;
     }
     return prev;
@@ -751,9 +754,11 @@ const commSound = {play: () => {}, stop: () => {}};
   return {radarCanvas, radarCtx};
 })();
 
-const renderRadar = (radarCtx, radarCanvas, shipState, controlState, collisionState, visibleHalfW) => {
+const renderRadar = (radarCtx, radarCanvas, shipStates, controlStates, collisionState, visibleHalfW) => {
+  const shipState = shipStates.map.get(viewId);
+  const controlState = controlStates.map.get(viewId);
   const {currentAcceleration} = shipState;
-  const accelerating = controlState.accelerating;
+  const accelerating = controlState ? controlState.accelerating : false;
   const isZoomed = collisionState.isZoomed;
   // renderRadar
   const {RADAR_W, RADAR_H, halfWidth, halfHeight, gameWidth, gameHeight, zoom} = constants;
@@ -970,7 +975,8 @@ const hudState = Behaviors.select(
   resize, (prev, resize) => prev
 );
 
-const fuelAlertText = shipState.isAlerted ? (shipState.hasFuel ? "LOW ON FUEL" : "OUT OF FUEL") : "";
+const localShipState = shipStates.map.get(viewId);
+const fuelAlertText = localShipState?.isAlerted ? (localShipState?.hasFuel ? "LOW ON FUEL" : "OUT OF FUEL") : "";
 
 function fillLeftInfoPanel(gameState, hudState, shipState, collisionState) {
   // const {currentTime, currentScore} = gameState;
@@ -1007,11 +1013,12 @@ function fillLeftInfoPanel(gameState, hudState, shipState, collisionState) {
 function fillRightInfoPanel(gameState, hudState, shipState, collisionState) {
   const {currentTime} = gameState;
   const {hudContext, hudWidth, hudHeight} = hudState;
-  const {currentFuel, currentScore, velocityX, velocityY} = shipState;
+  const {currentFuel, currentScore, velocityX, velocityY, r} = shipState;
   const {altitude} = collisionState;
   const {
     infoPanelFontSize, infoPanelTextColor, 
-    infoPanelRelativeOffsetX, infoPanelRelativeOffsetY, infoPanelRelativeOffsetYStep} = constants;
+    infoPanelRelativeOffsetX, infoPanelRelativeOffsetY, infoPanelRelativeOffsetYStep
+  } = constants;
 
   hudContext.textAlign = 'right';
   hudContext.fillStyle = infoPanelTextColor;
@@ -1029,7 +1036,7 @@ function fillRightInfoPanel(gameState, hudState, shipState, collisionState) {
     hudWidth*(1-infoPanelRelativeOffsetX), 
     hudHeight*(infoPanelRelativeOffsetY+2*infoPanelRelativeOffsetYStep));
   hudContext.fillText(
-    "ROTATION ANGLE".padEnd(18, " ") + (-lander.rotation.z * (180/Math.PI)).toFixed(1).padStart(6, " "), 
+    "ROTATION ANGLE".padEnd(18, " ") + (-r * (180/Math.PI)).toFixed(1).padStart(6, " "), 
     hudWidth*(1-infoPanelRelativeOffsetX), 
     hudHeight*(infoPanelRelativeOffsetY+3*infoPanelRelativeOffsetYStep));
 }
@@ -1156,27 +1163,30 @@ function worldToHudCoord(wx, wy, isZoomed) {
 }`],
 [`34`, `const timerState = Behaviors.select(
   {now: 0 , delta: 0.01},
-  init, (_prev, _init) => ({now: Renkon.time, delta: 0.011}),
+  init, (_prev, _init) => ({now: Renkon.time, delta: 0.0001}),
   timer, (prev, timer) => ({now: Renkon.time, delta: (Renkon.time - prev.now) / 1000.0})
 );
 
 const timer = Events.timer(4);
 
-const init = undefined;`],
+const init = undefined;
+`],
 [`42`, `const somebodyLanded = Events.receiver({queued: true});
 const somebodyCrashed = Events.receiver({queued: true});
 const newRound = Events.receiver();
 
 const gameState = Behaviors.select(
-  {isDebugOn: false, state: "isBetweenRounds", since: 0},
+  {isDebugOn: false, state: "isBetweenRounds", since: 0, winner: ""},
   somebodyLanded, (prev, somebodyLandedArray) => {
-    console.log("somebodyLanded", somebodyLandedArray);
     const sorted = [...somebodyLandedArray].sort((a, b) => b.time - a.time);
-    return {...prev, state: "showWinner", since: sorted[0].time};
+    console.log("somebodyLanded", sorted);
+    return {...prev, state: "showWinner", since: sorted[0].time, winner: sorted[0].color};
   },
   somebodyCrashed, (prev, somebodyCrashedArray) => {
     console.log("somebodyCrashed", somebodyCrashedArray);
     const sorted = [...somebodyCrashedArray].sort((a, b) => b.time - a.time);
+    const survivers = [...players.map].filter(([viewId, col]) => col.crashInfo === "");
+    console.log("somebodyCrashed", survivers);
     return {...prev, state: "showWinner", since: sorted[0].time};    
   },
   timerState, (prev, timerState) => {
@@ -1194,136 +1204,283 @@ const gameState = Behaviors.select(
     return prev;
   }
 );
-  
-const collisionState = Behaviors.select(
-  {landed: false, crashInfo: "", altitude: 0, fuelChange: 0, isZoomed: false, zoomChanged: false, time: -1},
-  newRound, (_prev, _newRound) => {
-    console.log("newRound collisionState");
-    return {
-      landed: false, crashInfo: "", altitude: 0, fuelChange: 0, isZoomed: false, zoomChanged: true, time: -1
+
+const renderState = Behaviors.select(
+  {isZoomed: false, zoomChanged: false},
+  collisionState, (prev, collisionState) => {
+    let {isZoomed, zoomChanged} = prev;
+    let {altitude} = collisionState.map.get(viewId);
+    const {cameraZoomAltitude, cameraZoomOutAltitude} = constants;
+
+    if (gameState.state !== "playOn") {
+      isZoomed = false;
+    } else if (altitude <= cameraZoomAltitude || prev.isZoomed && altitude <= cameraZoomOutAltitude) {
+      isZoomed = true;
+    } else if (prev.isZoomed && altitude >= cameraZoomOutAltitude) {
+      isZoomed = false;
     }
+    if (prev.isZoomed === isZoomed) {
+      return prev;
+    }
+    return {isZoomed, zoomChanged: true};
+  }
+);
+
+function newCollisionState(viewId) {
+  return {viewId, landed: false, crashInfo: "", altitude: 0, fuelChange: 0, time: 0, color: ""}
+}
+
+// model
+const collisionState = Behaviors.select(
+  {map: new Map(isLocal ? [[viewId, newCollisionState(viewId)]] : [])},
+  newRound, (prev, _newRound) => {
+    console.log("newRound collisionState");
+    const newMap = new Map([...prev.map].map(([viewId, _v]) => ([viewId, newCollisionState(viewId)])));
+    return {map: newMap};
   },
-  shipState, (prev, shipState) => {
+  shipStates, (prev, shipStates) => {
     // orderCheck
-    const time = shipState.time;
     if (gameState.state === "showWinnder") {return prev;}
     if (gameState.state !== "playOn") {return prev;}
-    const {x, y, r, velocityY, velocityX, currentFuel} = shipState;
+    const lineSegments = lineSegmentsModel;
+    const time = Renkon.time;
     const {
       smallScale, mainScale,
       halfWidth, halfHeight, landerScale, lineWidth,
       landingAngleTolerance, landingVelocityTolerance,
       fuelGainMax, fuelGainMin, fuelGainExtra, fuelPenaltyMax, fuelPenaltyMin,
-      cameraZoomAltitude, cameraZoomOutAltitude} = constants;
-    if(x < -halfWidth - lineWidth ||
-       x > halfWidth + lineWidth ||
-       y < -halfHeight - lineWidth ||
-       y > halfHeight + lineWidth){
-      return {...prev, crashInfo: "OUT OF BOUNDS", altitude: 0, zoomChanged: prev.isZoomed, isZoomed: false, time};
-    }
+    } = constants;
+    let spheres = colliderPositions;
+    const olds = new Set([...prev.map.keys()]);
+    for (const [shipId, shipState] of shipStates.map) {
+      olds.delete(shipId);      
+      const {x, y, r, velocityY, velocityX, currentFuel} = shipState;
+      let myCollisionState = prev.map.get(shipId);
+      if (!myCollisionState) {
+        myCollisionState = newCollisionState(shipId);
+      }
+      
+      if (x < -halfWidth - lineWidth ||
+        x > halfWidth + lineWidth ||
+        y < -halfHeight - lineWidth ||
+        y > halfHeight + lineWidth) {
+        prev.map.set(shipId, {...myCollisionState, crashInfo: "OUT OF BOUNDS", altitude: 0, color: shipState.color, time});
+        continue;
+      }
 
-    // terrainCheck
-    let i,j;
+      const squaredDistance = (v1, v2) => {
+        let dx = v1.x - v2.x;
+        let dy = v1.y - v2.y;
+        return dx * dx + dy * dy;
+      };
 
-    let spheres = colliders.children;
-    let altitude = prev.altitude;
-    let hasLanded;
-    let crashInfo;
-    let fuelChange;
-    let isZoomed = prev.isZoomed;
-    let zoomChanged = false;
+      // terrainCheck
 
-    for (i = 0; i < spheres.length; i++) {
-      let worldPosition = new THREE.Vector3();
-      spheres[i].getWorldPosition(worldPosition);
+      let altitude = myCollisionState.altitude;
+      let hasLanded;
+      let crashInfo = myCollisionState.crashInfo;
+      let fuelChange;
 
-      for (j = 0; j < lineSegments.length; j++) {
-        let leftVector = lineSegments[j][0];
-        let rightVector = lineSegments[j][1];
+      let nextShip = false;
+      for (let i = 0; i < spheres.length; i++) {
+        const myX = x + spheres[i].position.x * Math.cos(r);
+        const myY = y + spheres[i].position.y * Math.sin(r);
+        const worldPosition = {x: myX, y: myY, z: 0};
+        // spheres[i].getWorldPosition(worldPosition);
 
-        if (i == 0 && worldPosition.x > leftVector.x && worldPosition.x < rightVector.x){
-          const k = (rightVector.y-leftVector.y)/(rightVector.x-leftVector.x);
-          const terrainHeight = leftVector.y + k * (worldPosition.x - leftVector.x);
-          altitude = worldPosition.y - mainScale - smallScale - terrainHeight;
-          altitude = Math.max(0, altitude);
-        }
+        for (let j = 0; j < lineSegmentsModel.length; j++) {
+          let leftVector = lineSegments[j][0];
+          let rightVector = lineSegments[j][1];
 
-        let dot = ((worldPosition.x-leftVector.x)*(rightVector.x-leftVector.x) + (worldPosition.y-leftVector.y)*(rightVector.y-leftVector.y)) / leftVector.distanceToSquared(rightVector);
-        let closestX, closestY, distanceX, distanceY, distanceSquared;
+          if (i == 0 && worldPosition.x > leftVector.x && worldPosition.x < rightVector.x) {
+            const k = (rightVector.y-leftVector.y)/(rightVector.x-leftVector.x);
+            const terrainHeight = leftVector.y + k * (worldPosition.x - leftVector.x);
+            altitude = worldPosition.y - mainScale - smallScale - terrainHeight;
+            altitude = Math.max(0, altitude);
+          }
 
-        closestX = leftVector.x + (dot * (rightVector.x - leftVector.x));
-        closestY = leftVector.y + (dot * (rightVector.y - leftVector.y));
+          let dot = ((worldPosition.x-leftVector.x)*(rightVector.x-leftVector.x) + (worldPosition.y-leftVector.y)*(rightVector.y-leftVector.y)) / squaredDistance(leftVector, rightVector);
+          let closestX, closestY, distanceX, distanceY, distanceSquared;
 
-        if (closestX < leftVector.x ||
+          closestX = leftVector.x + (dot * (rightVector.x - leftVector.x));
+          closestY = leftVector.y + (dot * (rightVector.y - leftVector.y));
+
+          if (closestX < leftVector.x ||
             closestX > rightVector.x ||
             closestY > Math.max(leftVector.y, rightVector.y) ||
             closestY < Math.min(leftVector.y, rightVector.y)) continue;
 
-        distanceX = closestX - worldPosition.x;
-        distanceY = closestY - worldPosition.y;
-        distanceSquared = distanceX*distanceX + distanceY*distanceY;
+          distanceX = closestX - worldPosition.x;
+          distanceY = closestY - worldPosition.y;
+          distanceSquared = distanceX*distanceX + distanceY*distanceY;
 
-        let radius=mainScale;
-        if(i>0) radius=smallScale;
+          let radius=mainScale;
+          if(i>0) radius=smallScale;
 
-        let hitDistance = radius + lineWidth;        
+          let hitDistance = radius + lineWidth;        
 
-        if(distanceSquared <= hitDistance*hitDistance) {
-          hasLanded = true;
-          if(Math.min(x - leftVector.x, rightVector.x - x) < (landerScale*0.38)) {
-            crashInfo = "TOO CLOSE TO EDGE OF TERRAIN";
-            hasLanded = false;
+          if(distanceSquared <= hitDistance*hitDistance) {
+            hasLanded = true;
+            if(Math.min(x - leftVector.x, rightVector.x - x) < (landerScale*0.38)) {
+              crashInfo = "TOO CLOSE TO EDGE OF TERRAIN";
+              hasLanded = false;
+            }
+            if(heightDifferences[j] > 0.0001 ) {
+              crashInfo = "CRASHED ON UNEVEN TERRAIN";
+              hasLanded = false;
+            }
+            if(Math.abs(r) > landingAngleTolerance) {
+              crashInfo = "LANDING ANGLE WAS TOO HIGH";
+              hasLanded = false;
+            }
+            if(velocityX*velocityX + velocityY*velocityY > landingVelocityTolerance*landingVelocityTolerance) {
+              crashInfo = "LANDING VELOCITY WAS TOO HIGH";
+              hasLanded = false;
+            }
+            let mul = 1;
+            if (hasLanded) {
+              console.log("hasLanded");
+              fuelChange = Math.random() * (fuelGainMax - fuelGainMin) + fuelGainMin;
+              fuelChange += fuelGainExtra * mul;
+            } else if (crashInfo) {
+              console.log("hasCrashed")
+              fuelChange = Math.random() * (fuelPenaltyMax - fuelPenaltyMin) + fuelPenaltyMin;
+              fuelChange = Math.min(fuelChange, currentFuel);
+            }
+            if(hasLanded || crashInfo) {
+              prev.map.set(shipId, {landed: hasLanded, crashInfo: crashInfo, fuelChange, altitude: 0, color: shipState.color, time});
+              nextShip = true;
+              break;
+            }
           }
-          if(heightDifferences[j] > 0.0001 ) {
-            crashInfo = "CRASHED ON UNEVEN TERRAIN";
-            hasLanded = false;
-          }
-          if(Math.abs(r) > landingAngleTolerance) {
-            crashInfo = "LANDING ANGLE WAS TOO HIGH";
-            hasLanded = false;
-          }
-          if(velocityX*velocityX + velocityY*velocityY > landingVelocityTolerance*landingVelocityTolerance) {
-            crashInfo = "LANDING VELOCITY WAS TOO HIGH";
-            hasLanded = false;
-          }
-          let mul = 1;
-          if (hasLanded) {
-            console.log("hasLanded")
-            fuelChange = Math.random() * (fuelGainMax - fuelGainMin) + fuelGainMin;
-            fuelChange += fuelGainExtra * mul;
-          } else if (crashInfo)
-            console.log("hasCrashed")
-            fuelChange = Math.random() * (fuelPenaltyMax - fuelPenaltyMin) + fuelPenaltyMin;
-            fuelChange = Math.min(fuelChange, currentFuel);
-          }
-          if(hasLanded || crashInfo) {
-            return {landed: hasLanded, crashInfo: crashInfo, fuelChange, altitude: 0, zoomChanged: prev.isZoomed === false, isZoomed: true, time};
+          if (nextShip) {
+            break;
           }
         }
+        if (nextShip) {
+          break;
+        }
       }
-      if (gameState.state !== "playOn") {
-        isZoomed = false;
-        if (prev.isZoomed) zoomChanged = true;
-      } else if (altitude <= cameraZoomAltitude || prev.isZoomed && altitude <= cameraZoomOutAltitude) {
-        isZoomed = true;
-      } else if (prev.isZoomed && altitude >= cameraZoomOutAltitude) {
-        isZoomed = false;
-      }
-      return {...prev, isZoomed, zoomChanged: prev.isZoomed === false, altitude, time};
-    });
+      prev.map.set(shipId, {...prev.map.get(shipId), altitude});
+    }
+    for (const oldId of olds) {
+      prev.map.delete(oldId);
+    }
+    return {map: prev.map};
+  }
+);
 
 ((collisionState) => {
-  if (collisionState.crashInfo !== "") {
-    Events.send(somebodyCrashed, collisionState);
-  }
-  if (collisionState.landed) {
-    Events.send(somebodyLanded, collisionState);
+  for (const [viewId, c] of collisionState.map) {
+    if (c.crashInfo !== "") {
+      console.log("crash", c);
+      Events.send(somebodyCrashed, c);
+    }
+    if (c.landed) {
+      console.log("landed", c);
+      Events.send(somebodyLanded, c);
+    }
   }
 })(collisionState);
 
 
-const shipState = Behaviors.select(
-  {
+const controlStates = Behaviors.collect(
+  {map: new Map()},
+  controlState, (prev, controlState) => {
+    prev.map.set(controlState.viewId, controlState);
+    return {map: prev.map};
+  }
+);`],
+[`160`, `const controlState = Behaviors.select(
+  {rotatingRight: false, rotatingLeft: false, accelerating: false, viewId},
+  keys, (prev, keys) => {
+    const value = {...prev};
+    if (keys.includes("ArrowLeftDown")) {
+      value.rotatingLeft = true;
+    }
+    if (keys.includes("ArrowRightDown")) {
+      value.rotatingRight = true;
+    }
+    if (keys.includes("ArrowUpDown")) {
+      value.accelerating = true;
+    }
+    if (keys.includes("ArrowLeftUp")) {
+      value.rotatingLeft = false;
+    }
+    if (keys.includes("ArrowRightUp")) {
+      value.rotatingRight = false;
+    }
+    if (keys.includes("ArrowUpUp")) {
+      value.accelerating = false;
+    }
+    if (prev.rotatingLeft === value.rotatingLeft &&
+      prev.rotatingRight === value.rotatingRight &&
+      prev.accelerating === value.accelerating) {
+      return prev;
+    }
+    return value;
+  },
+);
+
+const keyLeftDown = Events.listener(
+  document.body, "keydown", 
+  (evt) => evt.key === "ArrowLeft" ? evt.key + "Down" : undefined
+);
+
+const keyRightDown = Events.listener(
+  document.body, "keydown",
+  (evt) => evt.key === "ArrowRight" ? evt.key + "Down" : undefined
+);
+
+const keyUpDown = Events.listener(
+  document.body, "keydown",
+  (evt) => evt.key === "ArrowUp" ? evt.key + "Down" : undefined
+);
+
+const keyLeftUp = Events.listener(
+  document.body, "keyup", 
+  (evt) => evt.key === "ArrowLeft" ? evt.key + "Up" : undefined
+);
+
+const keyRightUp = Events.listener(
+  document.body, "keyup",
+  (evt) => evt.key === "ArrowRight" ? evt.key + "Up" : undefined
+);
+
+const keyUpUp = Events.listener(
+  document.body, "keyup",
+  (evt) => evt.key === "ArrowUp" ? evt.key + "Up": undefined
+);
+
+const keys = Events.some(keyLeftDown, keyRightDown, keyUpDown, keyLeftUp, keyRightUp, keyUpUp);
+`],
+[`196`, `const viewId = Renkon.app?.viewId || "local";
+const isLocal = viewId === "local";
+
+const viewExit = Events.receiver({queued: true});
+const viewJoin = Events.receiver({queued: true});
+
+const colors = ["red", "blue", "green", "yellow"];
+
+const players = Behaviors.select(
+  {map: (isLocal ? new Map([[viewId, {color: colors[0]}]]) : new Map)},
+  viewJoin, (prev, joins) => {
+    for (const join of joins) {
+      prev.map.set(join, {color: colors[prev.map.size % colors.length]});
+    }
+    return {map: prev.map};
+  },
+  viewExit, (prev, exits) => {
+    for (const exit of exits) {
+      prev.delete(exit);
+    }
+    return {map: prev.map};
+  }
+);
+
+console.log("players", players)`],
+[`197`, `const newShipState = (viewId, isOngoing) => {
+  const obj = {
     x: 0, y: 0, r: 0, visible: true,
     velocityDeltaX: 0, velocityDeltaY: 0,
     currentAcceleration: 0, currentAccelerationRatio: 0,
@@ -1331,37 +1488,54 @@ const shipState = Behaviors.select(
     landerForward: new THREE.Vector2(0,1),
     landerBackDirection: new THREE.Vector2(0,1),
     velocityX: 0, velocityY: 0,
-    time: -1
+    time: -1, viewId
+  };
+  if (isOngoing) {
+    const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = randomSpawn();
+    return {...obj, x: randomPositionX, y: randomPositionY, r: randomRotation, velocityX: initialVelocity, velocityY: 0, time: Renkon.now};
+  }
+  return obj;
+};
+
+const shipStates = Behaviors.select(
+  isLocal ? {map: new Map([[viewId, newShipState(viewId)]]) }: new Map(),
+  players, (prev, players) => {
+    const prevKeys = [...prev.map.keys()];
+    const newKeys = [...players.map.keys()];
+    const olds = prevKeys.filter((e) => !newKeys.includes(e));
+    const news = newKeys.filter((e) => !prevKeys.includes(e));
+    olds.forEach((id) => prev.map.delete(id));
+    news.forEach((id) => {
+      prev.map.set(id, newShipState(id, (gameState.state === "playOn")));
+    });
+    return {map: prev.map}
   },
-  newRound, (_prev, _new) => {
-    console.log("new ship");
-    return {
-      x: 0, y: 0, r: 0, visible: true,
-      velocityDeltaX: 0, velocityDeltaY: 0,
-      currentAcceleration: 0, currentAccelerationRatio: 0,
-      currentFuel: 1000,
-      landerForward: new THREE.Vector2(0,1),
-      landerBackDirection: new THREE.Vector2(0,1),
-      velocityX: 0, velocityY: 0,
-      time: -1
-    }
+  newRound, (prev, _new) => {
+    console.log("new ship(s)");
+    return {map: new Map(
+      [...prev.map].map(([viewId, ship]) => ([viewId, newShipState(viewId)]))
+    )};
   },
   gameState, (prev, gameState) => {
     if (gameState.state === "playOn") {
       console.log('play');
-      const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = randomSpawn();
-      return {...prev, x: randomPositionX, y: randomPositionY, r: randomRotation, velocityX: initialVelocity, velocityY: 0, time: Renkon.now};
+      for (const [viewId, ship] of prev.map) {
+        const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = randomSpawn();
+        prev.map.set(viewId, {...ship, x: randomPositionX, y: randomPositionY, r: randomRotation, velocityX: initialVelocity, velocityY: 0, time: Renkon.now})
+      };
+      return {map: prev.map};
     }
     return prev;
   },
-  timerState, (prev, timer) => {
+  timerState, (prevShips, timer) => {
+    const prev = prevShips.map.get(viewId);
     let rotationDelta = 0;
-    if (gameState.state === "showWinner") {return prev;}
+    if (gameState.state === "showWinner") {return prevShips;}
     
     const deltaTime = timer.delta;
     const time = timer.now;
     let {x, y, r, landerForward} = prev;
-    const {rotatingRight, rotatingLeft, accelerating} = controlState;
+    const {rotatingRight, rotatingLeft, accelerating} = controlStates.map.get(viewId);
     const {
       angularVelocity, thrusterJerk, thrusterAccelerationMax, gravity,
       fuelConsumptionRateMax, fuelConsumptionRateMin,
@@ -1370,12 +1544,9 @@ const shipState = Behaviors.select(
     if(rotatingLeft) rotationDelta += angularVelocity * deltaTime;
     if(rotatingRight) rotationDelta += -angularVelocity * deltaTime;
 
-    // lander.rotation.z += rotationDelta;
     r += rotationDelta;
     // console.log(r)
 
-    // if(lander.rotation.z > Math.PI / 2) lander.rotation.z = Math.PI / 2;
-    // if(lander.rotation.z < -Math.PI / 2) lander.rotation.z = -Math.PI / 2;
     if(r > Math.PI / 2) r = Math.PI / 2;
     if(r < -Math.PI / 2) r = -Math.PI / 2;
     
@@ -1433,69 +1604,65 @@ const shipState = Behaviors.select(
     let positionDeltaX = velocityX * deltaTime;
     // lander.position.x += positionDeltaX;
     x += positionDeltaX;
-    return {
+    prevShips.map.set(viewId, {
       x, y, r, visible: prev.visible,
       velocityDeltaX, velocityDeltaY,
       currentAcceleration, currentFuel, currentAccelerationRatio,
       landerForward, landerBackDirection: prev.landerBackDirection,
-      velocityX, velocityY, time} 
-});
-`],
-[`160`, `const controlState = Behaviors.select(
-  {rotatingRight: false, rotatingLeft: false, accelerating: false},
-  keys, (prev, keys) => {
-    const value = {...prev};
-    if (keys.includes("ArrowLeftDown")) {
-      value.rotatingLeft = true;
-    }
-    if (keys.includes("ArrowRightDown")) {
-      value.rotatingRight = true;
-    }
-    if (keys.includes("ArrowUpDown")) {
-      value.accelerating = true;
-    }
-    if (keys.includes("ArrowLeftUp")) {
-      value.rotatingLeft = false;
-    }
-    if (keys.includes("ArrowRightUp")) {
-      value.rotatingRight = false;
-    }
-    if (keys.includes("ArrowUpUp")) {
-      value.accelerating = false;
-    }
-    return value;
+      velocityX, velocityY, time
+    });
+    return {map: prevShips.map}
+  }
+);
+
+const colliderPositions = (() => {
+  const {mainScale, smallScale} = constants;
+  const verticalOffset = -mainScale + smallScale;
+  const horizontalOffset = mainScale - smallScale;
+  return [{
+    name: "left", 
+    position: {x: -horizontalOffset, y: verticalOffset},
+    radius: smallScale
+  }, 
+  {
+    name: "right",
+    position: {x: horizontalOffset, y: verticalOffset},
+    radius: smallScale
   },
-);
+  {
+    name: "main",
+    position: {x: 0, y: 0},
+    radius: mainScale          
+  }
+]
+})();
+console.log("col", colliderPositions)
 
-const keyLeftDown = Events.listener(
-  document.body, "keydown", 
-  (evt) => evt.key === "ArrowLeft" ? evt.key + "Down" : undefined
-);
+function newLander() {
+  const {mainScale, smallScale} = constants;
+  const geometry = new THREE.PlaneGeometry(constants.landerScale, constants.landerScale);
+  const texture = new THREE.TextureLoader().load('textures/lander.png');
+  const material = new THREE.MeshBasicMaterial({map: texture});
+  material.transparent = true;
+  const lander = new THREE.Mesh(geometry, material);
+  scene.add(lander);
 
-const keyRightDown = Events.listener(
-  document.body, "keydown",
-  (evt) => evt.key === "ArrowRight" ? evt.key + "Down" : undefined
-);
+  return lander;
+}
 
-const keyUpDown = Events.listener(
-  document.body, "keydown",
-  (evt) => evt.key === "ArrowUp" ? evt.key + "Down" : undefined
-);
-
-const keyLeftUp = Events.listener(
-  document.body, "keyup", 
-  (evt) => evt.key === "ArrowLeft" ? evt.key + "Up" : undefined
-);
-
-const keyRightUp = Events.listener(
-  document.body, "keyup",
-  (evt) => evt.key === "ArrowRight" ? evt.key + "Up" : undefined
-);
-
-const keyUpUp = Events.listener(
-  document.body, "keyup",
-  (evt) => evt.key === "ArrowUp" ? evt.key + "Up": undefined
-);
-
-const keys = Events.some(keyLeftDown, keyRightDown, keyUpDown, keyLeftUp, keyRightUp, keyUpUp);
-`]]}
+const landers = Behaviors.select(
+  isLocal ? {map: new Map([[viewId, newLander()]])}: new Map(),
+  viewJoin, (prev, joins) => {
+    for (const join of joins) {
+      const lander = newLander();
+      prev.map.set(viewId, lander);
+    }
+    return {map: prev.map};
+  },
+  viewExit, (prev, exits) => {
+    for (const exit of exits) {
+      prev.delete(exit);
+    }
+    return {map: prev.map};
+  },
+)`]]}
