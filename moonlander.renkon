@@ -1,9 +1,9 @@
 {"padTitle":"moonlander",
 "positions":{"map":{"__map":true,
-"values":[["1",{"height":3052.2806336940703,
+"values":[["1",{"height":3668.997363385877,
 "id":"1",
-"width":974.886475695685,
-"x":-1252.020142019639,
+"width":1002.8876178917,
+"x":-1280.021284215654,
 "y":3110.5601026207787}],["2",{"height":1064.483179052934,
 "id":"2",
 "width":585.2740315467669,
@@ -11,56 +11,60 @@
 "y":3118.1243424872478}],["7",{"height":6762.057745645519,
 "id":"7",
 "width":1120.868478304371,
-"x":4776.241816397377,
-"y":3059.8382948524813}],["13",{"height":1207.1168306831983,
+"x":4381.986672677687,
+"y":3106.040256723329}],["13",{"height":786.6273658378875,
 "id":"13",
-"width":680.5820265109874,
-"x":6234.903684005899,
-"y":4694.115625729772}],["17",{"height":228.7674356848047,
-"id":"17",
-"width":572.8338732304037,
-"x":6224.518369528621,
-"y":4382.163145404702}],["23",{"height":1257.8575397244015,
+"width":625.3854365358418,
+"x":5732.06090526548,
+"y":4411.317062607016}],["23",{"height":1642.735177278523,
 "id":"23",
-"width":747.8256814924646,
-"x":1542.4251451106693,
-"y":3055.494857874923}],["24",{"height":1970.3146218360507,
+"width":771.0661034385383,
+"x":3420.3934029570937,
+"y":3112.438220192685}],["24",{"height":1532.089952430402,
 "id":"24",
-"width":658.6044789526261,
-"x":-2034.4889724687089,
-"y":3117.6736439275996}],["25",{"height":1221.2245332196048,
+"width":491.11452991212195,
+"x":-1858.2084173553858,
+"y":3110.2484721313976}],["25",{"height":1221.2245332196048,
 "id":"25",
 "width":714.2733894893871,
-"x":6251.97441928801,
-"y":5997.358808591727}],["31",{"height":4036.359275880022,
+"x":5737.066352132596,
+"y":5268.224108533278}],["31",{"height":3406.2727974604827,
 "id":"31",
-"width":933.4792288386477,
-"x":2440.2496962577784,
-"y":3064.709683773554}],["34",{"height":294.8236627142669,
+"width":765.4819006167074,
+"x":2463.588574289238,
+"y":3111.644527326503}],["34",{"height":173.51928931179185,
 "id":"34",
-"width":829.061940920184,
-"x":-1175.412986143853,
-"y":2771.6381057070917}],["42",{"height":4121.893174477463,
+"width":629.6184075941906,
+"x":476.08214539466417,
+"y":2838.9491689526417}],["42",{"height":4301.6801967150195,
 "id":"42",
-"width":943.9655255661711,
-"x":3625.1766165742733,
-"y":3069.02522138969}],["160",{"height":1218.1690499384022,
+"width":1026.8030382522213,
+"x":1415.446807519531,
+"y":3110.1711479897585}],["160",{"height":1218.1690499384022,
 "id":"160",
 "width":679.6161902498887,
-"x":6211.852588433938,
-"y":3062.0481311152325}],["196",{"height":522.0446093689553,
+"x":5725.121232497237,
+"y":3111.8915678213916}],["196",{"height":507.227625062628,
 "id":"196",
-"width":900.0504632723639,
-"x":-234.07836861077152,
-"y":2435.8192413334295}],["197",{"height":4072.425774088373,
+"width":732.2063549296432,
+"x":1205.0144165981133,
+"y":2551.136313335371}],["197",{"height":4210.3172863301625,
 "id":"197",
-"width":973.1655715332109,
-"x":439.1154414292034,
-"y":3039.50108016743}],["312",{"height":644.7118873038488,
-"id":"312",
-"width":1087.7090128758564,
-"x":-356.0925865988803,
-"y":3033.9151966467884}]]}},
+"width":890.015366002664,
+"x":438.3340277695133,
+"y":3112.010986180615}],["446",{"height":5443.07682754038,
+"id":"446",
+"width":914.4759594892654,
+"x":6703.2036390754965,
+"y":3098.4081304101232}],["447",{"height":2420.463106417372,
+"id":"447",
+"width":812.9652306802489,
+"x":7703.616829325727,
+"y":3089.645595225071}],["474",{"height":662.3143384146887,
+"id":"474",
+"width":397.2024329324288,
+"x":8551.184922131122,
+"y":3097.7403115473253}]]}},
 "titles":{"map":{"__map":true,
 "values":[["1",{"id":"1",
 "state":false,
@@ -70,9 +74,7 @@
 "state":false,
 "title":"THREE"}],["13",{"id":"13",
 "state":false,
-"title":"untitled-13"}],["17",{"id":"17",
-"state":false,
-"title":"untitled-17"}],["23",{"id":"23",
+"title":"Sound"}],["23",{"id":"23",
 "state":false,
 "title":"Radar"}],["24",{"id":"24",
 "state":false,
@@ -86,21 +88,24 @@
 "state":false,
 "title":"States"}],["160",{"id":"160",
 "state":false,
-"title":"untitled-160"}],["196",{"id":"196",
+"title":"Control"}],["196",{"id":"196",
 "state":false,
 "title":"Multiplayer"}],["197",{"id":"197",
 "state":false,
-"title":"Ships"}],["312",{"id":"312",
+"title":"Ships"}],["446",{"id":"446",
 "state":false,
-"title":"untitled-312"}]]}},
+"title":"untitled-446"}],["447",{"id":"447",
+"state":false,
+"title":"untitled-447"}],["474",{"id":"474",
+"state":false,
+"title":"untitled-474"}]]}},
 "version":3,
 "windowEnabled":{"map":{"__map":true,
 "values":[["1",{"enabled":true,
 "id":"1"}],["2",{"enabled":true,
 "id":"2"}],["7",{"enabled":true,
 "id":"7"}],["13",{"enabled":true,
-"id":"13"}],["17",{"enabled":true,
-"id":"17"}],["23",{"enabled":true,
+"id":"13"}],["23",{"enabled":true,
 "id":"23"}],["24",{"enabled":true,
 "id":"24"}],["25",{"enabled":false,
 "id":"25"}],["31",{"enabled":true,
@@ -109,13 +114,15 @@
 "id":"42"}],["160",{"enabled":true,
 "id":"160"}],["196",{"enabled":true,
 "id":"196"}],["197",{"enabled":true,
-"id":"197"}],["312",{"enabled":true,
-"id":"312"}]]}},
+"id":"197"}],["446",{"enabled":true,
+"id":"446"}],["447",{"enabled":true,
+"id":"447"}],["474",{"enabled":true,
+"id":"474"}]]}},
 "windowTypes":{"map":{"__map":true,
-"values":[["1","code"],["2","code"],["7","code"],["13","code"],["17","code"],["23","code"],["24","code"],["25","code"],["31","code"],["34","code"],["42","code"],["160","code"],["196","code"],["197","code"],["312","runner"]]}},
-"windows":["1","2","7","13","17","23","24","25","31","34","42","160","196","197","312"],
+"values":[["1","code"],["2","code"],["7","code"],["13","code"],["23","code"],["24","code"],["25","code"],["31","code"],["34","code"],["42","code"],["160","code"],["196","code"],["197","code"],["446","code"],["447","code"],["474","code"]]}},
+"windows":["1","2","7","13","23","24","25","31","34","42","160","196","197","446","447","474"],
 "zIndex":{"map":{"__map":true,
-"values":[["1",110],["2",111],["7",106],["13",105],["17",113],["23",108],["24",107],["25",114],["31",102],["34",104],["42",115],["160",100],["196",116],["197",103],["312",117]]}}}
+"values":[["1",110],["2",111],["7",105],["13",100],["23",104],["24",116],["25",107],["31",102],["34",103],["42",106],["160",114],["196",115],["197",108],["446",117],["447",118],["474",119]]}}}
 {__codeMap: true, value: [[`1`, `const gameWidth = 800;
 const gameHeight = 450;
 const halfWidth = gameWidth/2;
@@ -228,8 +235,8 @@ const explosionPSColorEnd = new THREE.Color("rgb(200,40,0)");
 const explosionPSScaleStart = 2;
 const explosionPSScaleEnd = 0.8;
 
-const RADAR_W = 200;
-const RADAR_H = Math.round(RADAR_W * gameHeight / gameWidth); // ~113
+const radarWidth = 200;
+const radarHeight = Math.round(radarWidth * gameHeight / gameWidth); // ~113
 
 const constants = {
  gameWidth, gameHeight, halfWidth, halfHeight, lineWidth,
@@ -266,13 +273,7 @@ const constants = {
 
  multiplierFontSize, multiplierFontColor,
 
- particleEmitPointOffset,
-
- coneMaxParticles, conePSPerSecondMin, conePSPerSecondMax, conePSLifetimeMin, conePSLifetimeMax, conePSDragCoefMin, conePSDragCoefMax, conePSStartingWidth, conePSAngle, conePSSize, conePSMinVelocityMagnitude, conePSMaxVelocityMagnitude, conePSStartOpacity, conePSEndOpacity, conePSStartColor, conePSEndColor, conePSStartScale, conePSEndScale,
-
- explosionPSParticlesMax, explosionPSLifetimeMin, explosionPSLifetimeMax, explosionPSDragCoefMin, explosionPSDragCoefMax, explosionPSSize, explosionPSMinVelocityMagnitude, explosionPSMaxVelocityMagnitude, explosionPSOpacityStart, explosionPSOpacityEnd, explosionPSColorStart, explosionPSColorEnd, explosionPSScaleStart, explosionPSScaleEnd,
-
- RADAR_W, RADAR_H,
+ radarWidth, radarHeight,
 }
 `],
 [`2`, `const renkon = (() => {
@@ -363,7 +364,23 @@ canvas {
   return {scene, renderer, camera};
 })(THREE);
 
-const {borders} = ((THREE, scene) => {
+function newLander(id) {
+  const {mainScale, smallScale} = constants;
+  const geometry = new THREE.PlaneGeometry(constants.landerScale, constants.landerScale);
+  const texture = new THREE.TextureLoader().load('textures/lander.png');
+  const material = new THREE.MeshBasicMaterial({map: texture});
+  material.transparent = true;
+  const lander = new THREE.Mesh(geometry, material);
+  lander.name = id;
+  scene.add(lander);
+  return lander;
+}
+
+const landers = Behaviors.select(
+  {map: new Map([...shipStates.map.keys()].map((id) => ([id, newLander(id)])))},
+);
+
+const borders = ((THREE, scene) => {
   // createBorders
   let borders = new THREE.Group();
   scene.add(borders);
@@ -388,26 +405,8 @@ const {borders} = ((THREE, scene) => {
   rightBorder.position.x = verticalOffset;
   topBorder.position.y = horizontalOffset;
   botBorder.position.y = -horizontalOffset;
-  return {borders};
+  return borders;
 })(THREE, scene);
-
-const {lineSegmentsModel, heightDifferences} = ((points) => {
-  const {halfWidth, halfHeight, lineWidth} = constants;
-  const lineSegments = [];
-  const heightDifferences = [];
-  function placeTerrainSegment(leftPoint, rightPoint, lineSegments) {
-    let leftVector = {x: leftPoint[0] - halfWidth, y: leftPoint[1] - halfHeight};
-    let rightVector = {x: rightPoint[0] - halfWidth, y: rightPoint[1] - halfHeight};
-  
-    lineSegments.push([leftVector, rightVector]);
-  }
-
-  for(let i=0; i<points.length-1; i++) {
-    placeTerrainSegment(points[i], points[i+1], lineSegments);
-    heightDifferences.push(Math.abs(points[i][1]-points[i+1][1]));
-  }
-  return {lineSegmentsModel: lineSegments, heightDifferences};
-})(points);
 
 const {lineSegments} = ((scene, points) => {
   const terrainMeshGroup = new THREE.Group();
@@ -522,7 +521,8 @@ const render = ((scene, renderer, gameState, hudState, shipStates, landers, cont
   const lander = landers.map.get(viewId);
   const myCollisionState = collisionState.map.get(viewId);
 
-  const {altitude} = myCollisionState;
+  const {altitude, crashInfo} = myCollisionState;
+  const crashed = crashInfo !== "";
   const {isZoomed, zoomChanged} = renderState;
   const z = cameraPositionDefault[2];
   if (isZoomed) {
@@ -560,8 +560,6 @@ const renderHud = (renderer, gameState, hudState, shipState, collisionState) => 
   fillLeftInfoPanel(gameState, hudState, shipState, collisionState);
   fillRightInfoPanel(gameState, hudState, shipState, collisionState);
   fillMainPanel(gameState, hudState, shipState, collisionState);
-
-  drawMultipliers(gameState, hudState);
 
   hudTexture.needsUpdate = true;
   renderer.render(sceneHud, cameraHud);
@@ -632,81 +630,32 @@ function generateTrajectoryMesh(trajectory) {
   return lineMeshes;
 }
 
-const randomSpawn = () => {
-  let randomPositionX;
-  let randomPositionY;
-  let randomRotation;
-  const {
-    halfWidth, halfHeight, horizontalSpawnOffset,
-    middleSpawnOffset, verticalMiddleSpawnOffset,
-    velocityXSpawnMax, velocityXSpawnMin} = constants;
-  let minX = -halfWidth + horizontalSpawnOffset;
-  let maxX = halfWidth - horizontalSpawnOffset;
-
-  if(Math.random() > 0.5) {
-    minX = -halfWidth + horizontalSpawnOffset;
-    maxX = -middleSpawnOffset;
-  } else {
-    minX = middleSpawnOffset;
-    maxX = halfWidth - horizontalSpawnOffset;
-  }
-
-  randomPositionX = Math.random() * (maxX - minX) + minX;
-
-  const minY = verticalMiddleSpawnOffset;
-  const maxY = halfHeight - verticalTopSpawnOffset;
-
-  randomPositionY = Math.random() * (maxY - minY) + minY;
-  randomRotation = (Math.random() - 0.5) * Math.PI; 
-
-  let initialVelocity = Math.random() * (velocityXSpawnMax - velocityXSpawnMin) + velocityXSpawnMin;
-  if(randomPositionX > 0) {
-    initialVelocity = -initialVelocity;
-  }
-  return {initialVelocity, randomPositionX, randomPositionY, randomRotation};
-}
-
-const updateLanders = ((landers, shipStates) => {
+const updateLanders = ((landers, shipStates, collisionState) => {
   for (const [k, shipState] of shipStates.map) {
-    const lander = landers.map.get(viewId);
+    const visible = collisionState.map.get(k).crashInfo === "";
+    const lander = landers.map.get(k);
+    lander.visible = visible;
     lander.position.x = shipState.x;
     lander.position.y = shipState.y;
     lander.rotation.z = shipState.r;
   }
-})(landers, shipStates);`],
-[`13`, `const isAlerted = Behaviors.select(
-  false,
-  shipStates, (prev, shipStates) => {
-    const currentFuel = shipStates.map.get(viewId).currentFuel;
-    if (!prev && currentFuel < fuelAlertThreshold) {
-      fuelAlert();
-      return true;
-    }
-    if (prev && currentFuel > fuelAlertThreshold) {
-      return false;
-    }
-    return prev;
-  }
-);
+})(landers, shipStates, collisionState);`],
+[`13`, `const crashSound = new sound("crash");
+const rocketSound = new sound("rocket");
+const lowFuelSound = new sound("alarm");
+const commSound = new sound("morse");
+rocketSound.loop();
 
-const fuelAlert = ((gameState, shipStates, timer) => {
-  if (gameState.isGameOver || shipStates.map.get(viewId).isAlerted) {
-    // lowFuelSound.play();
-  }
-})(gameState, shipStates, timer);
-/*
-const crashSound = new sound("audio/crash.mp3");
-const rocketSound = new sound("audio/rocket.mp3");
-const lowFuelSound = new sound("audio/alarm.mp3");
-const commSound = new sound("audio/morse.mp3");
-*/
-class sound{
-  constructor(src) {
+class sound {
+  constructor(shortName) {
+    const src = \`audio/\${shortName}.mp3\`;
     this.sound = document.createElement("audio");
     this.sound.src = src;
+    this.sound.id = shortName;
     this.sound.setAttribute("preload", "auto");
     this.sound.setAttribute("controls", "none");
     this.sound.style.display = "none";
+    document.body.querySelector(\`#\${this.sound.id}\`)?.remove();
     document.body.appendChild(this.sound);
   }
 
@@ -719,7 +668,7 @@ class sound{
   }
 
   loop() {
-    this.sound.addEventListener('timeupdate', function(){
+    this.sound.addEventListener('timeupdate', () => {
       let buffer = 0.42;
       if(this.currentTime > this.sound.duration - buffer){
         this.currentTime = 0;
@@ -728,43 +677,24 @@ class sound{
     });
   }
 }
-
-const hasFuel = Behaviors.select(
-  true,
-  shipStates, (prev, shipStates) => {
-    if(shipStates.map.get(viewId).currentFuel <  0.0001) {
-      return false;
-    }
-    return prev;
-  }
-)`],
-[`17`, `
-const crashSound = {play: () => {}, stop: () => {}};
-const rocketSound = {play: () => {}, stop: () => {}};
-const lowFuelSound = {play: () => {}, stop: () => {}};
-const commSound = {play: () => {}, stop: () => {}};
-
 `],
 [`23`, `const {radarCanvas, radarCtx} = (() => {
   // initRadar;
   const radarCanvas = document.getElementById('radar');
-  radarCanvas.width  = constants.RADAR_W;
-  radarCanvas.height = constants.RADAR_H;
+  radarCanvas.width  = constants.radarWidth;
+  radarCanvas.height = constants.radarHeight;
   const radarCtx = radarCanvas.getContext('2d');
   return {radarCanvas, radarCtx};
 })();
 
 const renderRadar = (radarCtx, radarCanvas, shipStates, controlStates, collisionState, visibleHalfW) => {
-  const shipState = shipStates.map.get(viewId);
   const controlState = controlStates.map.get(viewId);
-  const {currentAcceleration} = shipState;
-  const accelerating = controlState ? controlState.accelerating : false;
   const isZoomed = collisionState.isZoomed;
   // renderRadar
-  const {RADAR_W, RADAR_H, halfWidth, halfHeight, gameWidth, gameHeight, zoom} = constants;
+  const {radarWidth, radarHeight, halfWidth, halfHeight, gameWidth, gameHeight, zoom} = constants;
   const ctx = radarCtx;
-  const W = RADAR_W;
-  const H = RADAR_H;
+  const W = radarWidth;
+  const H = radarHeight;
 
   ctx.fillStyle = '#001500';
   ctx.fillRect(0, 0, W, H);
@@ -802,16 +732,37 @@ const renderRadar = (radarCtx, radarCanvas, shipStates, controlStates, collision
     );
   }
 
-  // Lander dot — yellow when thrusting, cyan otherwise
-  if (shipState.visible) {
-    ctx.fillStyle = accelerating ? '#ffee00' : '#00ffcc';
-    ctx.beginPath();
-    ctx.arc(toRX(shipState.x), toRY(shipState.y), 2.5, 0, Math.PI * 2);
-    ctx.fill();
+  for (const [shipId, shipState] of shipStates.map) {
+    const {currentAcceleration} = shipState;
+    const accelerating = controlState ? controlState.accelerating : false;
+
+    // Lander dot — yellow when thrusting, cyan otherwise
+    if (shipState.visible) {
+      let fill;
+      if (shipId === viewId) {
+        fill = accelerating ? '#ffee00' : '#00ffcc';
+      } else {
+        fill = '#cccccc';
+      }
+      ctx.fillStyle = fill;
+      ctx.beginPath();
+      ctx.arc(toRX(shipState.x), toRY(shipState.y), 2.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
   }
   return radarCanvas;
 };
-`],
+
+const playRocketSound = ((collisionState, controlStates) => {
+  const col = collisionState.map.get(viewId);
+  const control = controlStates.map.get(viewId);
+
+  if (col && col.crashInfo === "" && control && control.accelerating) {
+    rocketSound.play();
+  } else {
+    rocketSound.stop();
+  }
+})(collisionState, controlStates);`],
 [`24`, `const points = [
     [0,28],
     [10,15],
@@ -968,17 +919,23 @@ function resetControls() {
   const hudPlane = new THREE.Mesh(planeGeometry, hudMaterial);
   sceneHud.add(hudPlane);
   return {sceneHud, hudCanvas, hudContext, hudTexture, hudWidth, hudHeight, cameraHud}
-})(THREE, visibleHalfW)
+})(THREE, visibleHalfW);
 
 const hudState = Behaviors.select(
   {hudContext, hudCanvas, hudContext, hudTexture, hudWidth, hudHeight, cameraHud, sceneHud},
-  resize, (prev, resize) => prev
-);
+  resize, (prev, _resize) => {
+    const hudWidth = window.innerWidth;
+    const hudHeight = window.innerHeight;
+    prev.hudCanvas.width = hudWidth;
+    prev.hudCanvas.height = hudHeight;
+    return {...prev, hudWidth, hudHeight};
+  });
 
 const localShipState = shipStates.map.get(viewId);
-const fuelAlertText = localShipState?.isAlerted ? (localShipState?.hasFuel ? "LOW ON FUEL" : "OUT OF FUEL") : "";
+const fuelAlertText = "";
 
 function fillLeftInfoPanel(gameState, hudState, shipState, collisionState) {
+  /*
   // const {currentTime, currentScore} = gameState;
   const currentTime = "100";
   const currentScore = "200";
@@ -1008,12 +965,12 @@ function fillLeftInfoPanel(gameState, hudState, shipState, collisionState) {
       hudWidth*infoPanelRelativeOffsetX, 
       hudHeight*(infoPanelRelativeOffsetY+3*infoPanelRelativeOffsetYStep));
   }
+  */
 }
 
 function fillRightInfoPanel(gameState, hudState, shipState, collisionState) {
-  const {currentTime} = gameState;
   const {hudContext, hudWidth, hudHeight} = hudState;
-  const {currentFuel, currentScore, velocityX, velocityY, r} = shipState;
+  const {currentFuel, velocityX, velocityY, r} = shipState;
   const {altitude} = collisionState;
   const {
     infoPanelFontSize, infoPanelTextColor, 
@@ -1039,11 +996,15 @@ function fillRightInfoPanel(gameState, hudState, shipState, collisionState) {
     "ROTATION ANGLE".padEnd(18, " ") + (-r * (180/Math.PI)).toFixed(1).padStart(6, " "), 
     hudWidth*(1-infoPanelRelativeOffsetX), 
     hudHeight*(infoPanelRelativeOffsetY+3*infoPanelRelativeOffsetYStep));
+  hudContext.fillText(
+    "FUEL".padEnd(20, " ") + currentFuel.toFixed(0).padStart(4, "0"), 
+    hudWidth*(1-infoPanelRelativeOffsetX),
+    hudHeight*(infoPanelRelativeOffsetY+4*infoPanelRelativeOffsetYStep));
 }
 
 function fillMainPanel(gameState, hudState, shipState, collisionState) {
-  const {isGameOver, isBetweenRounds, scoreChange} = gameState;
-  const {hasFuel} = shipState;
+  const {state, scoreChange, since, winner, winnerName, survivors} = gameState;
+  const {currentFuel} = shipState;
   const {hudContext, hudWidth, hudHeight} = hudState;
   const {landed, crashInfo, fuelChange} = collisionState;
   const {
@@ -1054,151 +1015,100 @@ function fillMainPanel(gameState, hudState, shipState, collisionState) {
 
   hudContext.textAlign = 'center';
 
-  if(isGameOver) {
+  if(state === "isBetweenRounds") {
     hudContext.font = "Normal "+mainPanelFontSize+"px Courier New";
     hudContext.fillStyle = mainPanelTextColor;
-
+    const whole = Math.ceil(3 - (Renkon.time - since) / 1000);
+    const frac = 3 - (Renkon.time - since) / 1000;
     hudContext.fillText(
-      "PRESS ANY KEY TO PLAY", 
+      "YOU ARE PLAYER: " + players.map.get(viewId).color.toUpperCase(), 
       hudWidth*mainPanelRelativeOffsetX, 
       hudHeight*(mainPanelRelativeOffsetY+0*mainPanelRelativeOffsetYStep));
     hudContext.fillText(
       "ARROW KEYS / ON-SCREEN CONTROLS",
       hudWidth*mainPanelRelativeOffsetX,
       hudHeight*(mainPanelRelativeOffsetY+1*mainPanelRelativeOffsetYStep));
+
+    hudContext.font = "Normal "+(mainPanelFontSize * (1 + frac))+"px Courier New";
+    hudContext.fillStyle = mainPanelTextColor;
+    hudContext.fillText(
+      \`\${whole}\`,
+      hudWidth*mainPanelRelativeOffsetX,
+      hudHeight*(mainPanelRelativeOffsetY+1*mainPanelRelativeOffsetYStep));
+    return;
   }
-  else if(isBetweenRounds) {
+
+  let landingText, scoreText, fuelText, gameOverText;
+  if (state === "showWinner") {
     hudContext.font = "Normal "+statsPanelFontSize+"px Courier New";
     hudContext.fillStyle = statsPanelTextColor;
 
-    let landingText, scoreText, fuelText, gameOverText;
-
     gameOverText = "";
-    if(landed) {
-        landingText = "SUCCESSFULLY LANDED";
-        fuelText = fuelChange.toFixed(0) + " FUEL UNITS GAINED";
-        scoreText = scoreChange + " POINTS GAINED";
+    if (winner === "NOBODY") {
+      landingText = "NO WINNER";
+      scoreText = crashInfo;
+    } else {
+      landingText = "WINNER: PLAYER " + winnerName.toUpperCase();
+      scoreText = "";
     }
-    else {
-        landingText = "LANDER DESTROYED";
-        fuelText = fuelChange.toFixed(0) + " FUEL UNITS LOST";
-        scoreText = crashInfo;
-        if(!hasFuel) {
-            fuelText = "OUT OF FUEL";
-            gameOverText = "GAME OVER";
-        }
-    }
-
-    hudContext.fillText(
-      landingText, 
-      hudWidth*statsPanelRelativeOffsetX, 
-      hudHeight*(statsPanelRelativeOffsetY+0*statsPanelRelativeOffsetYStep));
-    hudContext.fillText(
-      scoreText, 
-      hudWidth*statsPanelRelativeOffsetX, 
-      hudHeight*(statsPanelRelativeOffsetY+1*statsPanelRelativeOffsetYStep));
-    hudContext.fillText(
-      fuelText, 
-      hudWidth*statsPanelRelativeOffsetX, 
-      hudHeight*(statsPanelRelativeOffsetY+2*statsPanelRelativeOffsetYStep));
-    hudContext.fillText(
-      gameOverText, 
-      hudWidth*statsPanelRelativeOffsetX, 
-      hudHeight*(statsPanelRelativeOffsetY+3*statsPanelRelativeOffsetYStep));        
+  } else if (state === "playOn" && survivors && !survivors.has(viewId)) {
+    landingText = "LANDER DESTROYED";
+    scoreText = crashInfo;
+  } else {
+    // console.log("you are still there");
+    return;
   }
+
+  hudContext.fillText(
+    landingText, 
+    hudWidth*statsPanelRelativeOffsetX, 
+    hudHeight*(statsPanelRelativeOffsetY+0*statsPanelRelativeOffsetYStep));
+  hudContext.fillText(
+    scoreText, 
+    hudWidth*statsPanelRelativeOffsetX, 
+    hudHeight*(statsPanelRelativeOffsetY+1*statsPanelRelativeOffsetYStep));
+  hudContext.fillText(
+    gameOverText, 
+    hudWidth*statsPanelRelativeOffsetX, 
+    hudHeight*(statsPanelRelativeOffsetY+3*statsPanelRelativeOffsetYStep));        
 }
-
-function drawMultipliers(gameState, hudState) {
-  return;
-  /*
-  const {isGameOver, isBetweenRounds} = gameState;
-  const {hudContext} = hudState;
-
-  if(isGameOver) return;
-
-  hudContext.textAlign = 'center';
-  hudContext.fillStyle = multiplierFontColor;
-
-  let fontSize = multiplierFontSize;
-  if(isZoomed) fontSize *= zoom;
-  hudContext.font = "Normal "+fontSize+"px Courier New";
-
-  for(let i = 0; i < scoreMultipliers.length; i++) {
-    let mul = scoreMultipliers[i];
-    if(mul < 2) continue;
-
-    let leftVector = lineSegments[i][0];
-    let rightVector = lineSegments[i][1];
-    let pointX, pointY;
-    pointX = (leftVector.x + rightVector.x) / 2;
-    pointY = leftVector.y;
-
-    let hudPoint = worldToHudCoord(pointX, pointY);
-    hudContext.fillText("X"+mul, hudPoint[0], hudPoint[1] + fontSize);
-  }
-  */
-}
-
-function worldToHudCoord(wx, wy, isZoomed) {
-  let hx, hy;
-
-  // Always offset by camera position (camera now pans horizontally even when not zoomed)
-  wx -= camera.position.x;
-  wy -= camera.position.y;
-
-  const {hudWidth, hudHeight} = hudState;
-  const {gameHeight, zoom} = constants;
-
-  if(isZoomed) {
-    wx *= zoom;
-    wy *= zoom;
-  }
-
-  // x: map [-visibleHalfW, +visibleHalfW] → [0, hudWidth]
-  hx = (wx / (visibleHalfW * 2) + 0.5) * hudWidth;
-  // y: full height is always shown, so use gameHeight
-  hy = (1 - (wy / gameHeight + 0.5)) * hudHeight;
-
-  return [hx, hy];
-}`],
+`],
 [`34`, `const timerState = Behaviors.select(
   {now: 0 , delta: 0.01},
-  init, (_prev, _init) => ({now: Renkon.time, delta: 0.0001}),
   timer, (prev, timer) => ({now: Renkon.time, delta: (Renkon.time - prev.now) / 1000.0})
 );
 
 const timer = Events.timer(4);
-
-const init = undefined;
 `],
-[`42`, `const somebodyLanded = Events.receiver({queued: true});
-const somebodyCrashed = Events.receiver({queued: true});
+[`42`, `const somebodyLanded = Events.receiver();
+const somebodyCrashed = Events.receiver();
 const newRound = Events.receiver();
 
 const gameState = Behaviors.select(
-  {isDebugOn: false, state: "isBetweenRounds", since: 0, winner: ""},
-  somebodyLanded, (prev, somebodyLandedArray) => {
-    const sorted = [...somebodyLandedArray].sort((a, b) => b.time - a.time);
-    console.log("somebodyLanded", sorted);
-    return {...prev, state: "showWinner", since: sorted[0].time, winner: sorted[0].color};
+  {isDebugOn: false, state: "isBetweenRounds", since: 0, winner: "", survivors: new Set()},
+  somebodyLanded, (prev, somebodyLanded) => {
+    return {...prev, state: "showWinner", survivors: new Set([somebodyLanded.winner]), since: Renkon.time, winner: somebodyLanded.winner, winnerName: somebodyLanded.winnerName};
   },
-  somebodyCrashed, (prev, somebodyCrashedArray) => {
-    console.log("somebodyCrashed", somebodyCrashedArray);
-    const sorted = [...somebodyCrashedArray].sort((a, b) => b.time - a.time);
-    const survivers = [...players.map].filter(([viewId, col]) => col.crashInfo === "");
-    console.log("somebodyCrashed", survivers);
-    return {...prev, state: "showWinner", since: sorted[0].time};    
+  somebodyCrashed, (prev, somebodyCrashed) => {
+    console.log("somebodyCrashed", somebodyCrashed);
+    const sorted = [...somebodyCrashed.collisionStateMap].sort((a, b) => b.time - a.time);
+    const survivors = somebodyCrashed.survivors;
+    console.log("somebodyCrashed", survivors);
+    if (survivors.size === 0) {
+      return {...prev, state: "showWinner", since: Renkon.time, winner: "NOBODY", survivors};
+    }
+    return {...prev, prevState: "playOn", state: "playOn", survivors};
   },
   timerState, (prev, timerState) => {
     if (prev.state === "isBetweenRounds") {
       if (timerState.now - prev.since > 3000) {
-        return {...prev, state: "playOn", since: timerState.now};
+        return {...prev, prevState: prev.state, state: "playOn", survivors: new Set([...players.map.keys()]), since: timerState.now};
       }
     }
     if (prev.state === "showWinner") {
       if (timerState.now - prev.since > 3000) {
         Events.send(newRound, true);
-        return {state: "isBetweenRounds", since: timerState.now};
+        return {state: "isBetweenRounds", survivors: new Set(), since: timerState.now};
       }
     }
     return prev;
@@ -1227,12 +1137,12 @@ const renderState = Behaviors.select(
 );
 
 function newCollisionState(viewId) {
-  return {viewId, landed: false, crashInfo: "", altitude: 0, fuelChange: 0, time: 0, color: ""}
+  return {viewId, landed: false, crashInfo: "", altitude: 0, fuelChange: 0, time: 0}
 }
 
 // model
 const collisionState = Behaviors.select(
-  {map: new Map(isLocal ? [[viewId, newCollisionState(viewId)]] : [])},
+  {map: new Map([...shipStates.map.keys()].map((id) => ([id, newCollisionState(id)])))},
   newRound, (prev, _newRound) => {
     console.log("newRound collisionState");
     const newMap = new Map([...prev.map].map(([viewId, _v]) => ([viewId, newCollisionState(viewId)])));
@@ -1264,7 +1174,7 @@ const collisionState = Behaviors.select(
         x > halfWidth + lineWidth ||
         y < -halfHeight - lineWidth ||
         y > halfHeight + lineWidth) {
-        prev.map.set(shipId, {...myCollisionState, crashInfo: "OUT OF BOUNDS", altitude: 0, color: shipState.color, time});
+        prev.map.set(shipId, {...myCollisionState, crashInfo: "OUT OF BOUNDS", altitude: 0, time});
         continue;
       }
 
@@ -1348,7 +1258,7 @@ const collisionState = Behaviors.select(
               fuelChange = Math.min(fuelChange, currentFuel);
             }
             if(hasLanded || crashInfo) {
-              prev.map.set(shipId, {landed: hasLanded, crashInfo: crashInfo, fuelChange, altitude: 0, color: shipState.color, time});
+              prev.map.set(shipId, {landed: hasLanded, crashInfo: crashInfo, fuelChange, altitude: 0, time});
               nextShip = true;
               break;
             }
@@ -1370,19 +1280,29 @@ const collisionState = Behaviors.select(
   }
 );
 
-((collisionState) => {
-  for (const [viewId, c] of collisionState.map) {
-    if (c.crashInfo !== "") {
-      console.log("crash", c);
-      Events.send(somebodyCrashed, c);
+const collisionJudge = Behaviors.select(
+  {survivors: new Set()},
+  collisionState, (prev, collisionState) => {
+    for (const [colId, col] of collisionState.map) {
+      if (col.landed) {
+        console.log("landed", col);
+        Events.send(somebodyLanded, {collisionStateMap: collisionState.map, landed: col, winner: colId, winnerName: players.map.get(colId).color});
+        return {survivors: new Set()};
+      }
     }
-    if (c.landed) {
-      console.log("landed", c);
-      Events.send(somebodyLanded, c);
+    const newSurvivors = new Set([...collisionState.map].filter(([id, col]) => col.crashInfo === "").map(pair => pair[0]));
+    if (newSurvivors.size > prev.survivors.size) {
+      return {survivors: newSurvivors}
     }
-  }
-})(collisionState);
+    const diff = prev.survivors.difference(newSurvivors);
+    if (diff.size === 0) {
+      return prev;
+    }
 
+    Events.send(somebodyCrashed, {collisionStateMap: collisionState.map, survivors: newSurvivors, newCrash: diff});
+    return {survivors: newSurvivors};
+  }
+);
 
 const controlStates = Behaviors.collect(
   {map: new Map()},
@@ -1463,7 +1383,7 @@ const viewJoin = Events.receiver({queued: true});
 const colors = ["red", "blue", "green", "yellow"];
 
 const players = Behaviors.select(
-  {map: (isLocal ? new Map([[viewId, {color: colors[0]}]]) : new Map)},
+  {map: (isLocal ? new Map([[viewId, {color: colors[0]}], [viewId+2, {color: colors[1]}]]) : new Map)},
   viewJoin, (prev, joins) => {
     for (const join of joins) {
       prev.map.set(join, {color: colors[prev.map.size % colors.length]});
@@ -1477,30 +1397,30 @@ const players = Behaviors.select(
     return {map: prev.map};
   }
 );
-
-console.log("players", players)`],
+`],
 [`197`, `const newShipState = (viewId, isOngoing) => {
   const obj = {
     x: 0, y: 0, r: 0, visible: true,
     velocityDeltaX: 0, velocityDeltaY: 0,
     currentAcceleration: 0, currentAccelerationRatio: 0,
     currentFuel: 1000,
-    landerForward: new THREE.Vector2(0,1),
-    landerBackDirection: new THREE.Vector2(0,1),
+    landerForward: {x: 0, y: 1},
+    landerBackDirection: {x: 0, y: -1},
     velocityX: 0, velocityY: 0,
-    time: -1, viewId
+    viewId
   };
   if (isOngoing) {
     const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = randomSpawn();
-    return {...obj, x: randomPositionX, y: randomPositionY, r: randomRotation, velocityX: initialVelocity, velocityY: 0, time: Renkon.now};
+    return {...obj, x: randomPositionX, y: randomPositionY, r: randomRotation,
+            velocityX: initialVelocity, velocityY: 0};
   }
   return obj;
 };
 
 const shipStates = Behaviors.select(
-  isLocal ? {map: new Map([[viewId, newShipState(viewId)]]) }: new Map(),
+  {map: new Map([...players.map.keys()].map((id) => ([id, newShipState(id)])))},
   players, (prev, players) => {
-    const prevKeys = [...prev.map.keys()];
+    const prevKeys = prev == undefined ? [] : [...prev.map.keys()];
     const newKeys = [...players.map.keys()];
     const olds = prevKeys.filter((e) => !newKeys.includes(e));
     const news = newKeys.filter((e) => !prevKeys.includes(e));
@@ -1517,101 +1437,106 @@ const shipStates = Behaviors.select(
     )};
   },
   gameState, (prev, gameState) => {
-    if (gameState.state === "playOn") {
-      console.log('play');
-      for (const [viewId, ship] of prev.map) {
+    console.log("gameState");
+    if (gameState.state === "playOn" && gameState.prevState === "isBetweenRounds") {
+      console.log('new game');
+      for (const [shipId, ship] of prev.map) {
         const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = randomSpawn();
-        prev.map.set(viewId, {...ship, x: randomPositionX, y: randomPositionY, r: randomRotation, velocityX: initialVelocity, velocityY: 0, time: Renkon.now})
+        // const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = 
+        // {initialVelocity: 0, randomPositionX: 20, randomPositionY: -73, randomRotation: 0};
+        prev.map.set(shipId, {...ship, x: randomPositionX, y: randomPositionY, r: randomRotation,
+                              velocityX: initialVelocity, velocityY: 0, visible: true})
       };
       return {map: prev.map};
     }
     return prev;
   },
   timerState, (prevShips, timer) => {
-    const prev = prevShips.map.get(viewId);
-    let rotationDelta = 0;
+    if (prevShips.map.size === 0) {return prevShips;}
     if (gameState.state === "showWinner") {return prevShips;}
-    
-    const deltaTime = timer.delta;
-    const time = timer.now;
-    let {x, y, r, landerForward} = prev;
-    const {rotatingRight, rotatingLeft, accelerating} = controlStates.map.get(viewId);
+
     const {
       angularVelocity, thrusterJerk, thrusterAccelerationMax, gravity,
       fuelConsumptionRateMax, fuelConsumptionRateMin,
       accelerationFalloffMultiplier, horizontalDragCoef} = constants;
+
+    const deltaTime = timer.delta;
+    const time = timer.now;
+    for (const [shipId, shipState] of prevShips.map) {
+      if (!gameState.survivors.has(shipId)) {
+        prevShips.map.set(shipId, {...shipState, visible: false});
+        continue;
+      }
+      let rotationDelta = 0;
+      let {x, y, r, landerForward, landerBackDirection} = shipState;
+      const control = controlStates.map.get(shipId);
+      const {rotatingRight, rotatingLeft, accelerating} = control ? 
+        control : {rotatingRight: false, rotatingLeft: false, accelerating: false};
+
+      if(rotatingLeft) rotationDelta += angularVelocity * deltaTime;
+      if(rotatingRight) rotationDelta += -angularVelocity * deltaTime;
+
+      r += rotationDelta;
+      // console.log(r)
+
+      if(r > Math.PI / 2) r = Math.PI / 2;
+      if(r < -Math.PI / 2) r = -Math.PI / 2;
     
-    if(rotatingLeft) rotationDelta += angularVelocity * deltaTime;
-    if(rotatingRight) rotationDelta += -angularVelocity * deltaTime;
+      let velocityDeltaY = 0;
+      let velocityDeltaX = 0;
 
-    r += rotationDelta;
-    // console.log(r)
+      velocityDeltaY += -gravity * deltaTime;
+      let currentAcceleration = shipState.currentAcceleration;
+      let currentAccelerationRatio = shipState.currentAccelerationRatio;
+      let currentFuel = shipState.currentFuel;
+      let velocityX = shipState.velocityX;
+      let velocityY = shipState.velocityY;
 
-    if(r > Math.PI / 2) r = Math.PI / 2;
-    if(r < -Math.PI / 2) r = -Math.PI / 2;
-    
-    let velocityDeltaY = 0;
-    let velocityDeltaX = 0;
+      if(accelerating && currentFuel > 0) {
+        currentAcceleration += thrusterJerk * deltaTime;
+        if(currentAcceleration > thrusterAccelerationMax) currentAcceleration = thrusterAccelerationMax;
 
-    velocityDeltaY += -gravity * deltaTime;
-    let currentAcceleration = prev.currentAcceleration;
-    let currentAccelerationRatio = prev.currentAccelerationRatio;
-    let currentFuel = prev.currentFuel;
-    let velocityX = prev.velocityX;
-    let velocityY = prev.velocityY;
+        currentAccelerationRatio = currentAcceleration / thrusterAccelerationMax;
+        let fuelBurned = currentAccelerationRatio * (fuelConsumptionRateMax - fuelConsumptionRateMin) + fuelConsumptionRateMin;
+        currentFuel -= fuelBurned * deltaTime;
+        if (currentFuel < 0.0001) currentFuel = 0;
+      } else {
+        currentAcceleration -= thrusterJerk * deltaTime * accelerationFalloffMultiplier;
+        if(currentAcceleration < 0) currentAcceleration = 0;
+      }
+      landerForward.x = -Math.sin(r);
+      landerForward.y = Math.cos(r);
+      // const vector2Zero = new THREE.Vector2(0,0);
+      // landerForward.rotateAround(vector2Zero, r);
+      landerBackDirection.x = -landerForward.x;
+      landerBackDirection.y = -landerForward.y;
 
-    if(accelerating && currentFuel > 0) {
-      rocketSound.play();
+      velocityDeltaX += -velocityX * horizontalDragCoef * deltaTime;
 
-      currentAcceleration += thrusterJerk * deltaTime;
-      if(currentAcceleration > thrusterAccelerationMax) currentAcceleration = thrusterAccelerationMax;
+      velocityDeltaX += landerForward.x * currentAcceleration * deltaTime;
+      velocityDeltaY += landerForward.y * currentAcceleration * deltaTime;
 
-      currentAccelerationRatio = currentAcceleration / thrusterAccelerationMax;
-      let fuelBurned = currentAccelerationRatio * (fuelConsumptionRateMax - fuelConsumptionRateMin) + fuelConsumptionRateMin;
-      currentFuel -= fuelBurned * deltaTime;
-      if (currentFuel < 0.0001) currentFuel = 0;
-      // fuelCheck();
-      // fuelAlertCheck();
-     // console.log(currentAcceleration);
-    } else {
-      rocketSound.stop();
+      velocityY += velocityDeltaY;
+      velocityX += velocityDeltaX;
 
-      currentAcceleration -= thrusterJerk * deltaTime * accelerationFalloffMultiplier;
-      if(currentAcceleration < 0) currentAcceleration = 0;
-    }
-
-    landerForward.x = 0;
-    landerForward.y = 1;
-    const vector2Zero = new THREE.Vector2(0,0);
-    landerForward.rotateAround(vector2Zero, r);
-    prev.landerBackDirection.x = -landerForward.x;
-    prev.landerBackDirection.y = -landerForward.y;
-
-    velocityDeltaX += -velocityX * horizontalDragCoef * deltaTime;
-
-    velocityDeltaX += landerForward.x * currentAcceleration * deltaTime;
-    velocityDeltaY += landerForward.y * currentAcceleration * deltaTime;
-
-    velocityY += velocityDeltaY;
-    velocityX += velocityDeltaX;
-
-    // console.log(velocityX, velocityY);
+      // console.log(velocityX, velocityY);
   
-    let positionDeltaY = velocityY * deltaTime
-    // lander.position.y += positionDeltaY;
-    y += positionDeltaY;
+      let positionDeltaY = velocityY * deltaTime
+      // lander.position.y += positionDeltaY;
+      y += positionDeltaY;
 
-    let positionDeltaX = velocityX * deltaTime;
-    // lander.position.x += positionDeltaX;
-    x += positionDeltaX;
-    prevShips.map.set(viewId, {
-      x, y, r, visible: prev.visible,
-      velocityDeltaX, velocityDeltaY,
-      currentAcceleration, currentFuel, currentAccelerationRatio,
-      landerForward, landerBackDirection: prev.landerBackDirection,
-      velocityX, velocityY, time
-    });
-    return {map: prevShips.map}
+      let positionDeltaX = velocityX * deltaTime;
+      // lander.position.x += positionDeltaX;
+      x += positionDeltaX;
+      prevShips.map.set(shipId, {
+        x, y, r, visible: shipState.visible,
+        velocityDeltaX, velocityDeltaY,
+        currentAcceleration, currentFuel, currentAccelerationRatio,
+        landerForward, landerBackDirection: shipState.landerBackDirection,
+        velocityX, velocityY, viewId: shipId
+      });
+    }
+    return {map: prevShips.map};
   }
 );
 
@@ -1636,33 +1561,511 @@ const colliderPositions = (() => {
   }
 ]
 })();
-console.log("col", colliderPositions)
 
-function newLander() {
-  const {mainScale, smallScale} = constants;
-  const geometry = new THREE.PlaneGeometry(constants.landerScale, constants.landerScale);
-  const texture = new THREE.TextureLoader().load('textures/lander.png');
-  const material = new THREE.MeshBasicMaterial({map: texture});
-  material.transparent = true;
-  const lander = new THREE.Mesh(geometry, material);
-  scene.add(lander);
+const {lineSegmentsModel, heightDifferences} = ((points) => {
+  const {halfWidth, halfHeight, lineWidth} = constants;
+  const lineSegments = [];
+  const heightDifferences = [];
+  function placeTerrainSegment(leftPoint, rightPoint, lineSegments) {
+    let leftVector = {x: leftPoint[0] - halfWidth, y: leftPoint[1] - halfHeight};
+    let rightVector = {x: rightPoint[0] - halfWidth, y: rightPoint[1] - halfHeight};
+  
+    lineSegments.push([leftVector, rightVector]);
+  }
 
-  return lander;
+  for(let i=0; i<points.length-1; i++) {
+    placeTerrainSegment(points[i], points[i+1], lineSegments);
+    heightDifferences.push(Math.abs(points[i][1]-points[i+1][1]));
+  }
+  return {lineSegmentsModel: lineSegments, heightDifferences};
+})(points);
+
+const randomSpawn = () => {
+  let randomPositionX;
+  let randomPositionY;
+  let randomRotation;
+  const {
+    halfWidth, halfHeight, horizontalSpawnOffset,
+    middleSpawnOffset, verticalMiddleSpawnOffset,
+    velocityXSpawnMax, velocityXSpawnMin} = constants;
+  let minX = -halfWidth + horizontalSpawnOffset;
+  let maxX = halfWidth - horizontalSpawnOffset;
+
+  if(Math.random() > 0.5) {
+    minX = -halfWidth + horizontalSpawnOffset;
+    maxX = -middleSpawnOffset;
+  } else {
+    minX = middleSpawnOffset;
+    maxX = halfWidth - horizontalSpawnOffset;
+  }
+
+  randomPositionX = Math.random() * (maxX - minX) + minX;
+
+  const minY = verticalMiddleSpawnOffset;
+  const maxY = halfHeight - verticalTopSpawnOffset;
+
+  randomPositionY = Math.random() * (maxY - minY) + minY;
+  randomRotation = (Math.random() - 0.5) * Math.PI; 
+
+  let initialVelocity = Math.random() * (velocityXSpawnMax - velocityXSpawnMin) + velocityXSpawnMin;
+  if(randomPositionX > 0) {
+    initialVelocity = -initialVelocity;
+  }
+  return {initialVelocity, randomPositionX, randomPositionY, randomRotation};
+}`],
+[`446`, `class Particle {
+  constructor(scale) {
+    this.isAlive = false;
+    this.startLifeTime = 0;
+    this.lifeTime = 0;
+    this.velocity = new THREE.Vector3();
+    this.dragCoef = 0;
+        
+    const geometry = new THREE.PlaneGeometry(scale,scale);
+    const material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+    material.transparent = true;
+    this.mesh = new THREE.Mesh(geometry, material);
+    this.mesh.visible = false;
+  }
+
+  setTime(time) {
+      this.lifeTime = time;
+      this.startLifeTime = time;
+  }
 }
 
-const landers = Behaviors.select(
-  isLocal ? {map: new Map([[viewId, newLander()]])}: new Map(),
-  viewJoin, (prev, joins) => {
-    for (const join of joins) {
-      const lander = newLander();
-      prev.map.set(viewId, lander);
+class ParticleSystemCone{
+  constructor(
+    scene, target, maxParticles,
+    frequencyMin, frequencyMax, lifeTimeMin, lifeTimeMax,
+    gravity, dragCoefMin, dragCoefMax, direction, initialWidth, angle, particleSize,
+    velocityMinMagnitude, velocityMaxMagnitude,
+    startOpacity, endOpacity, startColor, endColor, startScale, endScale, constants) {
+    this.maxParticles = maxParticles;
+    this.frequencyMin = frequencyMin;
+    this.frequencyMax = frequencyMax;
+    this.lifeTimeMin = lifeTimeMin;
+    this.lifeTimeMax = lifeTimeMax;
+    this.gravity = gravity;
+    this.dragCoefMin = dragCoefMin;
+    this.dragCoefMax = dragCoefMax;
+    this.direction = direction;
+    this.initialWidth = initialWidth;
+    this.angle = angle;
+    this.tan = Math.tan(angle);
+
+    this.velocityMinMagnitude = velocityMinMagnitude;
+    this.velocityMaxMagnitude = velocityMaxMagnitude;
+    this.startOpacity = startOpacity;
+    this.endOpacity = endOpacity;
+    this.startColor = startColor;
+    this.endColor = endColor;
+    this.startScale = startScale;
+    this.endScale = endScale;
+
+    this.constants = constants;
+        
+    this.emitting = false;
+    this.frequencyOverflow = 0; 
+    this.initialVelocityX = 0;
+    this.initialVelocityY = 0;
+
+    this.vector2Zero = new THREE.Vector2(0,0);
+
+    this.target = target;
+
+    this.particles = [];
+    this.group = new THREE.Group();
+    scene.add(this.group);
+    this.group.position.z = -5;
+
+    let i;
+    for(i = 0; i < maxParticles; i++) {
+      this.particles[i] = new Particle(particleSize);
+      this.group.add(this.particles[i].mesh);
     }
-    return {map: prev.map};
-  },
-  viewExit, (prev, exits) => {
-    for (const exit of exits) {
-      prev.delete(exit);
+  }
+
+  update(deltaTime, currentAcceleration) {
+    this.thrustFactor = currentAcceleration / this.constants.thrusterAccelerationMax;
+    this.updateValues(deltaTime);
+    this.emit(deltaTime);
+  }
+
+  updateValues(deltaTime) {
+    let i;
+    for(i = 0; i < this.maxParticles; i++) {
+      let particle = this.particles[i];
+      if(!particle.isAlive) continue;
+
+      particle.lifeTime -= deltaTime;
+      if(particle.lifeTime <= 0) {
+        particle.isAlive = false;
+        particle.mesh.visible = false;
+        continue;
+      }
+
+      let velocityDeltaX, velocityDeltaY, positionDeltaX, positionDeltaY;
+      velocityDeltaX = -particle.velocity.x*particle.dragCoef * deltaTime;
+      velocityDeltaY = -(this.gravity+particle.velocity.y*particle.dragCoef) * deltaTime;
+      particle.velocity.x += velocityDeltaX;
+      particle.velocity.y += velocityDeltaY;
+      positionDeltaX = particle.velocity.x * deltaTime;
+      positionDeltaY = particle.velocity.y * deltaTime;
+      particle.mesh.position.x += positionDeltaX;
+      particle.mesh.position.y += positionDeltaY;
+
+      const t = particle.lifeTime / particle.startLifeTime;
+
+      const newScale = (1-t)*this.endScale + t * this.startScale;
+      particle.mesh.scale.set(newScale, newScale);
+
+      particle.mesh.material.opacity = (1-t) * this.endOpacity + t * this.startOpacity;
+      lerpColor(this.startColor, this.endColor, particle.mesh.material.color, t);
     }
-    return {map: prev.map};
-  },
-)`]]}
+  }
+
+  emit(deltaTime) {
+    if(this.emitting) {
+      let targetParticles = deltaTime * (this.frequencyMin + Math.random() * (this.frequencyMax - this.frequencyMin));
+      let newParticleCount = targetParticles + this.frequencyOverflow;
+      this.frequencyOverflow = newParticleCount % 1;
+      if(newParticleCount < 1) {
+        return;
+      }
+      let i;
+      for(i = 0; i < this.maxParticles; i++) {
+        let particle = this.particles[i];
+        if(!particle.isAlive) {
+          this.resetParticle(particle);
+          newParticleCount--;
+          if(newParticleCount < 1) {
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  resetParticle(particle) {
+    particle.isAlive = true;
+    particle.setTime(this.lifeTimeMin + Math.random() * (this.lifeTimeMax - this.lifeTimeMin));
+    particle.mesh.visible = true;
+    this.target.getWorldPosition(particle.mesh.position);
+    const offset = this.generateRandomOffset();
+    particle.mesh.position.x += offset.x;
+    particle.mesh.position.y += offset.y;
+    const velocity = this.generateRandomVelocity();
+    particle.velocity.set(this.initialVelocityX+velocity.x, this.initialVelocityY+velocity.y, 0);
+    particle.dragCoef = Math.random() * (this.dragCoefMax - this.dragCoefMin) + this.dragCoefMin;
+    particle.mesh.scale.set(this.startScale, this.startScale);
+    particle.mesh.material.opacity = this.startOpacity;
+    particle.mesh.material.color.setHex(this.startColor.getHex());
+  }
+
+  generateRandomOffset() {
+    let offset = new THREE.Vector2(this.direction.x, this.direction.y);
+    offset.rotateAround(this.vector2Zero, Math.PI/2);
+    offset.normalize();
+    offset.multiplyScalar((Math.random()-0.5)*2*this.initialWidth);
+    return offset;
+  }
+
+  generateRandomVelocity() {
+    let offset = new THREE.Vector2(this.direction.x, this.direction.y);
+    offset.rotateAround(this.vector2Zero, Math.PI/2);
+    offset.normalize();
+    offset.multiplyScalar((Math.random()-0.5)*2*this.tan);
+
+    offset.x += this.direction.x;
+    offset.y += this.direction.y;
+    offset.normalize();
+    offset.multiplyScalar((this.thrustFactor/2 + 0.5) * (Math.random() * (this.velocityMaxMagnitude - this.velocityMinMagnitude) + this.velocityMinMagnitude));
+    return offset;
+  }
+}
+
+class ParticleSystemExplosion{
+  constructor(
+    scene, target, maxParticles,
+    lifeTimeMin, lifeTimeMax, gravity, dragCoefMin, dragCoefMax, particleSize, 
+    velocityMinMagnitude, velocityMaxMagnitude,
+    startOpacity, endOpacity, startColor, endColor, startScale, endScale, constants) {
+    this.maxParticles = maxParticles;
+    this.lifeTimeMin = lifeTimeMin;
+    this.lifeTimeMax = lifeTimeMax;
+    this.gravity = gravity;
+    this.dragCoefMin = dragCoefMin;
+    this.dragCoefMax = dragCoefMax;
+
+    this.velocityMinMagnitude = velocityMinMagnitude;
+    this.velocityMaxMagnitude = velocityMaxMagnitude;
+    this.startOpacity = startOpacity;
+    this.endOpacity = endOpacity;
+    this.startColor = startColor;
+    this.endColor = endColor;
+    this.startScale = startScale;
+    this.endScale = endScale;
+
+    this.constants = constants;
+    
+    this.initialVelocityX = 0;
+    this.initialVelocityY = 0;
+
+    this.vector2Zero = new THREE.Vector2(0,0);
+    this.target = target;
+
+    this.particles = [];
+    this.group = new THREE.Group();
+    scene.add(this.group);
+    this.group.position.z = -5;
+
+    this.emitting = false;
+
+    for(let i = 0; i < maxParticles; i++) {
+      this.particles[i] = new Particle(particleSize);
+      this.group.add(this.particles[i].mesh);
+    }
+  }
+
+  update(deltaTime) {
+    if (!this.emitting) {return;}
+    this.updateValues(deltaTime);
+  }
+
+  updateValues(deltaTime) {
+    for(let i = 0; i < this.maxParticles; i++) {
+      let particle = this.particles[i];
+      if(!particle.isAlive) continue;
+
+      particle.lifeTime -= deltaTime;
+      if(particle.lifeTime <= 0) {
+          particle.isAlive = false;
+          particle.mesh.visible = false;
+          continue;
+      }
+
+      let velocityDeltaX, velocityDeltaY, positionDeltaX, positionDeltaY;
+      velocityDeltaX = -particle.velocity.x*particle.dragCoef * deltaTime;
+      velocityDeltaY = -(this.gravity+particle.velocity.y*particle.dragCoef) * deltaTime;
+      particle.velocity.x += velocityDeltaX;
+      particle.velocity.y += velocityDeltaY;
+      positionDeltaX = particle.velocity.x * deltaTime;
+      positionDeltaY = particle.velocity.y * deltaTime;
+      particle.mesh.position.x += positionDeltaX;
+      particle.mesh.position.y += positionDeltaY;
+
+      const t = particle.lifeTime / particle.startLifeTime;
+
+      const newScale = (1-t)*this.endScale + t * this.startScale;
+      particle.mesh.scale.set(newScale, newScale);
+
+      particle.mesh.material.opacity = (1-t) * this.endOpacity + t * this.startOpacity;
+      lerpColor(this.startColor, this.endColor, particle.mesh.material.color, t);
+    }
+  }
+
+  emit() {
+    if (this.emitting) {return;}
+    this.emitting = true;
+    for(let i = 0; i < this.maxParticles; i++) {
+      let particle = this.particles[i];
+      this.resetParticle(particle);
+    }
+  }
+
+  unemit() {
+    this.emitting = false;
+  }
+
+  resetParticle(particle) {
+    particle.isAlive = true;
+    particle.setTime(this.lifeTimeMin + Math.random() * (this.lifeTimeMax - this.lifeTimeMin));
+    particle.mesh.visible = true;
+    particle.mesh.position.set(this.target.position.x, this.target.position.y, -5); 
+    const velocity = this.generateRandomVelocity();
+    particle.velocity.set(this.initialVelocityX+velocity.x, this.initialVelocityY+velocity.y, 0);
+    particle.dragCoef = Math.random() * (this.dragCoefMax - this.dragCoefMin) + this.dragCoefMin;
+    particle.mesh.scale.set(this.startScale, this.startScale);
+    particle.mesh.material.opacity = this.startOpacity;
+    particle.mesh.material.color.setHex(this.startColor.getHex());
+  }
+
+  generateRandomVelocity() {
+    let offset = new THREE.Vector2(0, 1);
+    offset.rotateAround(this.vector2Zero, Math.random() * 2*Math.PI);
+    offset.normalize();
+    offset.multiplyScalar(Math.random() * (this.velocityMaxMagnitude - this.velocityMinMagnitude) + this.velocityMinMagnitude);
+    return offset;
+  }
+}
+
+function lerpColor(startColor, endColor, outColor, t) {
+  outColor.r = (1-t)*endColor.r + t*startColor.r;
+  outColor.g = (1-t)*endColor.g + t*startColor.g;
+  outColor.b = (1-t)*endColor.b + t*startColor.b;
+}`],
+[`447`, `const {thrusterPSs, explosionPSs} = ((landers, scene) => {
+  // initParticles
+  const {
+    particleEmitPointOffset, coneMaxParticles, 
+    conePSPerSecondMin, 
+    conePSPerSecondMax, 
+    conePSLifetimeMin, 
+    conePSLifetimeMax,
+    conePSDragCoefMin, 
+    conePSDragCoefMax,
+    conePSStartingWidth, 
+    conePSAngle, 
+    conePSSize,
+    conePSMinVelocityMagnitude,
+    conePSMaxVelocityMagnitude,
+    conePSStartOpacity,
+    conePSEndOpacity,
+    conePSStartColor,
+    conePSEndColor,
+    conePSStartScale,
+    conePSEndScale,
+    explosionPSParticlesMax,
+    explosionPSLifetimeMin,
+    explosionPSLifetimeMax,
+    explosionPSDragCoefMin,
+    explosionPSDragCoefMax,
+    explosionPSSize,
+    explosionPSMinVelocityMagnitude,
+    explosionPSMaxVelocityMagnitude,
+    explosionPSOpacityStart,
+    explosionPSOpacityEnd,
+    explosionPSColorStart,
+    explosionPSColorEnd,
+    explosionPSScaleStart,
+    explosionPSScaleEnd,
+  } = particleConstants;
+  const {gravity} = constants;
+  let thrusterPSs = new Map();
+  let explosionPSs = new Map();
+  for (const [landerId, lander] of landers.map) {
+    if (lander.children.find((c) => c.name === "thrusterParticleEmitPoint")) {
+      continue;
+    }
+    const thrusterParticleEmitPoint = new THREE.Group();
+    thrusterParticleEmitPoint.name = "thrusterParticleEmitPoint";
+    lander.add(thrusterParticleEmitPoint);
+    thrusterParticleEmitPoint.position.copy(particleEmitPointOffset);
+    const thrusterPS = new ParticleSystemCone(
+      scene, 
+      thrusterParticleEmitPoint,
+      coneMaxParticles, 
+      conePSPerSecondMin, 
+      conePSPerSecondMax, 
+      conePSLifetimeMin, 
+      conePSLifetimeMax, 
+      gravity, 
+      conePSDragCoefMin, 
+      conePSDragCoefMax, 
+      null, //shipState.landerBackDirection, 
+      conePSStartingWidth, 
+      conePSAngle, 
+      conePSSize,
+      conePSMinVelocityMagnitude,
+      conePSMaxVelocityMagnitude,
+      conePSStartOpacity,
+      conePSEndOpacity,
+      conePSStartColor,
+      conePSEndColor,
+      conePSStartScale,
+      conePSEndScale,
+      constants
+    );
+    const explosionPS = new ParticleSystemExplosion(
+      scene,
+      lander,
+      explosionPSParticlesMax,
+      explosionPSLifetimeMin,
+      explosionPSLifetimeMax,
+      gravity,
+      explosionPSDragCoefMin,
+      explosionPSDragCoefMax,
+      explosionPSSize,
+      explosionPSMinVelocityMagnitude,
+      explosionPSMaxVelocityMagnitude,
+      explosionPSOpacityStart,
+      explosionPSOpacityEnd,
+      explosionPSColorStart,
+      explosionPSColorEnd,
+      explosionPSScaleStart,
+      explosionPSScaleEnd,
+      constants
+    );
+    thrusterPSs.set(landerId, thrusterPS);
+    explosionPSs.set(landerId, explosionPS)
+  }
+  return {thrusterPSs, explosionPSs}; 
+})(landers, scene);
+
+const updateParticles = ((thrusterPSs, explosionPSs, controlStates, gameState, shipStates, timerState) => {
+  const deltaTime = timerState.delta;
+  const playOn = gameState.state === "playOn";
+  for (const [shipId, shipState] of shipStates.map) {
+    const thrusterPS = thrusterPSs.get(shipId);
+    const explosionPS = explosionPSs.get(shipId);
+    const controlState = controlStates.map.get(shipId);
+    const accelerating = controlState ? controlState.accelerating : false;
+    const {currentFuel, velocityX, velocityY, currentAcceleration, landerBackDirection} = shipState;
+    const hasFuel = currentFuel > 0;
+    thrusterPS.emitting = (accelerating && hasFuel && playOn);
+    thrusterPS.initialVelocityX = velocityX;
+    thrusterPS.initialVelocityY = velocityY;
+    thrusterPS.direction = landerBackDirection;
+    thrusterPS.update(deltaTime, currentAcceleration);
+
+    explosionPS.initialVelocityX = velocityX;
+    explosionPS.initialVelocityY = velocityY;
+    explosionPS.update(deltaTime);
+  }
+})(thrusterPSs, explosionPSs, controlStates, gameState, shipStates, timerState);
+
+const emitChecker = ((collisionState, explosionPSs) => {
+  for (const [shipId, colState] of collisionState.map) {
+    const explosionPS = explosionPSs.get(shipId);
+    if (colState.crashInfo !== "") {
+      explosionPS.emit();
+    } else {
+      explosionPS.unemit();
+    }
+  }
+})(collisionState, explosionPSs);`],
+[`474`, `const particleConstants = {
+   particleEmitPointOffset, coneMaxParticles, 
+    conePSPerSecondMin, 
+    conePSPerSecondMax, 
+    conePSLifetimeMin, 
+    conePSLifetimeMax, gravity,
+    conePSDragCoefMin, 
+    conePSDragCoefMax,
+    conePSStartingWidth, 
+    conePSAngle, 
+    conePSSize,
+    conePSMinVelocityMagnitude,
+    conePSMaxVelocityMagnitude,
+    conePSStartOpacity,
+    conePSEndOpacity,
+    conePSStartColor,
+    conePSEndColor,
+    conePSStartScale,
+    conePSEndScale,
+    explosionPSParticlesMax,
+    explosionPSLifetimeMin,
+    explosionPSLifetimeMax,
+    explosionPSDragCoefMin,
+    explosionPSDragCoefMax,
+    explosionPSSize,
+    explosionPSMinVelocityMagnitude,
+    explosionPSMaxVelocityMagnitude,
+    explosionPSOpacityStart,
+    explosionPSOpacityEnd,
+    explosionPSColorStart,
+    explosionPSColorEnd,
+    explosionPSScaleStart,
+    explosionPSScaleEnd,
+};`]]}
