@@ -1,14 +1,14 @@
 {"padTitle":"moonlander",
 "positions":{"map":{"__map":true,
-"values":[["1",{"height":3668.997363385877,
+"values":[["1",{"height":2851.904285979535,
 "id":"1",
-"width":1002.8876178917,
+"width":976.1297044643215,
 "x":-1280.021284215654,
 "y":3110.5601026207787}],["2",{"height":1064.483179052934,
 "id":"2",
 "width":585.2740315467669,
-"x":-209.02886536852145,
-"y":3118.1243424872478}],["7",{"height":6762.057745645519,
+"x":-2485.344934151861,
+"y":3103.1761336064587}],["7",{"height":6762.057745645519,
 "id":"7",
 "width":1120.868478304371,
 "x":4381.986672677687,
@@ -16,9 +16,9 @@
 "id":"13",
 "width":625.3854365358418,
 "x":5732.06090526548,
-"y":4411.317062607016}],["23",{"height":1642.735177278523,
+"y":4411.317062607016}],["23",{"height":1709.3704333300882,
 "id":"23",
-"width":771.0661034385383,
+"width":783.400119581732,
 "x":3420.3934029570937,
 "y":3112.438220192685}],["24",{"height":1532.089952430402,
 "id":"24",
@@ -31,8 +31,8 @@
 "y":5268.224108533278}],["31",{"height":3406.2727974604827,
 "id":"31",
 "width":765.4819006167074,
-"x":2463.588574289238,
-"y":3111.644527326503}],["34",{"height":173.51928931179185,
+"x":2548.2752336424387,
+"y":3106.550000310671}],["34",{"height":173.51928931179185,
 "id":"34",
 "width":629.6184075941906,
 "x":476.08214539466417,
@@ -44,11 +44,11 @@
 "id":"160",
 "width":679.6161902498887,
 "x":5725.121232497237,
-"y":3111.8915678213916}],["196",{"height":507.227625062628,
+"y":3111.8915678213916}],["196",{"height":532.4413534769277,
 "id":"196",
-"width":732.2063549296432,
-"x":1205.0144165981133,
-"y":2551.136313335371}],["197",{"height":4210.3172863301625,
+"width":748.2551798954082,
+"x":1277.493589052226,
+"y":2495.5271913923566}],["197",{"height":4210.3172863301625,
 "id":"197",
 "width":890.015366002664,
 "x":438.3340277695133,
@@ -60,11 +60,15 @@
 "id":"447",
 "width":812.9652306802489,
 "x":7703.616829325727,
-"y":3089.645595225071}],["474",{"height":662.3143384146887,
+"y":3089.645595225071}],["474",{"height":2147.2821746851605,
 "id":"474",
-"width":397.2024329324288,
-"x":8551.184922131122,
-"y":3097.7403115473253}]]}},
+"width":647.8055931128492,
+"x":-271.63471636481813,
+"y":3119.576579863285}],["484",{"height":1544.3929754455485,
+"id":"484",
+"width":702.4127331300457,
+"x":-357.985356094135,
+"y":1408.557016974976}]]}},
 "titles":{"map":{"__map":true,
 "values":[["1",{"id":"1",
 "state":false,
@@ -98,7 +102,9 @@
 "state":false,
 "title":"untitled-447"}],["474",{"id":"474",
 "state":false,
-"title":"untitled-474"}]]}},
+"title":"ViewConstants"}],["484",{"id":"484",
+"state":false,
+"title":"Croquet"}]]}},
 "version":3,
 "windowEnabled":{"map":{"__map":true,
 "values":[["1",{"enabled":true,
@@ -117,164 +123,59 @@
 "id":"197"}],["446",{"enabled":true,
 "id":"446"}],["447",{"enabled":true,
 "id":"447"}],["474",{"enabled":true,
-"id":"474"}]]}},
+"id":"474"}],["484",{"enabled":true,
+"id":"484"}]]}},
 "windowTypes":{"map":{"__map":true,
-"values":[["1","code"],["2","code"],["7","code"],["13","code"],["23","code"],["24","code"],["25","code"],["31","code"],["34","code"],["42","code"],["160","code"],["196","code"],["197","code"],["446","code"],["447","code"],["474","code"]]}},
-"windows":["1","2","7","13","23","24","25","31","34","42","160","196","197","446","447","474"],
+"values":[["1","code"],["2","code"],["7","code"],["13","code"],["23","code"],["24","code"],["25","code"],["31","code"],["34","code"],["42","code"],["160","code"],["196","code"],["197","code"],["446","code"],["447","code"],["474","code"],["484","code"]]}},
+"windows":["1","2","7","13","23","24","25","31","34","42","160","196","197","446","447","474","484"],
 "zIndex":{"map":{"__map":true,
-"values":[["1",110],["2",111],["7",105],["13",100],["23",104],["24",116],["25",107],["31",102],["34",103],["42",106],["160",114],["196",115],["197",108],["446",117],["447",118],["474",119]]}}}
+"values":[["1",110],["2",111],["7",105],["13",100],["23",104],["24",116],["25",107],["31",121],["34",103],["42",106],["160",114],["196",122],["197",108],["446",117],["447",118],["474",102],["484",119]]}}}
 {__codeMap: true, value: [[`1`, `const gameWidth = 800;
 const gameHeight = 450;
 const halfWidth = gameWidth/2;
 const halfHeight = gameHeight/2;
-const lineWidth = 0.5;
-
-const zoom = 4;
-const cameraZoomAltitude = 100;
-const cameraZoomOutAltitude = 110;
-const cameraPositionDefault = [0, 0, 5];
-
-const verticalTopSpawnOffset = 50;
-const verticalMiddleSpawnOffset = 170;
-const horizontalSpawnOffset = 80;
-const middleSpawnOffset = 120;
-const velocityXSpawnMin = 30;
-const velocityXSpawnMax = 50;
 
 const landerScale = 8;
-const gravity = 1.62;
-const thrusterAccelerationMax = 4;
-const thrusterJerk = 4;
-const accelerationFalloffMultiplier = 2;
-const angularVelocity = 90 * (Math.PI / 180);
-const horizontalDragCoef = 0.04;
-
-const mainScale = landerScale/2;
-const smallScale = landerScale/8;
-
-const startingFuel = 1000;
-const fuelConsumptionRateMin = 4;
-const fuelConsumptionRateMax = 14;
-const fuelPenaltyMin = 300;
-const fuelPenaltyMax = 350;
-const fuelGainMin = 50;
-const fuelGainMax = 50;
-const fuelGainExtra = 10;
-const fuelAlertThreshold = fuelPenaltyMin;
-
-const landingAngleTolerance = 6.7 * (Math.PI / 180);
-const landingVelocityTolerance = 5.0;
-
-const numOfStars = 100;
-
-const betweenRoundPause = 5.1;
-
-const alertInterval = 4;
-const commsIntervalMin = 20;
-const commsIntervalMax = 40;
-
-const scorePerLanding = 100;
-const scoreMultiplierChances = [0.4, 0.2, 0.15, 0.15, 0.1];
-
-const infoPanelFontSize = 20;
-const mainPanelFontSize = 30;
-const statsPanelFontSize = 30;
-
-const infoPanelTextColor = "rgba(255,255,255,1)";
-const mainPanelTextColor = "rgba(255,255,255,1)";
-const statsPanelTextColor = "rgba(255,255,255,1)";
-
-const infoPanelRelativeOffsetX = 0.03;
-const infoPanelRelativeOffsetY = 0.07;
-const infoPanelRelativeOffsetYStep = 0.03;
-
-const mainPanelRelativeOffsetX = 0.5;
-const mainPanelRelativeOffsetY = 0.35;
-const mainPanelRelativeOffsetYStep = 0.05;
-
-const statsPanelRelativeOffsetX = 0.5;
-const statsPanelRelativeOffsetY = 0.30;
-const statsPanelRelativeOffsetYStep = 0.05;
-
-const multiplierFontSize = 15;
-const multiplierFontColor = "rgba(255,255,255,1)";
-
-const particleEmitPointOffset = new THREE.Vector3(0, -landerScale/2.5, 3);
-
-const coneMaxParticles = 1100;
-const conePSPerSecondMin = 250;
-const conePSPerSecondMax = 350;
-const conePSLifetimeMin = 0.3;
-const conePSLifetimeMax = 0.8;
-const conePSDragCoefMin = 0.10;
-const conePSDragCoefMax = 0.20;
-const conePSStartingWidth = landerScale/6;
-const conePSAngle = 10 * (Math.PI / 180);
-const conePSSize = landerScale/4;
-const conePSMinVelocityMagnitude = 20;
-const conePSMaxVelocityMagnitude = 55;
-const conePSStartOpacity = 0.8;
-const conePSEndOpacity = 0.0;
-const conePSStartColor = new THREE.Color("rgb(255,255,128)");
-const conePSEndColor = new THREE.Color("rgb(255,0,0)");
-const conePSStartScale = 0.4;
-const conePSEndScale = 1;
-
-const explosionPSParticlesMax = 350;
-const explosionPSLifetimeMin = 0.8;
-const explosionPSLifetimeMax = 5;
-const explosionPSDragCoefMin = 0.6;
-const explosionPSDragCoefMax = 0.8;
-const explosionPSSize = 1;
-const explosionPSMinVelocityMagnitude = 0.0;
-const explosionPSMaxVelocityMagnitude = 50;
-const explosionPSOpacityStart = 0.8;
-const explosionPSOpacityEnd = 0.3;
-const explosionPSColorStart = new THREE.Color("rgb(240,160,20)");
-const explosionPSColorEnd = new THREE.Color("rgb(200,40,0)");
-const explosionPSScaleStart = 2;
-const explosionPSScaleEnd = 0.8;
-
-const radarWidth = 200;
-const radarHeight = Math.round(radarWidth * gameHeight / gameWidth); // ~113
 
 const constants = {
- gameWidth, gameHeight, halfWidth, halfHeight, lineWidth,
+  gameWidth,
+  gameHeight,
+  halfWidth, halfHeight,
+  lineWidth: 0.5,
 
- zoom, cameraZoomAltitude, cameraZoomOutAltitude, cameraPositionDefault,
+  zoom: 4,
+  cameraZoomAltitude: 100,
+  cameraZoomOutAltitude: 110,
+  cameraPositionDefault:  [0, 0, 5],
 
- verticalTopSpawnOffset, verticalMiddleSpawnOffset, horizontalSpawnOffset, middleSpawnOffset, velocityXSpawnMin, velocityXSpawnMax,
+  verticalTopSpawnOffset: 50,
+  verticalMiddleSpawnOffset: 170,
+  horizontalSpawnOffset: 80,
+  middleSpawnOffset: 120,
+  velocityXSpawnMin: 30,
+  velocityXSpawnMax: 50,
 
- landerScale, gravity, thrusterAccelerationMax, thrusterJerk, accelerationFalloffMultiplier, angularVelocity, horizontalDragCoef,
+  landerScale,
+  gravity: 1.62,
+  thrusterAccelerationMax: 4,
+  thrusterJerk: 4,
+  accelerationFalloffMultiplier: 2,
+  angularVelocity: 90 * (Math.PI / 180),
+  horizontalDragCoef: 0.04,
 
- mainScale, smallScale,
+  mainScale: landerScale/2,
+  smallScale: landerScale/8,
 
- startingFuel, fuelConsumptionRateMin, fuelConsumptionRateMax, fuelPenaltyMin, fuelPenaltyMax, fuelGainMin, fuelGainMax, fuelGainExtra,fuelAlertThreshold,
+  startingFuel: 1000,
+  fuelConsumptionRateMin: 4,
+  fuelConsumptionRateMax: 14,
+  fuelAlertThreshold: 300,
 
- landingAngleTolerance, landingVelocityTolerance,
+  landingAngleTolerance: 6.7 * (Math.PI / 180),
+  landingVelocityTolerance: 5.0,
+};
 
- numOfStars,
-
- betweenRoundPause,
-
- alertInterval, commsIntervalMin, commsIntervalMax,
-
- scorePerLanding, scoreMultiplierChances,
-
- infoPanelFontSize, mainPanelFontSize, statsPanelFontSize,
-
- infoPanelTextColor, mainPanelTextColor, statsPanelTextColor,
-
- infoPanelRelativeOffsetX, infoPanelRelativeOffsetY, infoPanelRelativeOffsetYStep,
-
- mainPanelRelativeOffsetX, mainPanelRelativeOffsetY, mainPanelRelativeOffsetYStep,
-
- statsPanelRelativeOffsetX, statsPanelRelativeOffsetY, statsPanelRelativeOffsetYStep,
-
- multiplierFontSize, multiplierFontColor,
-
- radarWidth, radarHeight,
-}
+console.log("constants", constants)
 `],
 [`2`, `const renkon = (() => {
   const radar = document.createElement("canvas");
@@ -332,7 +233,7 @@ canvas {
   document.head.appendChild(c);
 })(css, renkon);`],
 [`7`, `const {scene, camera, renderer} = ((THREE) => {
-  console.log("scenes");
+  console.log("scene");
   const scene = new THREE.Scene();
   const {landerScale, cameraPositionDefault, halfHeight} = constants;
   
@@ -352,15 +253,7 @@ canvas {
   renderer.domElement.id = "moonlander";
   document.body.querySelector("#moonlander")?.remove();
   document.body.insertBefore(renderer.domElement, document.body.querySelector("#radar"));
-/*
-  const geometry = new THREE.PlaneGeometry(landerScale, landerScale);
-  const texture = new THREE.TextureLoader().load('textures/lander.png');
-  const material = new THREE.MeshBasicMaterial({map: texture});
-  material.transparent = true;
-  const lander = new THREE.Mesh(geometry, material);
-  scene.add(lander);
-  */
-  // lander.visible = false;
+
   return {scene, renderer, camera};
 })(THREE);
 
@@ -449,7 +342,9 @@ const {stars} = ((THREE, scene) => {
   let stars = new THREE.Group();
   scene.add(stars);
 
-  const {numOfStars, gameWidth, gameHeight, landerScale} = constants;
+  const {numOfStars} = viewConstants;
+
+  const {gameWidth, gameHeight, landerScale} = constants;
 
   let j;
   for(let i = 0; i < numOfStars; i++) {
@@ -520,8 +415,11 @@ const render = ((scene, renderer, gameState, hudState, shipStates, landers, cont
 
   const lander = landers.map.get(viewId);
   const myCollisionState = collisionState.map.get(viewId);
+  if (!myCollisionState) {
+    console.log("collisionState not found:", viewId);
+  }
 
-  const {altitude, crashInfo} = myCollisionState;
+  const {altitude, crashInfo} = (myCollisionState ? myCollisionState : {altitude: 1000, crashInfo: ""});
   const crashed = crashInfo !== "";
   const {isZoomed, zoomChanged} = renderState;
   const z = cameraPositionDefault[2];
@@ -632,14 +530,39 @@ function generateTrajectoryMesh(trajectory) {
 
 const updateLanders = ((landers, shipStates, collisionState) => {
   for (const [k, shipState] of shipStates.map) {
-    const visible = collisionState.map.get(k).crashInfo === "";
+    const colState = collisionState.map.get(k);
+    if (!colState) {continue;}
+    const visible = colState.crashInfo === "";
     const lander = landers.map.get(k);
     lander.visible = visible;
     lander.position.x = shipState.x;
     lander.position.y = shipState.y;
     lander.rotation.z = shipState.r;
   }
-})(landers, shipStates, collisionState);`],
+})(landers, shipStates, collisionState);
+
+const renderState = Behaviors.select(
+  {isZoomed: false, zoomChanged: false},
+  collisionState, (prev, collisionState) => {
+    let {isZoomed, zoomChanged} = prev;
+    const myCollisionState = collisionState.map.get(viewId);
+    if (!myCollisionState) {return prev;}
+    let {altitude} = myCollisionState;
+    const {cameraZoomAltitude, cameraZoomOutAltitude} = constants;
+
+    if (gameState.state !== "playOn") {
+      isZoomed = false;
+    } else if (altitude <= cameraZoomAltitude || prev.isZoomed && altitude <= cameraZoomOutAltitude) {
+      isZoomed = true;
+    } else if (prev.isZoomed && altitude >= cameraZoomOutAltitude) {
+      isZoomed = false;
+    }
+    if (prev.isZoomed === isZoomed) {
+      return prev;
+    }
+    return {isZoomed, zoomChanged: true};
+  }
+);`],
 [`13`, `const crashSound = new sound("crash");
 const rocketSound = new sound("rocket");
 const lowFuelSound = new sound("alarm");
@@ -680,9 +603,10 @@ class sound {
 `],
 [`23`, `const {radarCanvas, radarCtx} = (() => {
   // initRadar;
+  const {radarWidth, radarHeight} = viewConstants;
   const radarCanvas = document.getElementById('radar');
-  radarCanvas.width  = constants.radarWidth;
-  radarCanvas.height = constants.radarHeight;
+  radarCanvas.width  = radarWidth;
+  radarCanvas.height = radarHeight;
   const radarCtx = radarCanvas.getContext('2d');
   return {radarCanvas, radarCtx};
 })();
@@ -691,7 +615,8 @@ const renderRadar = (radarCtx, radarCanvas, shipStates, controlStates, collision
   const controlState = controlStates.map.get(viewId);
   const isZoomed = collisionState.isZoomed;
   // renderRadar
-  const {radarWidth, radarHeight, halfWidth, halfHeight, gameWidth, gameHeight, zoom} = constants;
+  const {radarWidth, radarHeight} = viewConstants;
+  const {halfWidth, halfHeight, gameWidth, gameHeight, zoom} = constants;
   const ctx = radarCtx;
   const W = radarWidth;
   const H = radarHeight;
@@ -975,7 +900,7 @@ function fillRightInfoPanel(gameState, hudState, shipState, collisionState) {
   const {
     infoPanelFontSize, infoPanelTextColor, 
     infoPanelRelativeOffsetX, infoPanelRelativeOffsetY, infoPanelRelativeOffsetYStep
-  } = constants;
+  } = viewConstants;
 
   hudContext.textAlign = 'right';
   hudContext.fillStyle = infoPanelTextColor;
@@ -1011,7 +936,7 @@ function fillMainPanel(gameState, hudState, shipState, collisionState) {
     mainPanelFontSize, mainPanelTextColor, 
     statsPanelFontSize, statsPanelTextColor,
     statsPanelRelativeOffsetX, statsPanelRelativeOffsetY, statsPanelRelativeOffsetYStep,
-    mainPanelRelativeOffsetX, mainPanelRelativeOffsetY, mainPanelRelativeOffsetYStep} = constants;
+    mainPanelRelativeOffsetX, mainPanelRelativeOffsetY, mainPanelRelativeOffsetYStep} = viewConstants;
 
   hudContext.textAlign = 'center';
 
@@ -1115,37 +1040,25 @@ const gameState = Behaviors.select(
   }
 );
 
-const renderState = Behaviors.select(
-  {isZoomed: false, zoomChanged: false},
-  collisionState, (prev, collisionState) => {
-    let {isZoomed, zoomChanged} = prev;
-    let {altitude} = collisionState.map.get(viewId);
-    const {cameraZoomAltitude, cameraZoomOutAltitude} = constants;
-
-    if (gameState.state !== "playOn") {
-      isZoomed = false;
-    } else if (altitude <= cameraZoomAltitude || prev.isZoomed && altitude <= cameraZoomOutAltitude) {
-      isZoomed = true;
-    } else if (prev.isZoomed && altitude >= cameraZoomOutAltitude) {
-      isZoomed = false;
-    }
-    if (prev.isZoomed === isZoomed) {
-      return prev;
-    }
-    return {isZoomed, zoomChanged: true};
-  }
-);
-
+const newCollisionState = isLocal ? 
 function newCollisionState(viewId) {
-  return {viewId, landed: false, crashInfo: "", altitude: 0, fuelChange: 0, time: 0}
-}
+  return {viewId, landed: false, crashInfo: "", altitude: 0, time: 0}
+} : "newCollisionState";
 
 // model
 const collisionState = Behaviors.select(
-  {map: new Map([...shipStates.map.keys()].map((id) => ([id, newCollisionState(id)])))},
+  {map: new Map([...shipStates.map.keys()].map((id) => {
+    return [id, typeof newCollisionState === "string"
+            ? Renkon.app.newCollisionState(id)
+            : newCollisionState(id)]
+  }))},
   newRound, (prev, _newRound) => {
     console.log("newRound collisionState");
-    const newMap = new Map([...prev.map].map(([viewId, _v]) => ([viewId, newCollisionState(viewId)])));
+    const newMap = new Map([...prev.map].map(([viewId, _v]) => {
+      return [viewId, typeof newCollisionState === "string"
+            ? Renkon.app.newCollisionState(viewId)
+            : newCollisionState(viewId)];
+    }));
     return {map: newMap};
   },
   shipStates, (prev, shipStates) => {
@@ -1157,8 +1070,7 @@ const collisionState = Behaviors.select(
     const {
       smallScale, mainScale,
       halfWidth, halfHeight, landerScale, lineWidth,
-      landingAngleTolerance, landingVelocityTolerance,
-      fuelGainMax, fuelGainMin, fuelGainExtra, fuelPenaltyMax, fuelPenaltyMin,
+      landingAngleTolerance, landingVelocityTolerance
     } = constants;
     let spheres = colliderPositions;
     const olds = new Set([...prev.map.keys()]);
@@ -1167,7 +1079,9 @@ const collisionState = Behaviors.select(
       const {x, y, r, velocityY, velocityX, currentFuel} = shipState;
       let myCollisionState = prev.map.get(shipId);
       if (!myCollisionState) {
-        myCollisionState = newCollisionState(shipId);
+        myCollisionState = typeof newCollisionState === "string"
+          ? Renkon.app.newCollisionState(shipId)
+          : newCollisionState(shipId);
       }
       
       if (x < -halfWidth - lineWidth ||
@@ -1250,15 +1164,11 @@ const collisionState = Behaviors.select(
             let mul = 1;
             if (hasLanded) {
               console.log("hasLanded");
-              fuelChange = Math.random() * (fuelGainMax - fuelGainMin) + fuelGainMin;
-              fuelChange += fuelGainExtra * mul;
             } else if (crashInfo) {
               console.log("hasCrashed")
-              fuelChange = Math.random() * (fuelPenaltyMax - fuelPenaltyMin) + fuelPenaltyMin;
-              fuelChange = Math.min(fuelChange, currentFuel);
             }
             if(hasLanded || crashInfo) {
-              prev.map.set(shipId, {landed: hasLanded, crashInfo: crashInfo, fuelChange, altitude: 0, time});
+              prev.map.set(shipId, {landed: hasLanded, crashInfo: crashInfo, altitude: 0, time});
               nextShip = true;
               break;
             }
@@ -1381,9 +1291,8 @@ const viewExit = Events.receiver({queued: true});
 const viewJoin = Events.receiver({queued: true});
 
 const colors = ["red", "blue", "green", "yellow"];
-
 const players = Behaviors.select(
-  {map: (isLocal ? new Map([[viewId, {color: colors[0]}], [viewId+2, {color: colors[1]}]]) : new Map)},
+  {map: new Map(Renkon.app ? new Map() : new Map([["local", {color: colors[0]}], ["local2", {color: colors[1]}]]))},
   viewJoin, (prev, joins) => {
     for (const join of joins) {
       prev.map.set(join, {color: colors[prev.map.size % colors.length]});
@@ -1392,13 +1301,13 @@ const players = Behaviors.select(
   },
   viewExit, (prev, exits) => {
     for (const exit of exits) {
-      prev.delete(exit);
+      prev.map.delete(exit);
     }
     return {map: prev.map};
   }
 );
 `],
-[`197`, `const newShipState = (viewId, isOngoing) => {
+[`197`, `const newShipState = isLocal ? (function nweShipState(viewId, isOngoing) {
   const obj = {
     x: 0, y: 0, r: 0, visible: true,
     velocityDeltaX: 0, velocityDeltaY: 0,
@@ -1415,10 +1324,14 @@ const players = Behaviors.select(
             velocityX: initialVelocity, velocityY: 0};
   }
   return obj;
-};
+}) : "newShipState";
 
 const shipStates = Behaviors.select(
-  {map: new Map([...players.map.keys()].map((id) => ([id, newShipState(id)])))},
+  {map: new Map([...players.map.keys()].map((id) => {
+    return [id, typeof newShipState === "string"
+            ? Renkon.app.newShipState(id)
+            : newShipState(id)];
+  }))},
   players, (prev, players) => {
     const prevKeys = prev == undefined ? [] : [...prev.map.keys()];
     const newKeys = [...players.map.keys()];
@@ -1426,22 +1339,27 @@ const shipStates = Behaviors.select(
     const news = newKeys.filter((e) => !prevKeys.includes(e));
     olds.forEach((id) => prev.map.delete(id));
     news.forEach((id) => {
-      prev.map.set(id, newShipState(id, (gameState.state === "playOn")));
+      prev.map.set(id, typeof newShipState === "string"
+                   ? Renkon.app.newShipState(id, gameState.state === "playOn")
+                   : newShipState(id, gameState.state === "playOn"));
     });
-    return {map: prev.map}
+    return {map: prev.map};
   },
   newRound, (prev, _new) => {
     console.log("new ship(s)");
     return {map: new Map(
-      [...prev.map].map(([viewId, ship]) => ([viewId, newShipState(viewId)]))
-    )};
+      [...prev.map].map(([viewId, ship]) => {
+        return [viewId, typeof newShipState === "string"
+                   ? Renkon.app.newShipState(viewId)
+                   : newShipState(viewId)];
+    }))};
   },
   gameState, (prev, gameState) => {
     console.log("gameState");
     if (gameState.state === "playOn" && gameState.prevState === "isBetweenRounds") {
       console.log('new game');
       for (const [shipId, ship] of prev.map) {
-        const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = randomSpawn();
+        const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = (typeof randomSpawn === "string" ? Renkon.app.randomSpawn() : randomSpawn());
         // const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = 
         // {initialVelocity: 0, randomPositionX: 20, randomPositionY: -73, randomRotation: 0};
         prev.map.set(shipId, {...ship, x: randomPositionX, y: randomPositionY, r: randomRotation,
@@ -1580,13 +1498,13 @@ const {lineSegmentsModel, heightDifferences} = ((points) => {
   return {lineSegmentsModel: lineSegments, heightDifferences};
 })(points);
 
-const randomSpawn = () => {
+const randomSpawn = isLocal ? () => {
   let randomPositionX;
   let randomPositionY;
   let randomRotation;
   const {
     halfWidth, halfHeight, horizontalSpawnOffset,
-    middleSpawnOffset, verticalMiddleSpawnOffset,
+    middleSpawnOffset, verticalTopSpawnOffset, verticalMiddleSpawnOffset,
     velocityXSpawnMax, velocityXSpawnMin} = constants;
   let minX = -halfWidth + horizontalSpawnOffset;
   let maxX = halfWidth - horizontalSpawnOffset;
@@ -1612,7 +1530,7 @@ const randomSpawn = () => {
     initialVelocity = -initialVelocity;
   }
   return {initialVelocity, randomPositionX, randomPositionY, randomRotation};
-}`],
+} : "randomSpawn";`],
 [`446`, `class Particle {
   constructor(scale) {
     this.isAlive = false;
@@ -1940,7 +1858,7 @@ function lerpColor(startColor, endColor, outColor, t) {
     explosionPSColorEnd,
     explosionPSScaleStart,
     explosionPSScaleEnd,
-  } = particleConstants;
+  } = viewConstants;
   const {gravity} = constants;
   let thrusterPSs = new Map();
   let explosionPSs = new Map();
@@ -2035,37 +1953,150 @@ const emitChecker = ((collisionState, explosionPSs) => {
     }
   }
 })(collisionState, explosionPSs);`],
-[`474`, `const particleConstants = {
-   particleEmitPointOffset, coneMaxParticles, 
-    conePSPerSecondMin, 
-    conePSPerSecondMax, 
-    conePSLifetimeMin, 
-    conePSLifetimeMax, gravity,
-    conePSDragCoefMin, 
-    conePSDragCoefMax,
-    conePSStartingWidth, 
-    conePSAngle, 
-    conePSSize,
-    conePSMinVelocityMagnitude,
-    conePSMaxVelocityMagnitude,
-    conePSStartOpacity,
-    conePSEndOpacity,
-    conePSStartColor,
-    conePSEndColor,
-    conePSStartScale,
-    conePSEndScale,
-    explosionPSParticlesMax,
-    explosionPSLifetimeMin,
-    explosionPSLifetimeMax,
-    explosionPSDragCoefMin,
-    explosionPSDragCoefMax,
-    explosionPSSize,
-    explosionPSMinVelocityMagnitude,
-    explosionPSMaxVelocityMagnitude,
-    explosionPSOpacityStart,
-    explosionPSOpacityEnd,
-    explosionPSColorStart,
-    explosionPSColorEnd,
-    explosionPSScaleStart,
-    explosionPSScaleEnd,
-};`]]}
+[`474`, `const radarWidth = 200;
+const radarHeight = Math.round(radarWidth * constants.gameHeight / constants.gameWidth);
+
+const viewConstants = {
+  numOfStars: 100,
+  alertInterval: 4,
+  commsIntervalMin: 20,
+  commsIntervalMax: 40,
+  gravity: constants.gravity,
+
+  particleEmitPointOffset: new THREE.Vector3(0, -constants.landerScale/2.5, 3),
+    coneMaxParticles: 1100,
+    conePSPerSecondMin: 250,
+    conePSPerSecondMax: 350, 
+    conePSLifetimeMin: 0.3, 
+    conePSLifetimeMax: 0.8,
+    conePSDragCoefMin: 0.10, 
+    conePSDragCoefMax: 0.20,
+    conePSStartingWidth: constants.landerScale/6, 
+    conePSAngle: 10 * (Math.PI / 180), 
+    conePSSize: constants.landerScale/4,
+    conePSMinVelocityMagnitude: 20,
+    conePSMaxVelocityMagnitude: 55,
+    conePSStartOpacity: 0.8,
+    conePSEndOpacity: 0.0,
+    conePSStartColor: new THREE.Color("rgb(255,255,128)"),
+    conePSEndColor: new THREE.Color("rgb(255,0,0)"),
+    conePSStartScale: 0.4,
+    conePSEndScale: 1,
+    explosionPSParticlesMax: 350,
+    explosionPSLifetimeMin: 0.8,
+    explosionPSLifetimeMax: 5,
+    explosionPSDragCoefMin: 0.6,
+    explosionPSDragCoefMax: 0.8,
+    explosionPSSize: 1,
+    explosionPSMinVelocityMagnitude: 0.0,
+    explosionPSMaxVelocityMagnitude: 50,
+    explosionPSOpacityStart: 0.8,
+    explosionPSOpacityEnd: 0.3,
+    explosionPSColorStart: new THREE.Color("rgb(240,160,20)"),
+    explosionPSColorEnd: new THREE.Color("rgb(200,40,0)"),
+    explosionPSScaleStart: 2,
+    explosionPSScaleEnd: 0.8,
+
+
+  infoPanelFontSize: 20,
+  mainPanelFontSize: 30,
+  statsPanelFontSize: 30,
+
+  infoPanelTextColor: "rgba(255,255,255,1)",
+  mainPanelTextColor: "rgba(255,255,255,1)",
+  statsPanelTextColor: "rgba(255,255,255,1)",
+
+
+  infoPanelRelativeOffsetX: 0.03,
+  infoPanelRelativeOffsetY: 0.07,
+  infoPanelRelativeOffsetYStep: 0.03,
+
+  mainPanelRelativeOffsetX: 0.5,
+  mainPanelRelativeOffsetY: 0.35,
+  mainPanelRelativeOffsetYStep: 0.05,
+
+  statsPanelRelativeOffsetX: 0.5,
+  statsPanelRelativeOffsetY: 0.30,
+  statsPanelRelativeOffsetYStep: 0.05,
+
+ radarWidth, radarHeight,
+  
+};`],
+[`484`, `({
+  parameters: {
+    appParameters: {
+
+      name: '12a',
+      password: '1',
+      apiKey: "234567_Paste_Your_Own_API_Key_Here_7654321",
+      box: "http://localhost:8888",
+      eventRateLimit: 60,
+    },
+    realm: {model: [
+      "constants", "points",
+      "colors", "players", "shipStates", "colliderPositions", "lineSegmentsModel", "heightDifferences",
+      "somebodyLanded", "somebodyCrashed", "newRound", "gameState", "collisionState",
+      "collisionJudge", "controlStates", "newShipState", "newCollisionState", "randomSpawn",
+      "viewJoin", "viewExit"
+			       ]},
+    persistentNodes: [["windows", 60000]],
+    name: "moonlander"
+  },
+  methods: {
+    newShipState(viewId, isOngoing)  {
+  const obj = {
+    x: 0, y: 0, r: 0, visible: true,
+    velocityDeltaX: 0, velocityDeltaY: 0,
+    currentAcceleration: 0, currentAccelerationRatio: 0,
+    currentFuel: 1000,
+    landerForward: {x: 0, y: 1},
+    landerBackDirection: {x: 0, y: -1},
+    velocityX: 0, velocityY: 0,
+    viewId
+  };
+  if (isOngoing) {
+    const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = this.randomSpawn();
+    return {...obj, x: randomPositionX, y: randomPositionY, r: randomRotation,
+            velocityX: initialVelocity, velocityY: 0};
+  }
+  return obj;
+},
+randomSpawn() {
+  let randomPositionX;
+  let randomPositionY;
+  let randomRotation;
+  console.log("myConstants in randomSpawn")
+  const {
+    halfWidth, halfHeight, horizontalSpawnOffset,
+    middleSpawnOffset, verticalTopSpawnOffset, verticalMiddleSpawnOffset,
+    velocityXSpawnMax, velocityXSpawnMin} = this.programState.resolved.get("constants").value;
+  let minX = -halfWidth + horizontalSpawnOffset;
+  let maxX = halfWidth - horizontalSpawnOffset;
+
+  if(Math.random() > 0.5) {
+    minX = -halfWidth + horizontalSpawnOffset;
+    maxX = -middleSpawnOffset;
+  } else {
+    minX = middleSpawnOffset;
+    maxX = halfWidth - horizontalSpawnOffset;
+  }
+
+  randomPositionX = Math.random() * (maxX - minX) + minX;
+
+  const minY = verticalMiddleSpawnOffset;
+  const maxY = halfHeight - verticalTopSpawnOffset;
+
+  randomPositionY = Math.random() * (maxY - minY) + minY;
+  randomRotation = (Math.random() - 0.5) * Math.PI; 
+
+  let initialVelocity = Math.random() * (velocityXSpawnMax - velocityXSpawnMin) + velocityXSpawnMin;
+  if(randomPositionX > 0) {
+    initialVelocity = -initialVelocity;
+  }
+  return {initialVelocity, randomPositionX, randomPositionY, randomRotation};
+},
+ newCollisionState(viewId) {
+  return {viewId, landed: false, crashInfo: "", altitude: 0, fuelChange: 0, time: 0}
+}
+  }
+})`]]}
