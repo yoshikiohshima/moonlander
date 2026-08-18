@@ -1,13 +1,13 @@
 {"padTitle":"moonlander",
 "positions":{"map":{"__map":true,
-"values":[["1",{"height":2851.904285979535,
+"values":[["1",{"height":942.7994099148639,
 "id":"1",
-"width":976.1297044643215,
-"x":-1280.021284215654,
-"y":3110.5601026207787}],["2",{"height":1064.483179052934,
+"width":473.4217021759516,
+"x":-1169.9743393652577,
+"y":3113.6982772326055}],["2",{"height":2248.5905735396273,
 "id":"2",
-"width":585.2740315467669,
-"x":-2485.344934151861,
+"width":628.7378834165145,
+"x":-2528.8087860216083,
 "y":3103.1761336064587}],["7",{"height":6567.127535799305,
 "id":"7",
 "width":943.1846826809531,
@@ -15,8 +15,8 @@
 "y":3106.040256723329}],["13",{"height":786.6273658378875,
 "id":"13",
 "width":625.3854365358418,
-"x":5732.06090526548,
-"y":4411.317062607016}],["23",{"height":1709.3704333300882,
+"x":5727.041805440695,
+"y":4594.451615769875}],["23",{"height":1709.3704333300882,
 "id":"23",
 "width":783.400119581732,
 "x":3420.3934029570937,
@@ -24,26 +24,26 @@
 "id":"24",
 "width":491.11452991212195,
 "x":-1858.2084173553858,
-"y":3110.2484721313976}],["25",{"height":1221.2245332196048,
+"y":3110.2484721313976}],["25",{"height":1891.521928059599,
 "id":"25",
-"width":714.2733894893871,
-"x":5737.066352132596,
-"y":5268.224108533278}],["31",{"height":3406.2727974604827,
+"width":837.2216464311228,
+"x":5604.974048699213,
+"y":5477.85922640841}],["31",{"height":3406.2727974604827,
 "id":"31",
 "width":765.4819006167074,
 "x":2548.2752336424387,
 "y":3106.550000310671}],["34",{"height":173.51928931179185,
 "id":"34",
 "width":629.6184075941906,
-"x":476.08214539466417,
-"y":2838.9491689526417}],["42",{"height":4488.532500184656,
+"x":404.5372817044316,
+"y":2871.7228818457415}],["42",{"height":4759.389100917437,
 "id":"42",
-"width":1070.526996242846,
+"width":1048.3381662632978,
 "x":1415.446807519531,
-"y":3110.1711479897585}],["160",{"height":1218.1690499384022,
+"y":3110.1711479897585}],["160",{"height":1398.3435258585525,
 "id":"160",
-"width":679.6161902498887,
-"x":5725.121232497237,
+"width":778.2589666180205,
+"x":5648.662948567735,
 "y":3111.8915678213916}],["196",{"height":565.4659431184923,
 "id":"196",
 "width":750.8188817779335,
@@ -51,8 +51,8 @@
 "y":2495.5271913923566}],["197",{"height":7618.373736287312,
 "id":"197",
 "width":820.088926899228,
-"x":445.5086624122582,
-"y":3123.5603980445458}],["446",{"height":5443.07682754038,
+"x":402.57973115899773,
+"y":3119.6924153834566}],["446",{"height":5443.07682754038,
 "id":"446",
 "width":914.4759594892654,
 "x":6703.2036390754965,
@@ -60,15 +60,19 @@
 "id":"447",
 "width":903.5262754445741,
 "x":7703.616829325727,
-"y":3089.645595225071}],["474",{"height":2147.2821746851605,
+"y":3089.645595225071}],["474",{"height":1408.903354198164,
 "id":"474",
-"width":647.8055931128492,
-"x":-271.63471636481813,
+"width":581.5168839350215,
+"x":-396.3670209620325,
 "y":3119.576579863285}],["484",{"height":550.0360463784599,
 "id":"484",
 "width":609.485503945704,
-"x":-1074.2895246538205,
-"y":2489.324291366838}]]}},
+"x":-1143.475798820618,
+"y":2534.5123066354668}],["772",{"height":118.69182275585277,
+"id":"772",
+"width":415.4099674804236,
+"x":4367.963404393074,
+"y":2906.3648595442146}]]}},
 "titles":{"map":{"__map":true,
 "values":[["1",{"id":"1",
 "state":false,
@@ -84,7 +88,7 @@
 "state":false,
 "title":"points"}],["25",{"id":"25",
 "state":false,
-"title":"untitled-25"}],["31",{"id":"31",
+"title":"Joystick"}],["31",{"id":"31",
 "state":false,
 "title":"HUD"}],["34",{"id":"34",
 "state":false,
@@ -104,7 +108,9 @@
 "state":false,
 "title":"ViewConstants"}],["484",{"id":"484",
 "state":false,
-"title":"Croquet"}]]}},
+"title":"Croquet"}],["772",{"id":"772",
+"state":false,
+"title":"untitled-772"}]]}},
 "version":3,
 "windowEnabled":{"map":{"__map":true,
 "values":[["1",{"enabled":true,
@@ -113,7 +119,7 @@
 "id":"7"}],["13",{"enabled":true,
 "id":"13"}],["23",{"enabled":true,
 "id":"23"}],["24",{"enabled":true,
-"id":"24"}],["25",{"enabled":false,
+"id":"24"}],["25",{"enabled":true,
 "id":"25"}],["31",{"enabled":true,
 "id":"31"}],["34",{"enabled":true,
 "id":"34"}],["42",{"enabled":true,
@@ -124,12 +130,13 @@
 "id":"446"}],["447",{"enabled":true,
 "id":"447"}],["474",{"enabled":true,
 "id":"474"}],["484",{"enabled":true,
-"id":"484"}]]}},
+"id":"484"}],["772",{"enabled":true,
+"id":"772"}]]}},
 "windowTypes":{"map":{"__map":true,
-"values":[["1","code"],["2","code"],["7","code"],["13","code"],["23","code"],["24","code"],["25","code"],["31","code"],["34","code"],["42","code"],["160","code"],["196","code"],["197","code"],["446","code"],["447","code"],["474","code"],["484","code"]]}},
-"windows":["1","2","7","13","23","24","25","31","34","42","160","196","197","446","447","474","484"],
+"values":[["1","code"],["2","code"],["7","code"],["13","code"],["23","code"],["24","code"],["25","code"],["31","code"],["34","code"],["42","code"],["160","code"],["196","code"],["197","code"],["446","code"],["447","code"],["474","code"],["484","code"],["772","code"]]}},
+"windows":["1","2","7","13","23","24","25","31","34","42","160","196","197","446","447","474","484","772"],
 "zIndex":{"map":{"__map":true,
-"values":[["1",110],["2",111],["7",105],["13",100],["23",104],["24",116],["25",107],["31",121],["34",103],["42",106],["160",114],["196",108],["197",119],["446",117],["447",118],["474",102],["484",122]]}}}
+"values":[["1",110],["2",111],["7",105],["13",100],["23",104],["24",116],["25",122],["31",121],["34",102],["42",106],["160",114],["196",108],["197",103],["446",117],["447",118],["474",119],["484",107],["772",123]]}}}
 {__codeMap: true, value: [[`1`, `const gameWidth = 800;
 const gameHeight = 450;
 const halfWidth = gameWidth/2;
@@ -182,12 +189,29 @@ console.log("constants", constants)
   radar.id = "radar";
   document.body.querySelector(\`#\${radar.id}\`)?.remove();
   document.body.appendChild(radar);
-  
+
+  const joystickDiv = document.createElement("div");
+  joystickDiv.innerHTML = \`<div id="joystick"><div id="knob"></div></div>\`;
+  const joystick = joystickDiv.querySelector("#joystick");
+  document.body.querySelector(\`#\${joystick.id}\`)?.remove();
+  document.body.appendChild(joystick);
+
+  const thrusterDiv = document.createElement("div");
+  thrusterDiv.innerHTML = \`<button id="thruster">Thruster</button>\`;
+  const thruster = thrusterDiv.querySelector("#thruster");
+  document.body.querySelector(\`#\${thruster.id}\`)?.remove();
+  document.body.appendChild(thruster);
+
+  const dummyText = document.createElement("input");
+  dummyText.id = "dummyText";
+  document.body.querySelector(\`#\${dummyText.id}\`)?.remove();
+  document.body.appendChild(dummyText);
+
   const script = document.createElement("script");
   script.src = "https://unpkg.com/three@0.124.0";
   script.id = "three";
   return new Promise((resolve) => {
-    script.onload = () => resolve(script);
+    script.onload = () => resolve(document.body);
     document.head.querySelector(\`#\${script.id}\`)?.remove();
     document.head.appendChild(script);
   });
@@ -196,7 +220,6 @@ console.log("constants", constants)
 const THREE = (() => {return window.THREE})(renkon);
 
 const css = \`
-
 body {
     margin: 0;
     background-color: #000000;
@@ -223,6 +246,41 @@ canvas {
   top: 0px;
   left: 0px;
 }
+#joystick {
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    width: 80px;
+    height: 80px;
+    border: 3px solid #FFF;
+    border-radius: 40px;
+    opacity: 0.5;
+}
+#knob {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #FFF;
+}
+
+#thruster {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #FFF;
+}
+\`;
+
+const hideCSS = \`
+#joystick {
+  display: none;
+}
 \`;
 
 ((css, renkon) => {
@@ -231,6 +289,14 @@ canvas {
   c.id = "lander-css";
   document.head.querySelector(\`#\${c.id}\`)?.remove();
   document.head.appendChild(c);
+  if (!("ontouchstart" in window)) {
+    const hide = document.createElement("style");
+    hide.textContent = hideCSS;
+    hide.id = "hide";
+    document.head.querySelector(\`#\${hide.id}\`)?.remove();
+    document.head.appendChild(hide);
+  }
+  return renkon;
 })(css, renkon);`],
 [`7`, `const {scene, camera, renderer} = ((THREE) => {
   console.log("scene");
@@ -399,8 +465,6 @@ const visibleHalfW = Behaviors.select(
 
 const resizeFunction = (_prev, _resize) => {
   // onWindowResize
-  console.log("resizer");
-
   renderer.setSize(window.innerWidth, window.innerHeight);
   camera.left  = -visibleHalfW;
   camera.right =  visibleHalfW;
@@ -418,7 +482,7 @@ const keydown = Events.listener(window, "keydown", (evt) => evt);
 const keyup = Events.listener(window, "keyup", (evt) => evt);
 const visibilityChange = Events.listener(document, "visibilitychange", (evt) => evt);
 
-const render = ((scene, renderer, gameState, hudState, shipStates, landers, controlStates, collisionState, camera, resizer, timerState) => {
+const render = ((scene, renderer, gameState, hudState, shipStates, landers, controlStates, collisionState, camera, resizer, timerState, viewTimer) => {
   let trajectory;
   const {isDebugOn} = gameState;
   const {cameraPositionDefault, zoom, halfWidth} = constants;
@@ -459,22 +523,22 @@ const render = ((scene, renderer, gameState, hudState, shipStates, landers, cont
   }
 
   renderer.render(scene, camera);
-  renderHud(renderer, gameState, hudState, shipState, myCollisionState);
+  renderHud(renderer, gameState, hudState, shipState, myCollisionState, timerState);
   renderRadar(radarCtx, radarCanvas, shipStates, controlStates, myCollisionState, visibleHalfW);
 
   if (isDebugOn) {
     scene.remove(trajectory);
   }
   return {delta: timerState.delta};
-})(scene, renderer, gameState, hudState, shipStates, landers, controlStates, collisionState, camera, resizer, timerState);
+})(scene, renderer, gameState, hudState, shipStates, landers, controlStates, collisionState, camera, resizer, timerState, viewTimer);
 
-const renderHud = (renderer, gameState, hudState, shipState, collisionState) => {
+const renderHud = (renderer, gameState, hudState, shipState, collisionState, timerState) => {
   const {hudWidth, hudHeight, hudTexture, sceneHud, cameraHud} = hudState;
   hudState.hudContext.clearRect(0, 0, hudWidth, hudHeight);
 
   fillLeftInfoPanel(gameState, hudState, shipState, collisionState);
   fillRightInfoPanel(gameState, hudState, shipState, collisionState);
-  fillMainPanel(gameState, hudState, shipState, collisionState);
+  fillMainPanel(gameState, hudState, shipState, collisionState, timerState);
 
   hudTexture.needsUpdate = true;
   renderer.render(sceneHud, cameraHud);
@@ -784,56 +848,107 @@ const playRocketSound = ((collisionState, controlStates) => {
     [800,117]
     ];
 `],
-[`25`, `let rotSlider, thrustBtn;
-let rotSliderValue = 0;
-let thrustBtnDown  = false;
+[`25`, `const joystick = renkon.querySelector("#joystick");
+const knob = renkon.querySelector("#knob");
 
-function initControls() {
-  rotSlider = document.getElementById('rotSlider');
-  thrustBtn = document.getElementById('thrustBtn');
+const thruster = renkon.querySelector("#thruster");
+const dummyText = renkon.querySelector("#dummyText");
 
-  rotSlider.addEventListener('input', () => {
-    rotSliderValue = parseInt(rotSlider.value, 10);
-  });
+const preventAndReturn = (e) => {
+  e.preventDefault();
+  e.stopImmediatePropagation();
+  return e;  
+};
 
-  const snapSlider = () => {
-    rotSliderValue = 0;
-    rotSlider.value = 0;
-  };
-  rotSlider.addEventListener('pointerup',     snapSlider);
-  rotSlider.addEventListener('pointerleave',  snapSlider);
-  rotSlider.addEventListener('pointercancel', snapSlider);
+const onpointerdown = Events.listener(renkon, "pointerdown", preventAndReturn);
+const onpointermove = Events.listener(renkon, "pointermove", preventAndReturn);
+const onpointerup = Events.listener(renkon, "pointerup", preventAndReturn);
 
-  thrustBtn.addEventListener('pointerdown', e => {
-      e.preventDefault();
-      if (isGameOver && isPaused) { resetGame(); return; }
-      thrustBtnDown = true;
-      thrustBtn.classList.add('active');
-  });
+const thrusterdown = Events.listener(thruster, "pointerdown", preventAndReturn);
+const thrusterup = Events.listener(thruster, "pointerup", preventAndReturn);
 
-  const stopThrust = () => {
-      thrustBtnDown = false;
-      thrustBtn.classList.remove('active');
-  };
-  thrustBtn.addEventListener('pointerup',     stopThrust);
-  thrustBtn.addEventListener('pointerleave',  stopThrust);
-  thrustBtn.addEventListener('pointercancel', stopThrust);
-}
+Events.listener(renkon, "pointercancel", preventAndReturn);
+Events.listener(renkon, "contextmenu", preventAndReturn);
+Events.listener(renkon, "touchend", preventAndReturn);
 
-// Called each frame before handleMovement() — merges slider/button state into game flags
-function applyOnScreenControls() {
-  if (rotSliderValue < -15) rotatingLeft  = true;
-  if (rotSliderValue >  15) rotatingRight = true;
-  if (thrustBtnDown)        accelerating  = true;
-}
+const joystickControl = Behaviors.select(
+  {joystick: true, pointerId: null, x: 0, y: 0,rotatingLeft: false, rotatingRight: false, notFocused: true},
+  onpointerdown, (prev, e) => {
+    if (prev.notFocused) {
+      renkon.querySelector("#dummyText")?.focus();
+    }
+    if (prev.pointerId === null) {
+      const pointerId = e.pointerId;
+      const x = e.clientX;
+      const y = e.clientY;
+      //joystick.style.left = \`\${x - 60}px\`;
+      //joystick.style.top = \`\${y - 60}px\`;
+      joystick.style.display = "block";
+      document.body.setPointerCapture(pointerId);
+      return {joystick: true, pointerId, x, y, rotatingLeft: false, rotatingRight: false};
+    }
+    return prev;
+  },
+  onpointermove, (prev, e) => {
+    let rotatingRight = prev.rotatingRight;
+    let rotatingLeft = prev.rotatingLeft;
+    if (prev.pointerId === e.pointerId) {
+      let dx = e.clientX - prev.x;
+      let dy = e.clientY - prev.y;
+      if (dx > 30) {
+        dx = 30;
+        rotatingRight = true;
+      } else {
+        rotatingRight = false;
+      }
+      if (dx < -30) {
+        dx = -30;
+        rotatingLeft = true;
+      } else {
+        rotatingLeft = false;
+      }
+      knob.style.left = \`\${20 + dx}px\`;
+    }
+    return {...prev, rotatingRight, rotatingLeft};
+  },
+  onpointerup, (prev, e) => {
+    let pointerId = prev.pointerId;
+    if (prev.pointerId === e.pointerId) {
+      document.body.releasePointerCapture(prev.pointerId);
+      pointerId = null;
+      knob.style.left = \`20px\`;
+      knob.style.top = \`20px\`;
+      return {...prev, pointerId, rotatingRight: false, rotatingLeft: false};
+    }
+    return prev;
+  }
+);
 
-// Called on respawn to snap controls back to neutral
-function resetControls() {
-  rotSliderValue = 0;
-  thrustBtnDown  = false;
-  if (rotSlider) rotSlider.value = 0;
-  if (thrustBtn) thrustBtn.classList.remove('active');
-}
+const thrusterControl = Events.select(
+  {thruster: true, pointerId: null, accelerating: false, notFocused: true},
+  thrusterdown, (prev, e) => {
+    if (prev.notFocused) {
+      document.body.querySelector("#dummyText")?.focus();
+    }
+    if (prev.pointerId === null) {
+      const pointerId = e.pointerId;
+      thruster.setPointerCapture(pointerId);
+      return {thruster: true, pointerId, accelerating: true};
+    }
+    return prev;
+  },
+  thrusterup, (prev, e) => {
+    let pointerId = prev.pointerId;
+    if (prev.pointerId === e.pointerId) {
+      thruster.releasePointerCapture(pointerId);
+      pointerId = null;
+      console.log('thrusterup')
+      window.foo = true;
+      return {...prev, pointerId, accelerating: false};
+    }
+    return prev;
+  }
+);
 `],
 [`31`, `const {sceneHud, hudCanvas, hudContext, hudTexture, hudWidth, hudHeight, cameraHud} = ((THREE) => {
   // initHud
@@ -945,7 +1060,7 @@ function fillRightInfoPanel(gameState, hudState, shipState, collisionState) {
     hudHeight*(infoPanelRelativeOffsetY+4*infoPanelRelativeOffsetYStep));
 }
 
-function fillMainPanel(gameState, hudState, shipState, collisionState) {
+function fillMainPanel(gameState, hudState, shipState, collisionState, timerState) {
   const {state, scoreChange, since, winner, winnerName, survivors} = gameState;
   const {currentFuel} = shipState;
   const {hudContext, hudWidth, hudHeight} = hudState;
@@ -961,8 +1076,8 @@ function fillMainPanel(gameState, hudState, shipState, collisionState) {
   if(state === "isBetweenRounds") {
     hudContext.font = "Normal "+mainPanelFontSize+"px Courier New";
     hudContext.fillStyle = mainPanelTextColor;
-    const whole = Math.ceil(3 - (Renkon.time - since) / 1000);
-    const frac = 3 - (Renkon.time - since) / 1000;
+    const whole = Math.ceil(3 - (timerState.now - since) / 1000);
+    const frac = 3 - (timerState.now - since) / 1000;
     hudContext.fillText(
       "YOU ARE PLAYER: " + players.map.get(viewId).color.toUpperCase(), 
       hudWidth*mainPanelRelativeOffsetX, 
@@ -971,7 +1086,6 @@ function fillMainPanel(gameState, hudState, shipState, collisionState) {
       "ARROW KEYS / ON-SCREEN CONTROLS",
       hudWidth*mainPanelRelativeOffsetX,
       hudHeight*(mainPanelRelativeOffsetY+1*mainPanelRelativeOffsetYStep));
-
     hudContext.font = "Normal "+(mainPanelFontSize * (1 + frac))+"px Courier New";
     hudContext.fillStyle = mainPanelTextColor;
     hudContext.fillText(
@@ -1021,14 +1135,32 @@ function fillMainPanel(gameState, hudState, shipState, collisionState) {
   timer, (prev, timer) => ({now: Renkon.time, delta: (Renkon.time - prev.now) / 1000.0})
 );
 
-const timer = Events.timer(4);
+const timer = Events.timer(16);
 `],
 [`42`, `const somebodyLanded = Events.receiver();
 const somebodyCrashed = Events.receiver();
 const newRound = Events.receiver();
 
 const gameState = Behaviors.select(
-  {isDebugOn: false, state: "isBetweenRounds", since: 0, winner: "", survivors: new Set()},
+  {isDebugOn: false, state: "isBetweenRounds", since: 0, winner: "", knownPlayers: new Set(), survivors: new Set()},
+  players, (prev, players) => {
+    const prevKeys = [...prev.knownPlayers.keys()];
+    const newKeys = [...players.map.keys()];
+    const olds = prevKeys.filter((e) => !newKeys.includes(e));
+    const news = newKeys.filter((e) => !prevKeys.includes(e));
+    olds.forEach((id) => prev.knownPlayers.delete(id));
+    if (prev.state === "inBetweenRounds") {
+      news.forEach((id) => {
+        prev.knownPlayers.add(id);
+      });
+    } else if (prev.state === "playOn") {
+     news.forEach((id) => {
+       prev.knownPlayers.add(id);
+       prev.survivors.add(id);
+      });
+    }
+    return {...prev};
+  },
   somebodyLanded, (prev, somebodyLanded) => {
     return {...prev, state: "showWinner", survivors: new Set([somebodyLanded.winner]), since: Renkon.time, winner: somebodyLanded.winner, winnerName: somebodyLanded.winnerName};
   },
@@ -1045,7 +1177,7 @@ const gameState = Behaviors.select(
   timerState, (prev, timerState) => {
     if (prev.state === "isBetweenRounds") {
       if (timerState.now - prev.since > 3000) {
-        return {...prev, prevState: prev.state, state: "playOn", survivors: new Set([...players.map.keys()]), since: timerState.now};
+        return {...prev, prevState: prev.state, state: "playOn", knownPlayers: new Set([...players.map.keys()]), survivors: new Set([...players.map.keys()]), since: timerState.now};
       }
     }
     if (prev.state === "showWinner") {
@@ -1257,7 +1389,7 @@ const controlStates = Behaviors.collect(
   }
 );`],
 [`160`, `const controlState = Behaviors.select(
-  {rotatingRight: false, rotatingLeft: false, accelerating: false, viewId},
+  {rotatingRight: false, rotatingLeft: false, accelerating: false, wasThrustingFromButton: false, viewId},
   keys, (prev, keys) => {
     const value = {...prev};
     if (keys.includes("ArrowLeftDown")) {
@@ -1278,6 +1410,22 @@ const controlStates = Behaviors.collect(
     if (keys.includes("ArrowUpUp")) {
       value.accelerating = false;
     }
+    const joystick = keys.find(x => x?.joystick);
+    if (joystick !== undefined) {
+      value.rotatingLeft = value.rotatingLeft || joystick.rotatingLeft;
+      value.rotatingRight = value.rotatingRight || joystick.rotatingRight;
+    }
+    const thruster = keys.find(x => x?.thruster);
+    if (thruster !== undefined) {
+      if (thruster.accelerating) {
+        value.wasThrustingFromButton = true;
+        value.accelerating = true;
+      } else if (value.wasThrustingFromButton && !thruster.accelerating) {
+        value.wasThrustingFromButton = false;
+        value.accelerating = false;
+      }
+    }
+
     if (prev.rotatingLeft === value.rotatingLeft &&
       prev.rotatingRight === value.rotatingRight &&
       prev.accelerating === value.accelerating) {
@@ -1288,36 +1436,36 @@ const controlStates = Behaviors.collect(
 );
 
 const keyLeftDown = Events.listener(
-  document.body, "keydown", 
+  dummyText, "keydown", 
   (evt) => evt.key === "ArrowLeft" ? evt.key + "Down" : undefined
 );
 
 const keyRightDown = Events.listener(
-  document.body, "keydown",
+  dummyText, "keydown",
   (evt) => evt.key === "ArrowRight" ? evt.key + "Down" : undefined
 );
 
 const keyUpDown = Events.listener(
-  document.body, "keydown",
+  dummyText, "keydown",
   (evt) => evt.key === "ArrowUp" ? evt.key + "Down" : undefined
 );
 
 const keyLeftUp = Events.listener(
-  document.body, "keyup", 
+  dummyText, "keyup", 
   (evt) => evt.key === "ArrowLeft" ? evt.key + "Up" : undefined
 );
 
 const keyRightUp = Events.listener(
-  document.body, "keyup",
+  dummyText, "keyup",
   (evt) => evt.key === "ArrowRight" ? evt.key + "Up" : undefined
 );
 
 const keyUpUp = Events.listener(
-  document.body, "keyup",
+  dummyText, "keyup",
   (evt) => evt.key === "ArrowUp" ? evt.key + "Up": undefined
 );
 
-const keys = Events.some(keyLeftDown, keyRightDown, keyUpDown, keyLeftUp, keyRightUp, keyUpUp);
+const keys = Events.some(keyLeftDown, keyRightDown, keyUpDown, keyLeftUp, keyRightUp, keyUpUp, joystickControl, thrusterControl);
 `],
 [`196`, `const viewId = Renkon.app?.viewId || "local";
 const isLocal = viewId === "local";
@@ -1369,63 +1517,6 @@ const players = Behaviors.select(
 
 const shipStates = Behaviors.select(
   (() => {
-  const randomSpawn = () => {
-    let randomPositionX;
-    let randomPositionY;
-    let randomRotation;
-    console.log("myConstants in randomSpawn")
-    const {
-      halfWidth, halfHeight, horizontalSpawnOffset,
-      middleSpawnOffset, verticalTopSpawnOffset, verticalMiddleSpawnOffset,
-      velocityXSpawnMax, velocityXSpawnMin} = constants;
-    let minX = -halfWidth + horizontalSpawnOffset;
-    let maxX = halfWidth - horizontalSpawnOffset;
-    
-    if(Math.random() > 0.5) {
-      minX = -halfWidth + horizontalSpawnOffset;
-      maxX = -middleSpawnOffset;
-    } else {
-      minX = middleSpawnOffset;
-      maxX = halfWidth - horizontalSpawnOffset;
-    }
-    
-    randomPositionX = Math.random() * (maxX - minX) + minX;
-    
-    const minY = verticalMiddleSpawnOffset;
-    const maxY = halfHeight - verticalTopSpawnOffset;
-    
-    randomPositionY = Math.random() * (maxY - minY) + minY;
-    randomRotation = (Math.random() - 0.5) * Math.PI; 
-    
-    let initialVelocity = Math.random() * (velocityXSpawnMax - velocityXSpawnMin) + velocityXSpawnMin;
-    if(randomPositionX > 0) {
-      initialVelocity = -initialVelocity;
-    }
-    return {initialVelocity, randomPositionX, randomPositionY, randomRotation};
-  };
-  const newShipState = (viewId, isOngoing) => {
-    const obj = {
-      x: 0, y: 0, r: 0, visible: true,
-      velocityDeltaX: 0, velocityDeltaY: 0,
-      currentAcceleration: 0, currentAccelerationRatio: 0,
-      currentFuel: 1000,
-      landerForward: {x: 0, y: 1},
-      landerBackDirection: {x: 0, y: -1},
-      velocityX: 0, velocityY: 0,
-      viewId
-    };
-    if (isOngoing) {
-      const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = randomSpawn();
-      return {...obj, x: randomPositionX, y: randomPositionY, r: randomRotation,
-              velocityX: initialVelocity, velocityY: 0};
-    }
-    return obj;
-  };
-  return {map: new Map([...players.map.keys()].map((id) => {
-    return [id, newShipState(id)];
-  }))};
-  })(),
-  players, (prev, players) => {
     const randomSpawn = () => {
       let randomPositionX;
       let randomPositionY;
@@ -1478,6 +1569,64 @@ const shipStates = Behaviors.select(
       }
       return obj;
     };
+    return {map: new Map([...players.map.keys()].map((id) => {
+      return [id, newShipState(id)];
+    }))};
+  })(),
+  players, (prev, players) => {
+    console.log("players", players);
+    const randomSpawn = () => {
+      let randomPositionX;
+      let randomPositionY;
+      let randomRotation;
+      console.log("myConstants in randomSpawn")
+      const {
+        halfWidth, halfHeight, horizontalSpawnOffset,
+        middleSpawnOffset, verticalTopSpawnOffset, verticalMiddleSpawnOffset,
+        velocityXSpawnMax, velocityXSpawnMin} = constants;
+      let minX = -halfWidth + horizontalSpawnOffset;
+      let maxX = halfWidth - horizontalSpawnOffset;
+
+      if(Math.random() > 0.5) {
+        minX = -halfWidth + horizontalSpawnOffset;
+        maxX = -middleSpawnOffset;
+      } else {
+        minX = middleSpawnOffset;
+        maxX = halfWidth - horizontalSpawnOffset;
+      }
+
+      randomPositionX = Math.random() * (maxX - minX) + minX;
+
+      const minY = verticalMiddleSpawnOffset;
+      const maxY = halfHeight - verticalTopSpawnOffset;
+
+      randomPositionY = Math.random() * (maxY - minY) + minY;
+      randomRotation = (Math.random() - 0.5) * Math.PI; 
+
+      let initialVelocity = Math.random() * (velocityXSpawnMax - velocityXSpawnMin) + velocityXSpawnMin;
+      if(randomPositionX > 0) {
+        initialVelocity = -initialVelocity;
+      }
+      return {initialVelocity, randomPositionX, randomPositionY, randomRotation};
+    };
+    const newShipState = (viewId, isOngoing) => {
+      const obj = {
+        x: 0, y: 0, r: 0, visible: true,
+        velocityDeltaX: 0, velocityDeltaY: 0,
+        currentAcceleration: 0, currentAccelerationRatio: 0,
+        currentFuel: 1000,
+        landerForward: {x: 0, y: 1},
+        landerBackDirection: {x: 0, y: -1},
+        velocityX: 0, velocityY: 0,
+        viewId
+      };
+      if (isOngoing) {
+        const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = randomSpawn();
+        return {...obj, x: randomPositionX, y: randomPositionY, r: randomRotation,
+                velocityX: initialVelocity, velocityY: 0};
+      }
+      return obj;
+    };
 
     const prevKeys = prev == undefined ? [] : [...prev.map.keys()];
     const newKeys = [...players.map.keys()];
@@ -1502,7 +1651,7 @@ const shipStates = Behaviors.select(
         velocityXSpawnMax, velocityXSpawnMin} = constants;
       let minX = -halfWidth + horizontalSpawnOffset;
       let maxX = halfWidth - horizontalSpawnOffset;
-      
+
       if(Math.random() > 0.5) {
         minX = -halfWidth + horizontalSpawnOffset;
         maxX = -middleSpawnOffset;
@@ -1510,15 +1659,15 @@ const shipStates = Behaviors.select(
         minX = middleSpawnOffset;
         maxX = halfWidth - horizontalSpawnOffset;
       }
-      
+
       randomPositionX = Math.random() * (maxX - minX) + minX;
-      
+
       const minY = verticalMiddleSpawnOffset;
       const maxY = halfHeight - verticalTopSpawnOffset;
-      
+
       randomPositionY = Math.random() * (maxY - minY) + minY;
       randomRotation = (Math.random() - 0.5) * Math.PI; 
-      
+
       let initialVelocity = Math.random() * (velocityXSpawnMax - velocityXSpawnMin) + velocityXSpawnMin;
       if(randomPositionX > 0) {
         initialVelocity = -initialVelocity;
@@ -2266,11 +2415,12 @@ const viewConstants = {
   parameters: {
     appParameters: {
 
-      name: '124',
+      name: '125',
       password: '1',
       apiKey: "234567_Paste_Your_Own_API_Key_Here_7654321",
       box: "http://localhost:8888",
       eventRateLimit: 60,
+      
     },
     realm: {model: [
       "timer", "timerState",
@@ -2287,4 +2437,6 @@ const viewConstants = {
     name: "moonlander"
   },
   methods: {}
-})`]]}
+})`],
+[`772`, `const viewTimer = Events.timer(16);
+`]]}

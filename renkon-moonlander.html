@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Moonlander</title>
+    </head>
+    <body>
+        <!-- <div id="container" class="container">
+            <div id="mappy-1" class="mappy" style="width: 400px; height: 400px"></div>
+        </div> -->
+        <script type="module">
+            import {ProgramState, globals} from "./renkon-core.js";
+            import {loader} from "./loader.js";
+            window.RenkonWeb = {globals};
+            window.ProgramState = ProgramState;
+            window.onload = () => {
+              loader({
+                codemirror: false, padName: "moonlander.renkon"
+              })
+            };;
+        </script>
+    </body>
+</html>
