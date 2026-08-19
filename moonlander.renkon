@@ -15,8 +15,8 @@
 "y":3106.040256723329}],["13",{"height":786.6273658378875,
 "id":"13",
 "width":625.3854365358418,
-"x":5727.041805440695,
-"y":4594.451615769875}],["23",{"height":1709.3704333300882,
+"x":5634.210487773411,
+"y":4659.587204913543}],["23",{"height":1709.3704333300882,
 "id":"23",
 "width":783.400119581732,
 "x":3420.3934029570937,
@@ -40,9 +40,9 @@
 "id":"42",
 "width":1048.3381662632978,
 "x":1415.446807519531,
-"y":3110.1711479897585}],["160",{"height":1398.3435258585525,
+"y":3110.1711479897585}],["160",{"height":1509.5165811025672,
 "id":"160",
-"width":778.2589666180205,
+"width":946.9562518096706,
 "x":5648.662948567735,
 "y":3111.8915678213916}],["196",{"height":565.4659431184923,
 "id":"196",
@@ -136,7 +136,7 @@
 "values":[["1","code"],["2","code"],["7","code"],["13","code"],["23","code"],["24","code"],["25","code"],["31","code"],["34","code"],["42","code"],["160","code"],["196","code"],["197","code"],["446","code"],["447","code"],["474","code"],["484","code"],["772","code"]]}},
 "windows":["1","2","7","13","23","24","25","31","34","42","160","196","197","446","447","474","484","772"],
 "zIndex":{"map":{"__map":true,
-"values":[["1",110],["2",111],["7",105],["13",100],["23",104],["24",116],["25",122],["31",121],["34",102],["42",106],["160",114],["196",108],["197",103],["446",117],["447",118],["474",119],["484",107],["772",123]]}}}
+"values":[["1",110],["2",111],["7",105],["13",123],["23",104],["24",116],["25",122],["31",121],["34",102],["42",106],["160",114],["196",108],["197",103],["446",117],["447",118],["474",119],["484",107],["772",100]]}}}
 {__codeMap: true, value: [[`1`, `const gameWidth = 800;
 const gameHeight = 450;
 const halfWidth = gameWidth/2;
@@ -482,8 +482,9 @@ const keydown = Events.listener(window, "keydown", (evt) => evt);
 const keyup = Events.listener(window, "keyup", (evt) => evt);
 const visibilityChange = Events.listener(document, "visibilitychange", (evt) => evt);
 
-const render = ((scene, renderer, gameState, hudState, shipStates, landers, controlStates, collisionState, camera, resizer, timerState, viewTimer) => {
+const render = ((scene, renderer, gameState, hudState, shipStates, positionedLanders, controlStates, collisionState, camera, resizer, timerState, viewTimer) => {
   let trajectory;
+  const landers = positionedLanders.landers;
   const {isDebugOn} = gameState;
   const {cameraPositionDefault, zoom, halfWidth} = constants;
   const shipState = shipStates.map.get(viewId);
@@ -530,7 +531,7 @@ const render = ((scene, renderer, gameState, hudState, shipStates, landers, cont
     scene.remove(trajectory);
   }
   return {delta: timerState.delta};
-})(scene, renderer, gameState, hudState, shipStates, landers, controlStates, collisionState, camera, resizer, timerState, viewTimer);
+})(scene, renderer, gameState, hudState, shipStates, positionedLanders, controlStates, collisionState, camera, resizer, timerState, viewTimer);
 
 const renderHud = (renderer, gameState, hudState, shipState, collisionState, timerState) => {
   const {hudWidth, hudHeight, hudTexture, sceneHud, cameraHud} = hudState;
@@ -609,19 +610,27 @@ function generateTrajectoryMesh(trajectory) {
   return lineMeshes;
 }
 
-const updateLanders = ((landers, shipStates, collisionState) => {
-  if (shipStates.map.size !== landers.map.size) debugger;
-  for (const [k, shipState] of shipStates.map) {
-    const colState = collisionState.map.get(k);
-    if (!colState) {continue;}
-    const visible = colState.crashInfo === "";
-    const lander = landers.map.get(k);
-    lander.visible = visible;
-    lander.position.x = shipState.x;
-    lander.position.y = shipState.y;
-    lander.rotation.z = shipState.r;
+const positionedLanders = Events.select(
+  {landers: new Map, modelNow: 0, rendered: 0},
+  viewTimer, (prev, viewTimer) => {
+    const diff = Renkon.app.extrapolatedNow() - prev.rendered;
+    const deltaTime = diff / 1000;
+    for (const [k, shipState] of shipStates.map) {
+      const {velocityX, velocityY} = shipState;
+      const diffX = velocityX * deltaTime;
+      const diffY = velocityY * deltaTime;
+      const colState = collisionState.map.get(k);
+      if (!colState) {continue;}
+      const visible = colState.crashInfo === "";
+      const lander = landers.map.get(k);
+      lander.visible = visible;
+      lander.position.x = shipState.x + diffX;
+      lander.position.y = shipState.y + diffY;
+      lander.rotation.z = shipState.r;
+    }
+    return {landers: landers, modelNow: timerState.now, rendered: Renkon.app.extrapolatedNow()}
   }
-})(landers, shipStates, collisionState);
+);
 
 const renderState = Behaviors.select(
   {isZoomed: false, zoomChanged: false},
@@ -2204,7 +2213,8 @@ function lerpColor(startColor, endColor, outColor, t) {
 }`],
 [`447`, `const thrustersAndExplosions = Behaviors.select(
   {thrusterPSs: new Map(), explosionPSs: new Map()},
-  landers, (prev, landers) => {
+  positionedLanders, (prev, positionedLanders) => {
+    const landers = positionedLanders.landers;
     const {
       particleEmitPointOffset, coneMaxParticles, 
       conePSPerSecondMin, 
@@ -2415,7 +2425,7 @@ const viewConstants = {
   parameters: {
     appParameters: {
 
-      name: '125',
+      name: '126',
       password: '1',
       apiKey: "234567_Paste_Your_Own_API_Key_Here_7654321",
       box: "http://localhost:8888",
