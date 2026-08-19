@@ -2340,6 +2340,7 @@ const updateParticles = ((thrustersAndExplosions, controlStates, gameState, ship
     explosionPS.initialVelocityY = velocityY;
     explosionPS.update(deltaTime);
   }
+  return {thrusterPSs, explosionPSs};
 })(thrustersAndExplosions, controlStates, gameState, shipStates, render);
 
 const emitChecker = ((collisionState, thrustersAndExplosions) => {
@@ -2351,7 +2352,7 @@ const emitChecker = ((collisionState, thrustersAndExplosions) => {
       explosionPS.unemit();
     }
   }
-})(collisionState, thrustersAndExplosions);`],
+})(collisionState, updateParticles);`],
 [`474`, `const radarWidth = 200;
 const radarHeight = Math.round(radarWidth * constants.gameHeight / constants.gameWidth);
 
