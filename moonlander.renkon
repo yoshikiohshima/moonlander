@@ -1144,7 +1144,7 @@ function fillMainPanel(gameState, hudState, shipState, collisionState, timerStat
   timer, (prev, timer) => ({now: Renkon.time, delta: (Renkon.time - prev.now) / 1000.0})
 );
 
-const timer = Events.timer(16);
+const timer = Events.timer(1000/60);
 `],
 [`42`, `const somebodyLanded = Events.receiver();
 const somebodyCrashed = Events.receiver();
@@ -1998,7 +1998,7 @@ class ParticleSystemCone{
   }
 
   updateValues(deltaTime) {
-    deltaTime = 0.016;
+    deltaTime = 1/60;
     let i;
     for(i = 0; i < this.maxParticles; i++) {
       let particle = this.particles[i];
@@ -2448,5 +2448,5 @@ const viewConstants = {
   },
   methods: {}
 })`],
-[`772`, `const viewTimer = Events.timer(16);
+[`772`, `const viewTimer = Events.timer(1000/60);
 `]]}
