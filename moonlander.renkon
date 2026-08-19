@@ -617,15 +617,15 @@ const positionedLanders = Events.select(
     const deltaTime = diff / 1000;
     for (const [k, shipState] of shipStates.map) {
       const {velocityX, velocityY} = shipState;
-      const diffX = velocityX * deltaTime;
-      const diffY = velocityY * deltaTime;
+      const diffX = -velocityX * deltaTime;
+      const diffY = -velocityY * deltaTime;
       const colState = collisionState.map.get(k);
       if (!colState) {continue;}
       const visible = colState.crashInfo === "";
       const lander = landers.map.get(k);
       lander.visible = visible;
-      lander.position.x = shipState.x + diffX;
-      lander.position.y = shipState.y + diffY;
+      lander.position.x = shipState.x;
+      lander.position.y = shipState.y;
       lander.rotation.z = shipState.r;
     }
     return {landers: landers, modelNow: timerState.now, rendered: Renkon.app.extrapolatedNow()}
