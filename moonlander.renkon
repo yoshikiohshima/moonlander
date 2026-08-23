@@ -8,10 +8,10 @@
 "id":"2",
 "width":628.7378834165145,
 "x":-2528.8087860216083,
-"y":3103.1761336064587}],["7",{"height":6567.127535799305,
+"y":3103.1761336064587}],["7",{"height":6704.2423533667015,
 "id":"7",
-"width":943.1846826809531,
-"x":4381.986672677687,
+"width":944.0199034520549,
+"x":4381.151451906585,
 "y":3106.040256723329}],["13",{"height":786.6273658378875,
 "id":"13",
 "width":625.3854365358418,
@@ -611,24 +611,39 @@ function generateTrajectoryMesh(trajectory) {
 }
 
 const positionedLanders = Events.select(
-  {landers: new Map, modelNow: 0, rendered: 0},
+  {landers: new Map, renderedModelTime: 0, renderCount: 0, renderTime: 0},
   viewTimer, (prev, viewTimer) => {
-    const diff = Renkon.app.extrapolatedNow() - prev.rendered;
-    const deltaTime = diff / 1000;
+    let diff = prev.renderdCount * 1/60;
+    let deltaTime = 0;
+    let renderCount = prev.renderCount;
+    const modelTime = [...shipStates.map.values()][0].time;
+    if (modelTime === prev.renderedModelTime) {
+      renderCount++;
+      deltaTime = renderCount * 16.67 / 1000;
+      console.log("renderCount", renderCount)
+    } else {
+      renderCount = 1;
+      deltaTime = 0;
+    }
     for (const [k, shipState] of shipStates.map) {
       const {velocityX, velocityY} = shipState;
-      const diffX = -velocityX * deltaTime;
-      const diffY = -velocityY * deltaTime;
+      const diffX = velocityX * deltaTime;
+      const diffY = velocityY * deltaTime;
       const colState = collisionState.map.get(k);
+      if (!window.positions) {
+        window.positions = [];
+      }
+      // window.positions.push([shipState.x, prev.modelTime, modelTime, Date.now(), Renkon.app.extrapolatedNow()]);
+      // if (window.positions.length > 500) {debugger;}
       if (!colState) {continue;}
       const visible = colState.crashInfo === "";
       const lander = landers.map.get(k);
       lander.visible = visible;
-      lander.position.x = shipState.x;
-      lander.position.y = shipState.y;
+      lander.position.x = shipState.x + diffX;
+      lander.position.y = shipState.y + diffY;
       lander.rotation.z = shipState.r;
     }
-    return {landers: landers, modelNow: timerState.now, rendered: Renkon.app.extrapolatedNow()}
+    return {landers: landers, renderedModelTime: modelTime, renderCount, renderTime: Renkon.app.extrapolatedNow()}
   }
 );
 
@@ -1514,7 +1529,7 @@ const players = Behaviors.select(
     landerForward: {x: 0, y: 1},
     landerBackDirection: {x: 0, y: -1},
     velocityX: 0, velocityY: 0,
-    viewId
+    viewId, time: Renkon.time
   };
   if (isOngoing) {
     const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = randomSpawn();
@@ -1569,7 +1584,7 @@ const shipStates = Behaviors.select(
         landerForward: {x: 0, y: 1},
         landerBackDirection: {x: 0, y: -1},
         velocityX: 0, velocityY: 0,
-        viewId
+        viewId, time: Renkon.time
       };
       if (isOngoing) {
         const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = randomSpawn();
@@ -1627,7 +1642,7 @@ const shipStates = Behaviors.select(
         landerForward: {x: 0, y: 1},
         landerBackDirection: {x: 0, y: -1},
         velocityX: 0, velocityY: 0,
-        viewId
+        viewId, time: Renkon.time
       };
       if (isOngoing) {
         const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = randomSpawn();
@@ -1692,12 +1707,12 @@ const shipStates = Behaviors.select(
         landerForward: {x: 0, y: 1},
         landerBackDirection: {x: 0, y: -1},
         velocityX: 0, velocityY: 0,
-        viewId
+        viewId, time: Renkon.time
       };
       if (isOngoing) {
         const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = randomSpawn();
         return {...obj, x: randomPositionX, y: randomPositionY, r: randomRotation,
-                velocityX: initialVelocity, velocityY: 0};
+                velocityX: initialVelocity, velocityY: 0, time: Renkon.time};
       }
       return obj;
     };
@@ -1750,7 +1765,7 @@ const shipStates = Behaviors.select(
         // const {initialVelocity, randomPositionX, randomPositionY, randomRotation} = 
         // {initialVelocity: 0, randomPositionX: 20, randomPositionY: -73, randomRotation: 0};
         prev.map.set(shipId, {...ship, x: randomPositionX, y: randomPositionY, r: randomRotation,
-                              velocityX: initialVelocity, velocityY: 0, visible: true})
+                              velocityX: initialVelocity, velocityY: 0, visible: true, time: Renkon.time})
       };
       return {map: prev.map};
     }
@@ -1838,7 +1853,7 @@ const shipStates = Behaviors.select(
         velocityDeltaX, velocityDeltaY,
         currentAcceleration, currentFuel, currentAccelerationRatio,
         landerForward, landerBackDirection: shipState.landerBackDirection,
-        velocityX, velocityY, viewId: shipId
+        velocityX, velocityY, viewId: shipId, time: Renkon.time
       });
     }
     return {map: prevShips.map};
@@ -2429,7 +2444,7 @@ const viewConstants = {
       name: '126',
       password: '1',
       apiKey: "234567_Paste_Your_Own_API_Key_Here_7654321",
-      box: "http://localhost:8888",
+      box: "https://rhq.ai",
       eventRateLimit: 60,
       
     },
