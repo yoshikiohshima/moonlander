@@ -620,7 +620,7 @@ const positionedLanders = Events.select(
     const modelTime = Math.max(...[...shipStates.map.values()].map(m => m.time));
     if (modelTime === prev.renderedModelTime) {
       renderCount++;
-      deltaTime = renderCount * 1 / 60;
+      deltaTime = 1 / 60;
       // console.log("renderCount", renderCount)
     } else {
       renderCount = 0;
@@ -628,15 +628,19 @@ const positionedLanders = Events.select(
     }
     for (const [k, shipState] of shipStates.map) {
       const {velocityX, velocityY, currentAcceleration, landerForward} = shipState;
-      const diffX = (velocityX + landerForward.x * currentAcceleration) * deltaTime;
-      const diffY = (velocityY +  + landerForward.y * currentAcceleration) * deltaTime;
-      const colState = collisionState.map.get(k);
-      if (!window.positions) {
-        window.positions = [];
+      let diffX = 0;
+      let diffY = 0;
+      let accX = landerForward.x * currentAcceleration;
+      let accY = landerForward.y * currentAcceleration;
+      for (let i = 0; i < renderCount; i++) {
+        diffX += accX * deltaTime;
+        diffY += accY * deltaTime;
       }
-      // window.positions.push([shipState.x, prev.modelTime, modelTime, Date.now(), Renkon.app.extrapolatedNow()]);
-      // if (window.positions.length > 500) {debugger;}
-      if (!colState) {continue;}
+      diffX += velocityX * renderCount * deltaTime;
+      diffY += velocityY * renderCount * deltaTime;
+      const colState = collisionState.map.get(k);
+
+     if (!colState) {continue;}
       if (colState.landed) {continue;}
       const visible = colState.crashInfo === "";
       const lander = landers.map.get(k);
