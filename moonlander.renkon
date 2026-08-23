@@ -622,7 +622,7 @@ const positionedLanders = Events.select(
       deltaTime = renderCount * 16.67 / 1000;
       console.log("renderCount", renderCount)
     } else {
-      renderCount = 1;
+      renderCount = 0;
       deltaTime = 0;
     }
     for (const [k, shipState] of shipStates.map) {
