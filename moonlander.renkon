@@ -8,10 +8,10 @@
 "id":"2",
 "width":628.7378834165145,
 "x":-2528.8087860216083,
-"y":3103.1761336064587}],["7",{"height":6704.2423533667015,
+"y":3103.1761336064587}],["7",{"height":6895.735858475558,
 "id":"7",
-"width":944.0199034520549,
-"x":4381.151451906585,
+"width":943.8854246296283,
+"x":4381.285930729012,
 "y":3106.040256723329}],["13",{"height":786.6273658378875,
 "id":"13",
 "width":625.3854365358418,
@@ -173,7 +173,7 @@ const constants = {
   mainScale: landerScale/2,
   smallScale: landerScale/8,
 
-  startingFuel: 1000,
+  startingFuel: 500,
   fuelConsumptionRateMin: 4,
   fuelConsumptionRateMax: 14,
   fuelAlertThreshold: 300,
@@ -500,7 +500,7 @@ const render = ((scene, renderer, gameState, hudState, shipStates, positionedLan
     console.log("collisionState not found:", viewId);
   }
 
-  const {altitude, crashInfo} = (myCollisionState ? myCollisionState : {altitude: 1000, crashInfo: ""});
+  const {altitude, crashInfo} = myCollisionState;
   const crashed = crashInfo !== "";
   const {isZoomed, zoomChanged} = renderState;
   const z = cameraPositionDefault[2];
@@ -619,16 +619,16 @@ const positionedLanders = Events.select(
     const modelTime = [...shipStates.map.values()][0].time;
     if (modelTime === prev.renderedModelTime) {
       renderCount++;
-      deltaTime = renderCount * 16.67 / 1000;
-      console.log("renderCount", renderCount)
+      deltaTime = renderCount * 1 / 60;
+      // console.log("renderCount", renderCount)
     } else {
       renderCount = 0;
       deltaTime = 0;
     }
     for (const [k, shipState] of shipStates.map) {
-      const {velocityX, velocityY} = shipState;
-      const diffX = velocityX * deltaTime;
-      const diffY = velocityY * deltaTime;
+      const {velocityX, velocityY, currentAcceleration, landerForward} = shipState;
+      const diffX = (velocityX + landerForward.x * currentAcceleration) * deltaTime;
+      const diffY = (velocityY +  + landerForward.y * currentAcceleration) * deltaTime;
       const colState = collisionState.map.get(k);
       if (!window.positions) {
         window.positions = [];
@@ -636,6 +636,7 @@ const positionedLanders = Events.select(
       // window.positions.push([shipState.x, prev.modelTime, modelTime, Date.now(), Renkon.app.extrapolatedNow()]);
       // if (window.positions.length > 500) {debugger;}
       if (!colState) {continue;}
+      if (colState.landed) {continue;}
       const visible = colState.crashInfo === "";
       const lander = landers.map.get(k);
       lander.visible = visible;
@@ -764,7 +765,6 @@ const renderRadar = (radarCtx, radarCanvas, shipStates, controlStates, collision
   }
 
   for (const [shipId, shipState] of shipStates.map) {
-    const {currentAcceleration} = shipState;
     const accelerating = controlState ? controlState.accelerating : false;
 
     // Lander dot — yellow when thrusting, cyan otherwise
@@ -1371,7 +1371,6 @@ const collisionState = Behaviors.select(
           break;
         }
       }
-      if (!prev.map.get(shipId)) {debugger}
       prev.map.set(shipId, {...prev.map.get(shipId), altitude});
     }
     for (const oldId of olds) {
@@ -1502,7 +1501,6 @@ const players = Behaviors.select(
   (() => {
     //const array = [];
      const array = Renkon.app ? [] : [["local", {color: colors[0]}], ["local2", {color: colors[1]}]];
-    console.log("array", array);
     return {map: new Map(array)}
   })(),
   viewJoin, (prev, joins) => {
@@ -1525,7 +1523,7 @@ const players = Behaviors.select(
     x: 0, y: 0, r: 0, visible: true,
     velocityDeltaX: 0, velocityDeltaY: 0,
     currentAcceleration: 0, currentAccelerationRatio: 0,
-    currentFuel: 1000,
+    currentFuel: 500,
     landerForward: {x: 0, y: 1},
     landerBackDirection: {x: 0, y: -1},
     velocityX: 0, velocityY: 0,
@@ -1580,7 +1578,7 @@ const shipStates = Behaviors.select(
         x: 0, y: 0, r: 0, visible: true,
         velocityDeltaX: 0, velocityDeltaY: 0,
         currentAcceleration: 0, currentAccelerationRatio: 0,
-        currentFuel: 1000,
+        currentFuel: 500,
         landerForward: {x: 0, y: 1},
         landerBackDirection: {x: 0, y: -1},
         velocityX: 0, velocityY: 0,
@@ -1638,7 +1636,7 @@ const shipStates = Behaviors.select(
         x: 0, y: 0, r: 0, visible: true,
         velocityDeltaX: 0, velocityDeltaY: 0,
         currentAcceleration: 0, currentAccelerationRatio: 0,
-        currentFuel: 1000,
+        currentFuel: 500,
         landerForward: {x: 0, y: 1},
         landerBackDirection: {x: 0, y: -1},
         velocityX: 0, velocityY: 0,
@@ -1703,7 +1701,7 @@ const shipStates = Behaviors.select(
         x: 0, y: 0, r: 0, visible: true,
         velocityDeltaX: 0, velocityDeltaY: 0,
         currentAcceleration: 0, currentAccelerationRatio: 0,
-        currentFuel: 1000,
+        currentFuel: 500,
         landerForward: {x: 0, y: 1},
         landerBackDirection: {x: 0, y: -1},
         velocityX: 0, velocityY: 0,
@@ -1797,7 +1795,6 @@ const shipStates = Behaviors.select(
       if(rotatingRight) rotationDelta += -angularVelocity * deltaTime;
 
       r += rotationDelta;
-      // console.log(r)
 
       if(r > Math.PI / 2) r = Math.PI / 2;
       if(r < -Math.PI / 2) r = -Math.PI / 2;
@@ -1839,7 +1836,6 @@ const shipStates = Behaviors.select(
       velocityY += velocityDeltaY;
       velocityX += velocityDeltaX;
 
-      // console.log(velocityX, velocityY);
   
       let positionDeltaY = velocityY * deltaTime
       // lander.position.y += positionDeltaY;
@@ -2441,7 +2437,7 @@ const viewConstants = {
   parameters: {
     appParameters: {
 
-      name: '126',
+      name: '127',
       password: '1',
       apiKey: "234567_Paste_Your_Own_API_Key_Here_7654321",
       box: "https://rhq.ai",
