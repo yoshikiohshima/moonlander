@@ -648,7 +648,7 @@ const positionedLanders = Events.select(
 );
 
 const renderState = Behaviors.select(
-  {isZoomed: false, zoomChanged: false},
+  {isZoomed: false, zoomChanged: true},
   collisionState, (prev, collisionState) => {
     let {isZoomed, zoomChanged} = prev;
     const myCollisionState = collisionState.map.get(viewId);
