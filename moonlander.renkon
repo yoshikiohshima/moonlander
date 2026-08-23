@@ -72,7 +72,15 @@
 "id":"772",
 "width":415.4099674804236,
 "x":4367.963404393074,
-"y":2906.3648595442146}]]}},
+"y":2906.3648595442146}],["798",{"height":400,
+"id":"798",
+"width":800,
+"x":3927.283716163919,
+"y":9191.565181896874}],["799",{"height":400,
+"id":"799",
+"width":800,
+"x":3559.0090738897593,
+"y":9187.49176503878}]]}},
 "titles":{"map":{"__map":true,
 "values":[["1",{"id":"1",
 "state":false,
@@ -110,7 +118,11 @@
 "state":false,
 "title":"Croquet"}],["772",{"id":"772",
 "state":false,
-"title":"untitled-772"}]]}},
+"title":"untitled-772"}],["798",{"id":"798",
+"state":false,
+"title":"untitled-798"}],["799",{"id":"799",
+"state":false,
+"title":"untitled-799"}]]}},
 "version":3,
 "windowEnabled":{"map":{"__map":true,
 "values":[["1",{"enabled":true,
@@ -131,12 +143,14 @@
 "id":"447"}],["474",{"enabled":true,
 "id":"474"}],["484",{"enabled":true,
 "id":"484"}],["772",{"enabled":true,
-"id":"772"}]]}},
+"id":"772"}],["798",{"enabled":true,
+"id":"798"}],["799",{"enabled":true,
+"id":"799"}]]}},
 "windowTypes":{"map":{"__map":true,
-"values":[["1","code"],["2","code"],["7","code"],["13","code"],["23","code"],["24","code"],["25","code"],["31","code"],["34","code"],["42","code"],["160","code"],["196","code"],["197","code"],["446","code"],["447","code"],["474","code"],["484","code"],["772","code"]]}},
-"windows":["1","2","7","13","23","24","25","31","34","42","160","196","197","446","447","474","484","772"],
+"values":[["1","code"],["2","code"],["7","code"],["13","code"],["23","code"],["24","code"],["25","code"],["31","code"],["34","code"],["42","code"],["160","code"],["196","code"],["197","code"],["446","code"],["447","code"],["474","code"],["484","code"],["772","code"],["798","runner"],["799","runner"]]}},
+"windows":["1","2","7","13","23","24","25","31","34","42","160","196","197","446","447","474","484","772","798","799"],
 "zIndex":{"map":{"__map":true,
-"values":[["1",110],["2",111],["7",105],["13",123],["23",104],["24",116],["25",122],["31",121],["34",102],["42",106],["160",114],["196",108],["197",103],["446",117],["447",118],["474",119],["484",107],["772",100]]}}}
+"values":[["1",110],["2",111],["7",105],["13",123],["23",104],["24",116],["25",122],["31",121],["34",102],["42",106],["160",114],["196",108],["197",103],["446",117],["447",118],["474",119],["484",107],["772",100],["798",125],["799",126]]}}}
 {__codeMap: true, value: [[`1`, `const gameWidth = 800;
 const gameHeight = 450;
 const halfWidth = gameWidth/2;
@@ -611,12 +625,11 @@ function generateTrajectoryMesh(trajectory) {
 }
 
 const positionedLanders = Events.select(
-  {landers: new Map, renderedModelTime: 0, renderCount: 0, renderTime: 0},
+  {landers: new Map(), renderedModelTime: 0, renderCount: 0, renderTime: 0},
   viewTimer, (prev, viewTimer) => {
     let diff = prev.renderdCount * 1/60;
     let deltaTime = 0;
     let renderCount = prev.renderCount;
-    if (shipStates.map.size > 1) debugger;;
     const modelTime = Math.max(...[...shipStates.map.values()].map(m => m.time));
     if (modelTime === prev.renderedModelTime) {
       renderCount++;
@@ -1173,11 +1186,14 @@ const newRound = Events.receiver();
 const gameState = Behaviors.select(
   {isDebugOn: false, state: "isBetweenRounds", since: 0, winner: "", knownPlayers: new Set(), survivors: new Set()},
   players, (prev, players) => {
-    const prevKeys = [...prev.knownPlayers.keys()];
+    const prevKeys = [...prev.knownPlayers];
     const newKeys = [...players.map.keys()];
     const olds = prevKeys.filter((e) => !newKeys.includes(e));
     const news = newKeys.filter((e) => !prevKeys.includes(e));
-    olds.forEach((id) => prev.knownPlayers.delete(id));
+    olds.forEach((id) => {
+      prev.knownPlayers.delete(id);
+      prev.survivors.delete(id);
+    });
     if (prev.state === "inBetweenRounds") {
       news.forEach((id) => {
         prev.knownPlayers.add(id);
@@ -1606,7 +1622,6 @@ const shipStates = Behaviors.select(
       let randomPositionX;
       let randomPositionY;
       let randomRotation;
-      console.log("myConstants in randomSpawn")
       const {
         halfWidth, halfHeight, horizontalSpawnOffset,
         middleSpawnOffset, verticalTopSpawnOffset, verticalMiddleSpawnOffset,
@@ -2446,7 +2461,7 @@ const viewConstants = {
   parameters: {
     appParameters: {
 
-      name: '128',
+      name: '129',
       password: '1',
       apiKey: "234567_Paste_Your_Own_API_Key_Here_7654321",
       box: "https://rhq.ai",
