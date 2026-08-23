@@ -616,7 +616,8 @@ const positionedLanders = Events.select(
     let diff = prev.renderdCount * 1/60;
     let deltaTime = 0;
     let renderCount = prev.renderCount;
-    const modelTime = [...shipStates.map.values()][0].time;
+    if (shipStates.map.size > 1) debugger;;
+    const modelTime = Math.max(...[...shipStates.map.values()].map(m => m.time));
     if (modelTime === prev.renderedModelTime) {
       renderCount++;
       deltaTime = renderCount * 1 / 60;
@@ -1796,8 +1797,12 @@ const shipStates = Behaviors.select(
 
       r += rotationDelta;
 
-      if(r > Math.PI / 2) r = Math.PI / 2;
-      if(r < -Math.PI / 2) r = -Math.PI / 2;
+      if(r > (Math.PI * 1.5) / 2) {
+        r = (Math.PI * 1.5) / 2;
+      }
+      if(r < -(Math.PI * 1.5) / 2) {
+        r = -(Math.PI * 1.5) / 2
+      };
     
       let velocityDeltaY = 0;
       let velocityDeltaX = 0;
@@ -2437,7 +2442,7 @@ const viewConstants = {
   parameters: {
     appParameters: {
 
-      name: '127',
+      name: '128',
       password: '1',
       apiKey: "234567_Paste_Your_Own_API_Key_Here_7654321",
       box: "https://rhq.ai",
