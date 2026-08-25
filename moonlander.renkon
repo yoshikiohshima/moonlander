@@ -151,8 +151,8 @@ const constants = {
   lineWidth: 0.5,
 
   zoom: 4,
-  cameraZoomAltitude: 100,
-  cameraZoomOutAltitude: 110,
+  cameraZoomAltitude: 120,
+  cameraZoomOutAltitude: 130,
   cameraPositionDefault:  [0, 0, 5],
 
   verticalTopSpawnOffset: 50,
@@ -485,6 +485,7 @@ const visibilityChange = Events.listener(document, "visibilitychange", (evt) => 
 const render = ((scene, renderer, gameState, hudState, shipStates, positionedLanders, controlStates, collisionState, camera, resizer, timerState, viewTimer) => {
   let trajectory;
   const landers = positionedLanders.landers;
+  const diffYs = positionedLanders.diffYs;
   const {isDebugOn} = gameState;
   const {cameraPositionDefault, zoom, halfWidth} = constants;
   const shipState = shipStates.map.get(viewId);
@@ -505,7 +506,7 @@ const render = ((scene, renderer, gameState, hudState, shipStates, positionedLan
   const {isZoomed, zoomChanged} = renderState;
   const z = cameraPositionDefault[2];
   if (isZoomed) {
-    camera.position.set(lander.position.x, lander.position.y - altitude/2, z);
+    camera.position.set(lander.position.x, (lander.position.y - diffYs.get(viewId)) - altitude/2, z);
     camera.zoom = zoom;
     camera.updateProjectionMatrix();
   } else if (zoomChanged && isZoomed === false) {
@@ -611,9 +612,8 @@ function generateTrajectoryMesh(trajectory) {
 }
 
 const positionedLanders = Events.select(
-  {landers: new Map(), renderedModelTime: 0, renderCount: 0, renderTime: 0},
+  {landers: null, renderedModelTime: 0, diffYs: new Map(), renderCount: 0, renderTime: 0},
   viewTimer, (prev, viewTimer) => {
-    let diff = prev.renderdCount * 1/60;
     let deltaTime = 0;
     let renderCount = prev.renderCount;
     const modelTime = Math.max(...[...shipStates.map.values()].map(m => m.time));
@@ -625,7 +625,9 @@ const positionedLanders = Events.select(
       renderCount = 0;
       deltaTime = 0;
     }
+    const keys = new Set([...prev.diffYs.keys()]);
     for (const [k, shipState] of shipStates.map) {
+      keys.delete(k);
       const {velocityX, velocityY, currentAcceleration, landerForward} = shipState;
       let diffX = 0;
       let diffY = 0;
@@ -638,7 +640,7 @@ const positionedLanders = Events.select(
       diffX += velocityX * renderCount * deltaTime;
       diffY += velocityY * renderCount * deltaTime;
       const colState = collisionState.map.get(k);
-
+      prev.diffYs.set(k, diffY);
       const lander = landers.map.get(k);
       if (!colState) {lander.visible = false; continue;}
       if (colState.landed) {continue;}
@@ -648,7 +650,10 @@ const positionedLanders = Events.select(
       lander.position.y = shipState.y + diffY;
       lander.rotation.z = shipState.r;
     }
-    return {landers: landers, renderedModelTime: modelTime, renderCount, renderTime: Renkon.app.extrapolatedNow()}
+    [...keys].forEach(k => prev.diffYs.delete(k));
+    return {
+      landers: landers, renderedModelTime: modelTime, diffYs: prev.diffYs, 
+      renderCount, renderTime: Renkon.app.extrapolatedNow()};
   }
 );
 
@@ -2276,8 +2281,11 @@ function lerpColor(startColor, endColor, outColor, t) {
     const olds = prevKeys.filter((e) => !newKeys.includes(e));
     const news = newKeys.filter((e) => !prevKeys.includes(e));
     olds.forEach((id) => {
+      if (prev.explosionPSs.get(id)) {
+        prev.explosionPSs.get(id).unemit();
+        prev.explosionPSs.delete(id);
+      }
       prev.thrusterPSs.delete(id);
-      prev.explosionPSs.delete(id);
     });
     news.forEach((id) => {
       const lander = landers.map.get(id);
