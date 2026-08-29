@@ -15,8 +15,8 @@
 "y":3106.040256723329}],["13",{"height":786.6273658378875,
 "id":"13",
 "width":625.3854365358418,
-"x":5680.732611099984,
-"y":6683.136252235643}],["23",{"height":1709.3704333300882,
+"x":5702.139538844108,
+"y":7704.594729245174}],["23",{"height":1709.3704333300882,
 "id":"23",
 "width":783.400119581732,
 "x":3420.3934029570937,
@@ -24,11 +24,11 @@
 "id":"24",
 "width":491.11452991212195,
 "x":-1858.2084173553858,
-"y":3110.2484721313976}],["25",{"height":1940.561456655881,
+"y":3110.2484721313976}],["25",{"height":2665.440223547012,
 "id":"25",
-"width":836.3479909414862,
-"x":5671.687940912815,
-"y":4721.011473322983}],["31",{"height":3399.8826347444437,
+"width":671.9605275404789,
+"x":5697.020593650796,
+"y":4963.292455692801}],["31",{"height":3399.8826347444437,
 "id":"31",
 "width":724.2380960363134,
 "x":2548.2752336424387,
@@ -40,10 +40,10 @@
 "id":"42",
 "width":1048.3381662632978,
 "x":1415.446807519531,
-"y":3110.1711479897585}],["160",{"height":1535.5219826771886,
+"y":3110.1711479897585}],["160",{"height":1826.3862211977523,
 "id":"160",
-"width":931.4125670982758,
-"x":5664.20663327913,
+"width":930.5179831762126,
+"x":5665.101217201193,
 "y":3111.8915678213916}],["196",{"height":565.4659431184923,
 "id":"196",
 "width":750.8188817779335,
@@ -136,7 +136,7 @@
 "values":[["1","code"],["2","code"],["7","code"],["13","code"],["23","code"],["24","code"],["25","code"],["31","code"],["34","code"],["42","code"],["160","code"],["196","code"],["197","code"],["446","code"],["447","code"],["474","code"],["484","code"],["772","code"]]}},
 "windows":["1","2","7","13","23","24","25","31","34","42","160","196","197","446","447","474","484","772"],
 "zIndex":{"map":{"__map":true,
-"values":[["1",110],["2",111],["7",105],["13",108],["23",104],["24",116],["25",122],["31",123],["34",102],["42",106],["160",114],["196",121],["197",103],["446",117],["447",118],["474",119],["484",107],["772",100]]}}}
+"values":[["1",110],["2",111],["7",105],["13",123],["23",104],["24",116],["25",122],["31",108],["34",102],["42",106],["160",114],["196",121],["197",103],["446",117],["447",118],["474",119],["484",107],["772",100]]}}}
 {__codeMap: true, value: [[`1`, `const gameWidth = 800;
 const gameHeight = 450;
 const halfWidth = gameWidth/2;
@@ -196,9 +196,13 @@ console.log("constants", constants)
   document.body.querySelector(\`#\${joystick.id}\`)?.remove();
   document.body.appendChild(joystick);
 
-  const thrusterDiv = document.createElement("div");
-  thrusterDiv.innerHTML = \`<button id="thruster">Thruster</button>\`;
-  const thruster = thrusterDiv.querySelector("#thruster");
+  const thruster = document.createElement("div");
+  thruster.id = "thruster";
+  thruster.classList.add("noSelect");
+  //const label = document.createElement("div");
+  //label.textContent = "T";
+  //label.classList.add("noSelect");
+  //thruster.appendChild(label);
   document.body.querySelector(\`#\${thruster.id}\`)?.remove();
   document.body.appendChild(thruster);
 
@@ -273,8 +277,17 @@ canvas {
     width: 40px;
     height: 40px;
     border-radius: 20px;
+    border: 1pt solid white;
     background-color: #FFF;
     user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noSelect {
+  user-select: none;
+  -webkit-user-select: none;
 }
 \`;
 
@@ -885,34 +898,73 @@ const documentDown = Events.listener(document, "pointerdown", (ev) => {
   setTimeout(() => dummyText.focus(), 0);
 }, {capture: true});
 
-const onpointerdown = Events.listener(document, "pointerdown", (e) => {
-  console.log("joy pointer down")
-  return e});
-const onpointermove = Events.listener(document, "pointermove", (e) => {
+const joystickCapture = [null];
+
+const onpointerdown = Events.listener(joystick, "pointerdown", (e) => {
+  if (joystickCapture[0] === null) {
+    joystick.setPointerCapture(e.pointerId);
+    joystickCapture[0] = e.pointerId;
+  }
+  preventAndReturn(e);
   return e;
 });
-const onpointerup = Events.listener(document, "pointerup", e => e);
+const onpointermove = Events.listener(joystick, "pointermove", (e) => e);
 
-const thrusterdown = Events.listener(thruster, "pointerdown", preventAndReturn);
-const thrusterup = Events.listener(thruster, "pointerup", preventAndReturn);
+const onpointerup = Events.listener(joystick, "pointerup", (e) => {
+  if (joystickCapture[0] === e.pointerId) {
+    try {
+      joystick.releasePointerCapture(e.pointerId);
+    } catch(e) {
+    }
+    joystickCapture[0] = null;    
+  }
+  preventAndReturn(e); 
+  return e;
+});
+
+const thrusterCapture = [null];
+
+
+const thrusterdown = Events.listener(thruster, "pointerdown", (e) => {
+  if (thrusterCapture[0] === null) {
+    thruster.setPointerCapture(e.pointerId);
+    thrusterCapture[0] = e.pointerId;
+  }
+  preventAndReturn(e);
+  return e;
+});
+const thrusterup = Events.listener(thruster, "pointerup", (e) => {
+  if (thrusterCapture[0] === e.pointerId) {
+    try {
+      thruster.releasePointerCapture(e.pointerId);
+    } catch(e) {
+    }
+    thrusterCapture[0] = null;    
+  }
+  preventAndReturn(e); 
+  return e;
+});
 
 const cancel = Events.listener(document, "pointercancel", preventAndReturn);
 const menu = Events.listener(document, "contextmenu", preventAndReturn);
 const touchend = Events.listener(document, "touchend", preventAndReturn);
 
+Events.listener(thruster, "pointercancel", preventAndReturn);
+Events.listener(thruster, "contextmenu", preventAndReturn);
+Events.listener(thruster, "touchend", preventAndReturn);
+
 const upKind = Events.or(onpointerup, cancel, menu, touchend);
 
 const joystickControl = Events.select(
-  {joystick: true, pointerId: null, x: 0, y: 0,rotatingLeft: false, rotatingRight: false, notFocused: true},
+  {joystick: true, pointerId: null,
+   x: 0, y: 0,rotatingLeft: false, rotatingRight: false, notFocused: true},
   onpointerdown, (prev, e) => {
     if (prev.pointerId === null) {
       const pointerId = e.pointerId;
       const x = e.clientX;
       const y = e.clientY;
-      //joystick.style.left = \`\${x - 60}px\`;
       //joystick.style.top = \`\${y - 60}px\`;
       joystick.style.display = "block";
-      document.body.setPointerCapture(pointerId);
       return {joystick: true, pointerId, x, y, rotatingLeft: false, rotatingRight: false};
     }
     return prev;
@@ -937,13 +989,11 @@ const joystickControl = Events.select(
       }
       knob.style.left = \`\${20 + dx}px\`;
     }
-    console.log(rotatingLeft, rotatingRight)
     return {...prev, rotatingRight, rotatingLeft};
   },
   upKind, (prev, e) => {
     let pointerId = prev.pointerId;
     if (prev.pointerId === e.pointerId) {
-      document.body.releasePointerCapture(prev.pointerId);
     }
     pointerId = null;
     knob.style.left = \`20px\`;
@@ -960,7 +1010,6 @@ const thrusterControl = Events.select(
     }
     if (prev.pointerId === null) {
       const pointerId = e.pointerId;
-      thruster.setPointerCapture(pointerId);
       return {thruster: true, pointerId, accelerating: true};
     }
     return prev;
@@ -968,10 +1017,7 @@ const thrusterControl = Events.select(
   thrusterup, (prev, e) => {
     let pointerId = prev.pointerId;
     if (prev.pointerId === e.pointerId) {
-      thruster.releasePointerCapture(pointerId);
       pointerId = null;
-      console.log('thrusterup')
-      window.foo = true;
       return {...prev, pointerId, accelerating: false};
     }
     return prev;
@@ -1358,12 +1404,6 @@ const collisionState = Behaviors.select(
               crashInfo = "LANDING VELOCITY WAS TOO HIGH";
               hasLanded = false;
             }
-            let mul = 1;
-            if (hasLanded) {
-              console.log("hasLanded");
-            } else if (crashInfo) {
-              console.log("hasCrashed")
-            }
             if(hasLanded || crashInfo) {
               prev.map.set(shipId, {landed: hasLanded, crashInfo: crashInfo, altitude: 0, time});
               nextShip = true;
@@ -1444,10 +1484,23 @@ const controlStates = Behaviors.collect(
     const joystick = keys.find(x => x?.joystick);
     if (joystick !== undefined) {
       if (joystick.rotatingLeft || joystick.rotatingRight) {
+        // console.log("joystickRotating");
         value.wasRotatingFromJoystick = true;
+        if (joystick.rotatingLeft) {
+          value.rotatingLeft = true;
+        }
+        if (joystick.rotatingRight) {
+          value.rotatingRight = true;
+        }
       }
-      value.rotatingLeft = value.rotatingLeft || joystick.rotatingLeft;
-      value.rotatingRight = value.rotatingRight || joystick.rotatingRight;
+      if (!joystick.rotatingLeft && !joystick.rotatingRight) {
+        if (prev.wasRotatingFromJoystick) {
+          // console.log("not joystickRotating");
+          value.rotatingLeft = false;
+          value.rotatingRight = false;
+          value.wasRotatingFromJoystick = false;
+        }
+      }
     }
     const thruster = keys.find(x => x?.thruster);
     if (thruster !== undefined) {
@@ -1462,9 +1515,11 @@ const controlStates = Behaviors.collect(
 
     if (prev.rotatingLeft === value.rotatingLeft &&
       prev.rotatingRight === value.rotatingRight &&
-      prev.accelerating === value.accelerating) {
+      prev.accelerating === value.accelerating &&
+      prev.wasRotatingFromJoystick === value.wasRotatingFromJoystick) {
       return prev;
     }
+    // console.log("change", value);
     return value;
   },
 );
@@ -2454,7 +2509,7 @@ const viewConstants = {
   parameters: {
     appParameters: {
 
-      name: '131',
+      name: '132',
       password: '1',
       apiKey: "234567_Paste_Your_Own_API_Key_Here_7654321",
       box: "https://rhq.ai",
