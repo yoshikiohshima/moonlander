@@ -949,11 +949,12 @@ const cancel = Events.listener(document, "pointercancel", preventAndReturn);
 const menu = Events.listener(document, "contextmenu", preventAndReturn);
 const touchend = Events.listener(document, "touchend", preventAndReturn);
 
-Events.listener(thruster, "pointercancel", preventAndReturn);
-Events.listener(thruster, "contextmenu", preventAndReturn);
-Events.listener(thruster, "touchend", preventAndReturn);
+const tCancel = Events.listener(thruster, "pointercancel", preventAndReturn);
+const tMenu = Events.listener(thruster, "contextmenu", preventAndReturn);
+const tTouchend = Events.listener(thruster, "touchend", preventAndReturn);
 
 const upKind = Events.or(onpointerup, cancel, menu, touchend);
+const tUp = Events.or(thrusterup, tCancel, tMenu, tTouchend);
 
 const joystickControl = Events.select(
   {joystick: true, pointerId: null,
@@ -1014,7 +1015,7 @@ const thrusterControl = Events.select(
     }
     return prev;
   },
-  thrusterup, (prev, e) => {
+  tUp, (prev, e) => {
     let pointerId = prev.pointerId;
     if (prev.pointerId === e.pointerId) {
       pointerId = null;
