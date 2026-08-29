@@ -8,9 +8,9 @@
 "id":"2",
 "width":628.7378834165145,
 "x":-2528.8087860216083,
-"y":3103.1761336064587}],["7",{"height":6980.620294079672,
+"y":3103.1761336064587}],["7",{"height":7122.224254631893,
 "id":"7",
-"width":896.2504567861058,
+"width":982.2626716492796,
 "x":4368.593128390747,
 "y":3106.040256723329}],["13",{"height":786.6273658378875,
 "id":"13",
@@ -24,7 +24,7 @@
 "id":"24",
 "width":491.11452991212195,
 "x":-1858.2084173553858,
-"y":3110.2484721313976}],["25",{"height":1921.5338398796528,
+"y":3110.2484721313976}],["25",{"height":1940.561456655881,
 "id":"25",
 "width":836.3479909414862,
 "x":5671.687940912815,
@@ -274,12 +274,7 @@ canvas {
     height: 40px;
     border-radius: 20px;
     background-color: #FFF;
-}
-\`;
-
-const hideCSS = \`
-#joystick {
-  display: none;
+    user-select: none;
 }
 \`;
 
@@ -289,13 +284,6 @@ const hideCSS = \`
   c.id = "lander-css";
   document.head.querySelector(\`#\${c.id}\`)?.remove();
   document.head.appendChild(c);
-  if (!("ontouchstart" in window)) {
-    const hide = document.createElement("style");
-    hide.textContent = hideCSS;
-    hide.id = "hide";
-    document.head.querySelector(\`#\${hide.id}\`)?.remove();
-    document.head.appendChild(hide);
-  }
   return renkon;
 })(css, renkon);`],
 [`7`, `const {scene, camera, renderer} = ((THREE) => {
@@ -653,7 +641,7 @@ const positionedLanders = Events.select(
     [...keys].forEach(k => prev.diffYs.delete(k));
     return {
       landers: landers, renderedModelTime: modelTime, diffYs: prev.diffYs, 
-      renderCount, renderTime: Renkon.app.extrapolatedNow()};
+      renderCount, renderTime: Renkon.app?.extrapolatedNow?.()||Renkon.time};
   }
 );
 
@@ -893,23 +881,30 @@ const preventAndReturn = (e) => {
   return e;  
 };
 
-const onpointerdown = Events.listener(renkon, "pointerdown", preventAndReturn);
-const onpointermove = Events.listener(renkon, "pointermove", preventAndReturn);
-const onpointerup = Events.listener(renkon, "pointerup", preventAndReturn);
+const documentDown = Events.listener(document, "pointerdown", (ev) => {
+  setTimeout(() => dummyText.focus(), 0);
+}, {capture: true});
+
+const onpointerdown = Events.listener(document, "pointerdown", (e) => {
+  console.log("joy pointer down")
+  return e});
+const onpointermove = Events.listener(document, "pointermove", (e) => {
+  return e;
+});
+const onpointerup = Events.listener(document, "pointerup", e => e);
 
 const thrusterdown = Events.listener(thruster, "pointerdown", preventAndReturn);
 const thrusterup = Events.listener(thruster, "pointerup", preventAndReturn);
 
-Events.listener(renkon, "pointercancel", preventAndReturn);
-Events.listener(renkon, "contextmenu", preventAndReturn);
-Events.listener(renkon, "touchend", preventAndReturn);
+const cancel = Events.listener(document, "pointercancel", preventAndReturn);
+const menu = Events.listener(document, "contextmenu", preventAndReturn);
+const touchend = Events.listener(document, "touchend", preventAndReturn);
 
-const joystickControl = Behaviors.select(
+const upKind = Events.or(onpointerup, cancel, menu, touchend);
+
+const joystickControl = Events.select(
   {joystick: true, pointerId: null, x: 0, y: 0,rotatingLeft: false, rotatingRight: false, notFocused: true},
   onpointerdown, (prev, e) => {
-    if (prev.notFocused) {
-      renkon.querySelector("#dummyText")?.focus();
-    }
     if (prev.pointerId === null) {
       const pointerId = e.pointerId;
       const x = e.clientX;
@@ -942,18 +937,18 @@ const joystickControl = Behaviors.select(
       }
       knob.style.left = \`\${20 + dx}px\`;
     }
+    console.log(rotatingLeft, rotatingRight)
     return {...prev, rotatingRight, rotatingLeft};
   },
-  onpointerup, (prev, e) => {
+  upKind, (prev, e) => {
     let pointerId = prev.pointerId;
     if (prev.pointerId === e.pointerId) {
       document.body.releasePointerCapture(prev.pointerId);
-      pointerId = null;
-      knob.style.left = \`20px\`;
-      knob.style.top = \`20px\`;
-      return {...prev, pointerId, rotatingRight: false, rotatingLeft: false};
     }
-    return prev;
+    pointerId = null;
+    knob.style.left = \`20px\`;
+    knob.style.top = \`20px\`;
+    return {...prev, pointerId, rotatingRight: false, rotatingLeft: false};
   }
 );
 
@@ -1219,7 +1214,7 @@ const gameState = Behaviors.select(
     if (prev.state === "showWinner") {
       if (timerState.now - prev.since > 3000) {
         Events.send(newRound, true);
-        return {state: "isBetweenRounds", survivors: new Set(), since: timerState.now};
+        return {...prev, state: "isBetweenRounds", survivors: new Set(), since: timerState.now};
       }
     }
     return prev;
@@ -1424,7 +1419,8 @@ const controlStates = Behaviors.collect(
   }
 );`],
 [`160`, `const controlState = Behaviors.select(
-  {rotatingRight: false, rotatingLeft: false, accelerating: false, wasThrustingFromButton: false, viewId},
+  {rotatingRight: false, rotatingLeft: false, accelerating: false,
+   wasThrustingFromButton: false, wasRotatingFromJoystick: false, viewId},
   keys, (prev, keys) => {
     const value = {...prev};
     if (keys.includes("ArrowLeftDown")) {
@@ -1447,6 +1443,9 @@ const controlStates = Behaviors.collect(
     }
     const joystick = keys.find(x => x?.joystick);
     if (joystick !== undefined) {
+      if (joystick.rotatingLeft || joystick.rotatingRight) {
+        value.wasRotatingFromJoystick = true;
+      }
       value.rotatingLeft = value.rotatingLeft || joystick.rotatingLeft;
       value.rotatingRight = value.rotatingRight || joystick.rotatingRight;
     }
@@ -2455,7 +2454,7 @@ const viewConstants = {
   parameters: {
     appParameters: {
 
-      name: '129',
+      name: '131',
       password: '1',
       apiKey: "234567_Paste_Your_Own_API_Key_Here_7654321",
       box: "https://rhq.ai",
