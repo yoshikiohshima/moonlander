@@ -922,28 +922,8 @@ const onpointerup = Events.listener(joystick, "pointerup", (e) => {
   return e;
 });
 
-const thrusterCapture = [null];
-
-
-const thrusterdown = Events.listener(thruster, "pointerdown", (e) => {
-  if (thrusterCapture[0] === null) {
-    thruster.setPointerCapture(e.pointerId);
-    thrusterCapture[0] = e.pointerId;
-  }
-  preventAndReturn(e);
-  return e;
-});
-const thrusterup = Events.listener(thruster, "pointerup", (e) => {
-  if (thrusterCapture[0] === e.pointerId) {
-    try {
-      thruster.releasePointerCapture(e.pointerId);
-    } catch(e) {
-    }
-    thrusterCapture[0] = null;    
-  }
-  preventAndReturn(e); 
-  return e;
-});
+const thrusterdown = Events.listener(thruster, "pointerdown", preventAndReturn);
+const thrusterup = Events.listener(thruster, "pointerup", preventAndReturn);
 
 const cancel = Events.listener(document, "pointercancel", preventAndReturn);
 const menu = Events.listener(document, "contextmenu", preventAndReturn);
