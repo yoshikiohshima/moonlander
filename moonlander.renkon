@@ -894,6 +894,18 @@ const preventAndReturn = (e) => {
   return e;  
 };
 
+const release = (e) => {
+  if (joystickCapture[0] === e.pointerId) {
+    try {
+      joystick.releasePointerCapture(e.pointerId);
+    } catch(e) {
+    }
+    joystickCapture[0] = null;    
+  }
+  preventAndReturn(e); 
+  return e;
+};
+
 const documentDown = Events.listener(document, "pointerdown", (ev) => {
   setTimeout(() => dummyText.focus(), 0);
 }, {capture: true});
@@ -908,26 +920,17 @@ const onpointerdown = Events.listener(joystick, "pointerdown", (e) => {
   preventAndReturn(e);
   return e;
 });
+
 const onpointermove = Events.listener(joystick, "pointermove", (e) => e);
 
-const onpointerup = Events.listener(joystick, "pointerup", (e) => {
-  if (joystickCapture[0] === e.pointerId) {
-    try {
-      joystick.releasePointerCapture(e.pointerId);
-    } catch(e) {
-    }
-    joystickCapture[0] = null;    
-  }
-  preventAndReturn(e); 
-  return e;
-});
+const onpointerup = Events.listener(document, "pointerup", release);
 
 const thrusterdown = Events.listener(thruster, "pointerdown", preventAndReturn);
 const thrusterup = Events.listener(thruster, "pointerup", preventAndReturn);
 
-const cancel = Events.listener(document, "pointercancel", preventAndReturn);
-const menu = Events.listener(document, "contextmenu", preventAndReturn);
-const touchend = Events.listener(document, "touchend", preventAndReturn);
+const cancel = Events.listener(document, "pointercancel", release);
+const menu = Events.listener(document, "contextmenu", release);
+const touchend = Events.listener(document, "touchend", release);
 
 const tCancel = Events.listener(thruster, "pointercancel", preventAndReturn);
 const tMenu = Events.listener(thruster, "contextmenu", preventAndReturn);
@@ -939,6 +942,15 @@ const tUp = Events.or(thrusterup, tCancel, tMenu, tTouchend);
 const joystickControl = Events.select(
   {joystick: true, pointerId: null,
    x: 0, y: 0,rotatingLeft: false, rotatingRight: false, notFocused: true},
+  upKind, (prev, e) => {
+    let pointerId = prev.pointerId;
+    if (prev.pointerId === e.pointerId) {
+    }
+    pointerId = null;
+    knob.style.left = \`20px\`;
+    knob.style.top = \`20px\`;
+    return {...prev, pointerId, rotatingRight: false, rotatingLeft: false};
+  },
   onpointerdown, (prev, e) => {
     if (prev.pointerId === null) {
       const pointerId = e.pointerId;
@@ -971,37 +983,18 @@ const joystickControl = Events.select(
       knob.style.left = \`\${20 + dx}px\`;
     }
     return {...prev, rotatingRight, rotatingLeft};
-  },
-  upKind, (prev, e) => {
-    let pointerId = prev.pointerId;
-    if (prev.pointerId === e.pointerId) {
-    }
-    pointerId = null;
-    knob.style.left = \`20px\`;
-    knob.style.top = \`20px\`;
-    return {...prev, pointerId, rotatingRight: false, rotatingLeft: false};
   }
 );
 
 const thrusterControl = Events.select(
-  {thruster: true, pointerId: null, accelerating: false, notFocused: true},
-  thrusterdown, (prev, e) => {
-    if (prev.notFocused) {
-      document.body.querySelector("#dummyText")?.focus();
-    }
-    if (prev.pointerId === null) {
-      const pointerId = e.pointerId;
-      return {thruster: true, pointerId, accelerating: true};
-    }
-    return prev;
-  },
+  {thruster: true, pointerId: null, accelerating: false},
   tUp, (prev, e) => {
-    let pointerId = prev.pointerId;
-    if (prev.pointerId === e.pointerId) {
-      pointerId = null;
-      return {...prev, pointerId, accelerating: false};
-    }
-    return prev;
+    const pointerId = null;
+    return {...prev, pointerId, accelerating: false};
+  },
+  thrusterdown, (prev, e) => {
+    const pointerId = e.pointerId;
+    return {thruster: true, pointerId, accelerating: true};
   }
 );
 `],
@@ -2490,7 +2483,7 @@ const viewConstants = {
   parameters: {
     appParameters: {
 
-      name: '132',
+      name: '133',
       password: '1',
       apiKey: "234567_Paste_Your_Own_API_Key_Here_7654321",
       box: "https://rhq.ai",
