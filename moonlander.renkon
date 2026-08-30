@@ -1428,6 +1428,13 @@ const controlStates = Behaviors.collect(
   controlState, (prev, controlState) => {
     prev.map.set(controlState.viewId, controlState);
     return {map: prev.map};
+  },
+  players, (prev, players) => {
+    const prevKeys = [...prev.map.keys()];
+    const olds = prevKeys.filter((e) => !players.map.get(e));
+    olds.forEach((id) => prev.map.delete(id));
+    if (olds.length === 0) return prev;
+    return {map: prev.map};
   }
 );`],
 [`160`, `const controlState = Behaviors.select(
