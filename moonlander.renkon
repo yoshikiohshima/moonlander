@@ -344,15 +344,18 @@ const landers = Behaviors.select(
     const newKeys = [...shipStates.map.keys()];
     const olds = prevKeys.filter((e) => !newKeys.includes(e));
     const news = newKeys.filter((e) => !prevKeys.includes(e));
+    let changed = false;
     olds.forEach((shipId) => {
+      changed = true;
       const old = prev.map.get(shipId);
-      old?.remove();
+      if (old) scene.remove(old);
       prev.map.delete(shipId);      
     });
     news.forEach((shipId) => {
+      changed = true;
       prev.map.set(shipId, newLander(shipId));
     });
-    return {map: prev.map}
+    return changed ? {map: prev.map} : prev;
   }
 );
 
@@ -1216,10 +1219,9 @@ const gameState = Behaviors.select(
     return {...prev, state: "showWinner", survivors: new Set([somebodyLanded.winner]), since: Renkon.time, winner: somebodyLanded.winner, winnerName: somebodyLanded.winnerName};
   },
   somebodyCrashed, (prev, somebodyCrashed) => {
-    console.log("somebodyCrashed", somebodyCrashed);
     const sorted = [...somebodyCrashed.collisionStateMap].sort((a, b) => b.time - a.time);
     const survivors = somebodyCrashed.survivors;
-    console.log("somebodyCrashed", survivors);
+    console.log("somebodyCrashed", somebodyCrashed, survivors);
     if (survivors.size === 0) {
       return {...prev, state: "showWinner", since: Renkon.time, winner: "NOBODY", survivors};
     }
@@ -1255,6 +1257,25 @@ const collisionState = Behaviors.select(
       return [id, newCollisionState(id)];
     }))};
   })(),
+  players, (prev, players) => {
+    const newCollisionState = (viewId) => {
+      return {viewId, landed: false, crashInfo: "", altitude: 300, fuelChange: 0, time: 0}
+    };
+    let changed = false;
+    const prevKeys = [...prev.map.keys()];
+    const newKeys = [...players.map.keys()];
+    const olds = prevKeys.filter((e) => !newKeys.includes(e));
+    const news = newKeys.filter((e) => !prevKeys.includes(e));
+    olds.forEach((viewId) => {
+      changed = true;
+      prev.map.delete(viewId)
+    });
+    news.forEach((viewId) => {
+      changed = true;
+      prev.map.set(viewId, newCollisionState(viewId));
+    });
+    return changed ? {map: prev.map} : prev;
+  },
   newRound, (prev, _newRound) => {
     console.log("newRound collisionState");
     const newCollisionState = (viewId) => {
@@ -1267,27 +1288,10 @@ const collisionState = Behaviors.select(
   },
   shipStates, (prev, shipStates) => {
     // orderCheck
-    const newCollisionState = (viewId) => {
-      return {viewId, landed: false, crashInfo: "", altitude: 300, fuelChange: 0, time: 0}
-    };
-
-    let changed = false;
     const lineSegments = lineSegmentsModel;
     const time = Renkon.time;
-    const prevKeys = [...prev.map.keys()];
-    const newKeys = [...shipStates.map.keys()];
-    const olds = prevKeys.filter((e) => !newKeys.includes(e));
-    const news = newKeys.filter((e) => !prevKeys.includes(e));
-    olds.forEach((shipId) => {
-      changed = true;
-      prev.map.delete(shipId)
-    });
-    news.forEach((shipId) => {
-      changed = true;
-      prev.map.set(shipId, newCollisionState(shipId));
-    });
-    if (gameState.state === "showWinner") {return !changed ? prev : {map: prev.map};}
-    if (gameState.state !== "playOn") {return !changed ? prev : {map: prev.map};}
+    if (gameState.state === "showWinner") {return prev;}
+    if (gameState.state !== "playOn") {return prev;}
     const {
       smallScale, mainScale,
       halfWidth, halfHeight, landerScale, lineWidth,
@@ -1297,9 +1301,6 @@ const collisionState = Behaviors.select(
     for (const [shipId, shipState] of shipStates.map) {
       const {x, y, r, velocityY, velocityX, currentFuel} = shipState;
       let myCollisionState = prev.map.get(shipId);
-      if (!myCollisionState) {
-        myCollisionState = newCollisionState(shipId);
-      }
 
       if (x < -halfWidth - lineWidth ||
         x > halfWidth + lineWidth ||
@@ -1393,9 +1394,6 @@ const collisionState = Behaviors.select(
         }
       }
       prev.map.set(shipId, {...prev.map.get(shipId), altitude});
-    }
-    for (const oldId of olds) {
-      prev.map.delete(oldId);
     }
     return {map: prev.map};
   }
@@ -1583,7 +1581,6 @@ const shipStates = Behaviors.select(
       let randomPositionX;
       let randomPositionY;
       let randomRotation;
-      console.log("myConstants in randomSpawn")
       const {
         halfWidth, halfHeight, horizontalSpawnOffset,
         middleSpawnOffset, verticalTopSpawnOffset, verticalMiddleSpawnOffset,
@@ -1705,7 +1702,6 @@ const shipStates = Behaviors.select(
       let randomPositionX;
       let randomPositionY;
       let randomRotation;
-      console.log("myConstants in randomSpawn")
       const {
         halfWidth, halfHeight, horizontalSpawnOffset,
         middleSpawnOffset, verticalTopSpawnOffset, verticalMiddleSpawnOffset,
@@ -1764,7 +1760,6 @@ const shipStates = Behaviors.select(
       let randomPositionX;
       let randomPositionY;
       let randomRotation;
-      console.log("myConstants in randomSpawn")
       const {
         halfWidth, halfHeight, horizontalSpawnOffset,
         middleSpawnOffset, verticalTopSpawnOffset, verticalMiddleSpawnOffset,
@@ -2483,7 +2478,7 @@ const viewConstants = {
   parameters: {
     appParameters: {
 
-      name: '133',
+      name: '134',
       password: '1',
       apiKey: "234567_Paste_Your_Own_API_Key_Here_7654321",
       box: "https://rhq.ai",
