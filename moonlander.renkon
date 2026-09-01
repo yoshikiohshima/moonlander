@@ -1161,7 +1161,7 @@ function fillMainPanel(gameState, hudState, shipState, collisionState, timerStat
     }
   } else if (state === "playOn" && survivors && !survivors.has(viewId)) {
     landingText = "LANDER DESTROYED";
-    scoreText = crashInfo;
+    scoreText = crashInfo || "";
   } else {
     // console.log("you are still there");
     return;
@@ -2485,7 +2485,7 @@ const viewConstants = {
   parameters: {
     appParameters: {
 
-      name: '134',
+      name: '135',
       password: '1',
       apiKey: "234567_Paste_Your_Own_API_Key_Here_7654321",
       box: "https://rhq.ai",
