@@ -1341,7 +1341,9 @@ const collisionState = Behaviors.select(
             altitude = Math.max(0, altitude);
           }
 
-          let dot = ((worldPosition.x-leftVector.x)*(rightVector.x-leftVector.x) + (worldPosition.y-leftVector.y)*(rightVector.y-leftVector.y)) / squaredDistance(leftVector, rightVector);
+          let dot = ((worldPosition.x-leftVector.x)*(rightVector.x-leftVector.x) + 
+                     (worldPosition.y-leftVector.y)*(rightVector.y-leftVector.y)) /
+            squaredDistance(leftVector, rightVector);
           let closestX, closestY, distanceX, distanceY, distanceSquared;
 
           closestX = leftVector.x + (dot * (rightVector.x - leftVector.x));
